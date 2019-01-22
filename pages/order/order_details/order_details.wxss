@@ -1,0 +1,321 @@
+/* pages/order/order_details/order_details.wxss */
+/* 头部 */
+.head{
+  width: 750rpx;
+  height: 144rpx;
+  background: rgba(41,135,246,1);
+  padding-top:1rpx; 
+  position: relative;
+}
+/* 如果是订单未完成页面 */
+.state_box{
+  display: flex;
+  justify-content: space-around;
+  width: 630rpx;
+  margin-left: 60rpx;
+}
+.state{
+  width: 74rpx;
+  height: 96rpx;
+  text-align: center;
+  margin-top: 26rpx;
+}
+.state_img{
+  height: 40rpx;
+  width: 40rpx;
+}
+.state_img1{
+  height: 40rpx;
+  width: 40rpx;
+  opacity: 0.5;
+}
+.state_word{
+  width: 74rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: white;
+}
+.state_word1{
+  width: 74rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  color: white;
+  opacity: 0.5;
+}
+.line{
+  background: rgba(255,255,255,1);
+  width: 52rpx;
+  height: 2rpx;
+  opacity: 0.5;
+  margin-top: 46rpx;
+}
+.line1{
+  background: rgba(255,255,255,1);
+  width: 52rpx;
+  height: 2rpx;
+  margin-top: 46rpx;
+}
+/* 订单已完成的头部 */
+.yiwan{
+  margin-left: 60rpx;
+  margin-top: 16rpx;
+  height: 48rpx;
+  font-size: 34rpx;
+  color: white;
+}
+.yiwan_time{
+  font-size: 24rpx;
+  color: rgba(255,255,255,1);
+  margin-left: 60rpx;
+  margin-top: 20rpx;
+}
+.is_complete_img{
+  position: absolute;
+  width: 164rpx;
+  height: 110rpx;
+  top: 13rpx;
+  right: 50rpx;
+}
+.score_box{
+  width: 750rpx;
+  height: 276rpx;
+  opacity: 1;
+  background: rgba(254,247,235,1);
+  padding-top: 1rpx;
+}
+.score_title{
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  margin-left: 60rpx;
+  font-weight: bold;
+}
+.score_title text{
+  font-weight: 100;
+  color: gray;
+}
+.score_box image{
+  width: 324rpx;
+  height: 36rpx;
+  opacity: 1;
+  display: block;
+  margin-top: 60rpx;
+  margin-left: 216rpx;
+}
+.score_des{
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang;
+  color: rgba(245,166,35,1);
+  line-height: 40rpx;
+  letter-spacing: 0px;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+
+.details_title{
+  width: 656rpx;
+  opacity: 1;
+  background: rgba(255,245,230,1);
+  margin:30rpx 0 0 30rpx;
+  color: rgba(245,129,35,1);
+  line-height: 34rpx;
+  font-size: 24rpx;
+  padding: 13rpx 0 13rpx 34rpx;
+}
+
+.info1{
+  width: 660rpx;
+  height: 402rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-left: 30rpx;
+  position: relative;
+  padding-left:30rpx; 
+  padding-top: 36rpx;
+  margin-top: 20rpx;
+}
+.info{
+  width: 660rpx;
+  height: 402rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-left: 30rpx;
+  position: relative;
+  padding-left:30rpx; 
+  padding-top: 36rpx;
+}
+.icon {
+  width: 8rpx;
+  height: 80rpx;
+  opacity: 1;
+  background: rgba(41, 135, 246, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.info_title{
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+.info_list{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: rgba(74,74,74,1);
+  margin-top: 20rpx;
+  
+}
+/* 行程信息 */
+.trip{
+  width: 660rpx;
+  height: 336rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-left: 30rpx;
+  position: relative;
+  margin-top: 30rpx;
+  padding-left:30rpx; 
+  padding-top: 36rpx;
+}
+.info_title text{
+  color: rgba(41,135,246,1);
+  float: right;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+.info_title image{
+  height: 20rpx;
+  width: 20rpx;
+  float: right;
+  margin-right: 51rpx;
+  display: block;
+  margin-top: 10rpx;
+}
+
+/* 飞鸟信息 */
+.bird{
+  width: 660rpx;
+  height: 434rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-left: 30rpx;
+  position: relative;
+  margin-top: 30rpx;
+  padding-left:30rpx; 
+  padding-top: 36rpx;
+}
+.user{
+  height: 120rpx;
+  padding-left: 108rpx;
+  position: relative; 
+  width: 618rpx;
+  border-bottom: 1px solid rgba(238,238,238,1);
+  padding-top:1rpx; 
+}
+.headImg{
+  width: 88rpx;
+  height: 88rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.userName{
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 26rpx;
+  margin-top: 8rpx;
+}
+.rank{
+  width: 182rpx;
+  height: 28rpx;
+  background: rgba(254,247,235,1);
+  font-size: 18rpx;
+  color: rgba(245,166,35,1);
+  margin-top: 5rpx;
+}
+.rank image{
+  width: 100rpx;
+  height: 15rpx;
+}
+.bird_info{
+  margin-top: 20rpx;
+  color: rgba(153,153,153,1);
+  width: 618rpx;
+  font-size: 24rpx;
+  line-height: 24rpx;
+}
+
+.money{
+  width: 660rpx;
+  height: 90rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-left: 30rpx;
+  position: relative;
+  margin-top: 30rpx;
+  padding-left:30rpx; 
+  padding-top: 36rpx;
+}
+.money1{
+  width: 660rpx;
+  height: 90rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-left: 30rpx;
+  position: relative;
+  margin-top: 30rpx;
+  padding-left:30rpx; 
+  padding-top: 36rpx;
+  margin-bottom: 80rpx;
+}
+.is_money{
+  color: red;
+  font-size: 46rpx;
+  position: absolute;top: 32rpx;
+  right:36rpx;
+}
+
+/* 底部按钮 */
+.foot{
+  width: 750rpx;
+  height: 120rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  border-top: 1px solid rgba(210,210,210,1);
+  margin-top: 30rpx;
+}
+.foot view{
+  width: 210rpx;
+  height: 76rpx;
+  border-radius: 1px 1px 1px 1px;
+  text-align: center;
+  margin-top: 22rpx;
+  float: right;
+  margin-right: 32rpx;
+  font-size: 32rpx;
+  line-height: 76rpx;
+}
+.btn2{
+  border: 1px solid rgba(210,210,210,1);
+  color: rgba(153,153,153,1);
+  box-sizing: border-box;
+}
+.btn1{
+  border: rgba(41,135,246,1) 1px solid;
+  color: rgba(41,135,246,1);
+  box-sizing: border-box;
+}
+.btn3{
+  border: rgba(41,135,246,1) 1px solid;
+  color: white;
+  background: rgba(41,135,246,1);
+  box-sizing: border-box;
+}

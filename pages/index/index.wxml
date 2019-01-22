@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='title'>
+    <image src='/images/logo.png'></image>
+    <view>飞鸟纪</view>
+  </view>
+  <view class='title_m'>
+    <text class='line'></text>
+    <text>国际物流信息共享平台</text>
+    <text class='line'></text>
+  </view>
+  <view class='notice'>
+    <text class='li'></text>
+    <view class='notice_word'>飞鸟纪为了保证服务质量以及订单的真实性 需要您授权微信信息。</view>
+  </view>
+   <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="my_getUserInfo"> 授权登录 </button>
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+</view>

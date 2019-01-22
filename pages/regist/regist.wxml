@@ -1,0 +1,59 @@
+<!-- 头像title -->
+<view class='header_back'>
+  <view class='header'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+</view>
+<!-- 注册内容部分 -->
+<view class='content'>
+  <!-- 姓名、性别 -->
+  <view class='content_item'>
+    <view class='icon'></view>
+    <view class='item_1'>
+      <text >姓名</text>
+      <text style='color:red;' wx:if='{{isname}}'>*</text>
+      <input bindinput='name'></input>
+    </view>
+    <view class='item_1'>
+      <text>性别</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <!-- <view class="picker">{{array[index]}}</view> -->
+        <input placeholder-class='input_p' class="picker" value='{{array[index]}}' placeholder='选择'></input>
+      </picker>
+    </view>
+  </view>
+  <!-- 手机号码 -->
+  <view class='content_item'>
+    <view class='icon'></view>
+    <view class='item_2'>
+      <view>手机号码
+        <text style='color:red;' wx:if='{{isphone}}'>*</text>
+      </view>
+      <input placeholder-class='input_p' bindinput='qu' placeholder='输入区号' style='width:146rpx;'></input>
+      <text class='to'>-</text>
+      <input placeholder-class='input_p' bindinput='phone' placeholder='输入手机号码'></input>
+    </view>
+  </view>
+  <!-- 国家 -->
+  <view class='content_item'>
+    <view class='icon'></view>
+    <view class='item_3'>
+      <view>国家
+        <text style='color:red;' wx:if='{{is_country}}'>*</text>
+      </view>
+      <input bindinput='country' placeholder-class='input_p' placeholder='请输入您常驻的国家'></input>
+    </view>
+  </view>
+  <!-- 个人描述 -->
+  <view class='content_item'>
+    <view class='icon'></view>
+    <view class='item_4'>
+      <view>个人描述</view>
+      <textarea  bindinput='des' placeholder-class='input_p' placeholder='如：常年往返上海和英国伦敦出差，有需要带货的联系我。'></textarea>
+    </view>
+  </view>
+</view>
+<!-- 提交按钮 -->
+<view class='notice'>注：带<text style='color:red;'>*</text>号的为必填</view>
+<button class='sub' disabled="{{is_sub?'':'true'}}" bindtap='go_homepage'>提交</button>

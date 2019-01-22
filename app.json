@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/test/test",
+    "pages/find/find",
+    "pages/search_res/search_res",
+    "pages/trip_revise/trip_revise",
+    "pages/trip_details/trip_details",
+    "pages/homepage/homepage",
+    "pages/pay/pay_result",
+    "pages/order/order_success/order_success",
+    "pages/order/order_evaluate/order_evaluate",
+    "pages/order/order_details/order_details",
+    "pages/order/my_order/my_order",
+    "pages/my/my_comment/mycomment",
+    "pages/mytrip/mytrip",    
+    
+    "pages/release/release",
+    "pages/release/release_success/release_success",
+    "pages/my_info/phone/phone",
+    "pages/my_info/name/name",
+    "pages/my_info/country/country",
+    "pages/my_info/des/des",
+    "pages/my_info/info_list/info_list",
+    "pages/my/my",
+    
+    "pages/info/info",
+    "pages/index/index",
+    "pages/regist/regist",
+    "pages/logs/logs"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9a9a9",
+    "selectedColor": "#2987f6",
+    "backgroundColor": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/homepage/homepage",
+        "selectedIconPath": "/images/home_on.png",
+        "iconPath": "/images/home_off.png"
+      },
+      {
+        "text": "发现",
+        "pagePath": "pages/find/find",
+        "selectedIconPath": "/images/find_on.png",
+        "iconPath": "/images/find_off.png"
+      },
+      {
+        "text": "发布",
+        "pagePath": "pages/release/release",
+        "selectedIconPath": "/images/release_on.png",
+        "iconPath": "/images/release_off.png"
+      },
+      {
+        "text": "消息",
+        "pagePath": "pages/info/info",
+        "selectedIconPath": "/images/info_on.png",
+        "iconPath": "/images/info_off.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "selectedIconPath": "/images/my_on.png",
+        "iconPath": "/images/my_off.png"
+      }
+    ]
+  }
+}

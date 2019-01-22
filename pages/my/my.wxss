@@ -1,0 +1,132 @@
+/* pages/my/my.wxss */
+page{
+  background: rgba(248,248,248,1);
+}
+.header_back {
+  width: 750rpx;
+  height: 196rpx;
+  opacity: 1;
+  background: rgba(41, 135, 246, 1);
+  padding-top: 30rpx;
+}
+
+.header {
+  width: 690rpx;
+  height: 308rpx;
+  opacity: 1;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header image {
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  opacity: 1;
+  border-radius: 50%;
+  margin-top: 40rpx;
+}
+
+.header view {
+  width: 264rpx;
+  height: 48rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  color: rgba(74, 74, 74, 1);
+  line-height: 48px;
+  letter-spacing: 0px;
+  text-align: center;
+}
+#bianji{
+  position: absolute;
+  width: 44rpx;
+  height: 44rpx;
+  right: 30rpx;
+  border-radius: 0;
+}
+/* 我的订单 */
+.order{
+  width: 750rpx;
+  height: 268rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  margin-top: 164rpx;
+}
+.mine{
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size: 32rpx;
+  font-family: PingFang;
+  color: rgba(51,51,51,1);
+  letter-spacing: 0px;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.mine text{
+  margin:0 30rpx 0 30rpx;
+}
+
+.order_state{
+  height: 150rpx;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* flex-direction: column-reverse; */
+}
+.state_item{
+  width: 74rpx;
+  height: 94rpx;
+  margin-top: 40rpx;
+  margin-left: 64rpx; 
+  text-align: center;
+  /* margin-top: 50rpx; */
+}
+.state_item image{
+  width: 40rpx;
+  height:44rpx; 
+}
+.state_item view{
+  width: 74rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+/* 我的服务 */
+.my_server{
+  width: 750rpx;
+  height: 494rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  margin-top: 30rpx;
+}
+.server_item_box{
+  height: 344rpx;
+}
+.server_item{
+  width: 120rpx;
+  height: 116rpx;
+  float: left;
+  text-align: center;
+  margin-left: 60rpx;
+  margin-top: 28rpx;
+}
+.server_item image{
+  width: 64rpx;
+  height: 66rpx;
+}
+.server_item view{
+  width: 120rpx;
+  height: 34rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(102,102,102,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  text-align: center;
+}

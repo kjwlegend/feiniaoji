@@ -1,0 +1,6 @@
+<!--pages/my_info/name/name.wxml-->
+<view class='infos'>
+  <view>输入你的姓名  :</view>
+  <input placeholder='' placeholder-class='input_p'></input>
+</view>
+<button>保  存</button>

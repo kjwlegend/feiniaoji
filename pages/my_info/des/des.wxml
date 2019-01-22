@@ -1,0 +1,6 @@
+<!--pages/my_info/des/des.wxml-->
+<view class='infos'>
+  <view>输入你的个人描述:</view>
+  <textarea placeholder='如：常年往返上海和英国伦敦出差，有需要带货的联系我。' placeholder-class='input_p'></textarea>
+</view>
+<button>保  存</button>

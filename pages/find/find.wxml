@@ -1,0 +1,56 @@
+<!-- 头部内容 -->
+<view class='header'>
+  <image src='/images/banner.png'></image>
+  <!-- 头部搜索框 -->
+  <view class='header_content'>
+    <view class='place'>
+      <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker> -->
+      <input placeholder-class='input_p' placeholder='选择出发地'></input>
+      <image src='/images/fly.png'></image>
+      <input placeholder-class='input_p' placeholder='选择目的地'></input>
+    </view>
+    <view class='place'>
+      <input placeholder-class='input_p' placeholder='选择出发日期'></input>
+      <image src='/images/date.png'></image>
+      <input placeholder-class='input_p' placeholder='选择到达日期'></input>
+    </view>
+    <button>搜 索</button>
+  </view>
+</view>
+<!-- 热门行程部分 -->
+<view class='hot_trip_content'>
+  <view class='icon'></view>
+  <view class='hot_trip'>热门行程</view>
+  <view class='citys' wx:for="{{citys}}" wx:key='{{index}}'>
+    <image src='{{item.image}}'></image>
+    <view class='cityName'>{{item.f_city}}</view>
+    <view>-</view>
+    <view>{{item.to_city}}</view>
+  </view>
+</view>
+<!-- 为你推荐 -->
+<view class='recommed_content'>
+  <view class='icon'></view>
+  <view class='recommed'>为你推荐</view>
+  <!-- 客户列 -->
+  <view class='road_list' wx:for='{{road_list}}' wx:key='{{index}}'>
+    <image src='/images/banner.png' class='list_img'></image>
+    <view class='road_word'>
+      <text class='to_place'>伦敦-上海</text>
+      <view class='time'>
+        <image src='/images/home_time.png'></image>
+        2018-12-15
+      </view>
+      <view class='weight'>
+        <image src='/images/huo.png'></image>
+        15kg
+      </view>
+    </view>
+    <image class='right' src='/images/right_go.png'></image>
+  </view>
+  <view class='loading'><image src='/images/loading.png'></image> 加载中...</view>
+</view>

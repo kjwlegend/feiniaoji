@@ -1,0 +1,66 @@
+<!--pages/my/my_comment/mycomment.wxml-->
+<view class='myself'>
+  <view class='head'>
+    <image class='headImg' src='/images/find_on.png'></image>
+    <view class='myname'>飞鸟用户1995</view>
+    <view class='mycountry'>国家：美国</view>
+    <view class='yi'>已认证 <image src='/images/gougou_white.png'></image></view>
+  </view>
+  <view class='des'>本人常年往返上海纽约，只带小件，大件不带，做事不拖拉，欢迎信任~</view>
+  <!-- 信用等级 -->
+  <view class='credit'>信用等级:</view>
+  <view class='credit'>待评价的飞鸟订单:
+    <text style='color:red;'>4</text>
+    <view class='go_credit'>去评价</view>
+  </view>
+  <view class='credit'>待评价的用户订单:
+    <text style='color:red;'>4</text>
+    <view class='go_credit'>去评价</view>
+  </view>
+</view>
+
+<!-- 我收发的评价nav -->
+<view class='my_credit'>
+  <view class="{{choose==0?'my_credit_title1':'my_credit_title'}}" bindtap='choose' data-num='0'>我收到的评价</view>
+  <view class="{{choose==1?'my_credit_title1':'my_credit_title'}}" bindtap='choose' data-num='1'>我发出的评价</view>
+</view>
+
+<!-- 我收到的评价 -->
+<view class='res' wx:if='{{choose==0}}'>
+  <view class='res_item'>
+    <image class='res_headImg' src='/images/find_on.png'></image>
+    <view class='res_ncikname'>
+      <text>昵称Yuki717</text>  
+      <text style='color:rgba(153,153,153,1);float:right;'>2018-12-31 12:12:13</text>
+    </view>
+    <view class='score'>评分：</view>
+    <view class='res_content'>这里是评价内容这里是评价内容这里是评价内容这里是评价内容这里是评价内容</view>
+    <view class='citys_box'>
+      <view class='fly'>
+        <image src='/images/fly.png'></image>
+      </view>
+      <view class='city_to'>上海-纽约</view>
+      <view class='res_time'>2018-12-08 15:23:45 </view>
+    </view>
+  </view>
+</view>
+
+<!-- 我发出的评价 -->
+<view class='res' wx:if='{{choose==1}}'>
+  <view class='res_item'>
+    <image class='res_headImg' src='/images/find_on.png'></image>
+    <view class='res_ncikname'>
+      <text>昵称Yuki717</text>  
+      <text style='color:rgba(153,153,153,1);float:right;'>2018-12-31 12:12:13</text>
+    </view>
+    <view class='score'>评分：</view>
+    <view class='res_content'>这里是评价内容这里是评价内容这里是评价内容这里是评价内容这里是评价内容</view>
+    <view class='citys_box'>
+      <view class='fly'>
+        <image src='/images/fly.png'></image>
+      </view>
+      <view class='city_to'>上海-纽约</view>
+      <view class='res_time'>2018-12-08 15:23:45 </view>
+    </view>
+  </view>
+</view>

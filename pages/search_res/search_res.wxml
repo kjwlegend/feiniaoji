@@ -1,0 +1,53 @@
+<!-- 头部我的搜索 -->
+<view class='header_back'>
+  <view class='header_content'>
+    <view class='place' style='margin-left:20rpx;'>
+      <text style='font-size:34rpx;font-weight:bold;'>莫斯科</text>
+      <text style='color:rgba(155,155,155,1);margin-left:10rpx;'>俄罗...</text>
+      <view>2018-12-31</view>
+    </view>
+    <image src='/images/jiantou.png' class='jiantou'></image>
+    <view class='place' style='margin-right:20rpx;'>
+      <text style='font-size:34rpx;font-weight:bold;'>莫斯科</text>
+      <text style='color:rgba(155,155,155,1);margin-left:10rpx;'>俄罗...</text>
+      <view>2018-12-31</view>
+    </view>
+  </view>
+</view>
+
+<!-- 搜索到的内容 -->
+<view class='search_content'>
+  <view class='icon'></view>
+  <view class='search_title'>剩余可携重量：15 kg</view>
+  <!-- 城市始发地 -->
+  <view class='citys_box'>
+    <view class='cityTo'>
+      <view class='city_item'>
+        <text class='citys'>莫斯科</text>
+        <view class='citys_country'>俄罗斯</view>
+        <text>2018-12-31</text>
+      </view>
+      <view class='fly'>
+        <image src='/images/fly.png'></image>
+      </view>
+      <view class='city_item' style='margin-left:310rpx;'>
+        <text class='citys'>上海</text>
+        <view class='citys_country'>中国</view>
+        <text>2019-01-01</text>
+      </view>
+    </view>
+  </view>
+  <!-- 个人头像信息 -->
+  <view class='user'>
+    <image src='/images/fly.png' class='headImg'></image>
+    <view class='username'>飞鸟用户717</view>
+    <view class='rank'>信用等级 <image src='/images/el4.png'></image></view>
+  </view>
+</view>
+
+
+<!-- 底部 -->
+<view class='foot'>
+  <text>哎呀…到底了</text>
+  <image src='/images/wind.png'></image>
+</view>

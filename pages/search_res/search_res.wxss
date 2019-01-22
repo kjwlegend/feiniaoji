@@ -1,0 +1,173 @@
+/* pages/search_res/search_res.wxss */
+/* pages/trip_revise/trip_revise.wxss */
+/* pages/release/release.wxss */
+page{
+  background: rgba(248,248,248,1);
+}
+.header_back {
+  width: 750rpx;
+  height: 128rpx;
+  opacity: 1;
+  background: rgba(41, 135, 246, 1);
+  margin-bottom: 82rpx;
+}
+
+.header_content {
+  width: 690rpx;
+  height: 150rpx;
+  opacity: 1;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.place{
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  line-height: 40rpx;
+}
+.jiantou{
+  width: 100rpx;
+  height: 16rpx;
+  margin-top: 50rpx;
+}
+
+.search_content{
+  width: 690rpx;
+  height: 386rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin: 30rpx 0 0 30rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5rpx;
+}
+
+.icon{
+  background: rgba(41, 135, 246, 1);
+  width: 8rpx;
+  height: 386rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.search_title{
+  width: 690rpx;
+height: 60rpx;
+opacity: 1;
+background: rgba(239,247,252,1);
+  font-size: 24rpx;
+  line-height: 60rpx;
+  color: rgba(41, 135, 246, 1);
+  padding-left:38rpx; 
+}
+
+.citys_box{
+  position: relative; 
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+.cityTo{
+  width: 618rpx;
+  height: 160rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.city_item{
+  width: 148rpx;
+  height: 160rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  float: left;
+}
+.citys{
+  height: 50rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  color: rgba(74,74,74,1);
+  line-height: 50rpx;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.citys_country{
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  color:rgba(153,153,153,1);
+}
+.fly{
+  position: absolute;
+  width: 68rpx;
+  height: 68rpx;
+  top: 30rpx;
+  left: 250rpx;
+  border-radius: 50%;
+  background: rgba(239,247,252,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fly image{
+  width: 48rpx;
+  height: 38rpx;
+}
+
+.user{
+  height: 88rpx;
+  width: 410rpx;
+  margin-left: 38rpx;
+  position: relative;
+  padding-left: 108rpx;
+}
+.headImg{
+  position: absolute;
+  width: 88rpx;
+  height: 88rpx;
+  top: 0;left: 0;
+}
+.username{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 30rpx;
+}
+.rank{
+  width: 182rpx;
+  height: 28rpx;
+  opacity: 1;
+  background: rgba(254,247,235,1);
+  font-size: 18rpx;
+  line-height: 28rpx;
+  color: rgba(245,166,35,1);
+}
+.rank image{
+  width: 100rpx;
+  height: 15rpx;
+  /* margin-left: 5rpx; */
+}
+
+.foot{
+  margin-top: 100rpx;
+  text-align: center;
+  height: 34rpx;
+}
+.foot text{
+  color: rgba(153,153,153,1);
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+.foot image{
+  width: 46rpx;
+  height: 34rpx;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: 5rpx;
+  margin-left: 10rpx;
+}

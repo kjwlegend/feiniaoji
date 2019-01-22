@@ -1,0 +1,197 @@
+/* pages/my/my_comment/mycomment.wxss */
+
+.myself {
+  width: 630rpx;
+  height: 572rpx;
+  opacity: 1;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
+  margin: 30rpx 0 0 30rpx;
+  padding: 30rpx;
+  padding-bottom:10rpx; 
+}
+
+.head {
+  height: 128rpx;
+  position: relative;
+  padding-left: 160rpx;
+}
+
+.headImg {
+  width: 128rpx;
+  height: 128rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.myname {
+  height: 48rpx;
+  opacity: 1;
+  font-size: 34rpx;
+  font-family: PingFangSC;
+  color: rgba(74, 74, 74, 1);
+  line-height: 48rpx;
+  letter-spacing: 0px;
+}
+.mycountry{
+  height: 36rpx;
+  font-size: 26rpx;
+  font-family: PingFang;
+  color: rgba(102,102,102,1);
+  line-height: 36rpx;
+  margin:10rpx 0 10rpx 0;
+}
+.yi{
+  width: 100rpx;
+  height: 34rpx;
+  opacity: 1;
+  background: rgba(163,216,104,1);
+  color: white;
+  line-height: 34rpx;
+  text-align: center;
+  font-size: 18rpx;
+  border-radius: 2rpx;
+}
+.yi image{
+  width: 15rpx;
+  height: 15rpx;
+  vertical-align: middle;
+  margin-left: 5rpx;
+}
+
+.des{
+  width: 642rpx;
+  height: 72rpx;
+  opacity: 1;
+  font-size: 26rpx;
+  font-family: PingFang;
+  color: rgba(155,155,155,1);
+  line-height: 36rpx;
+  letter-spacing: 0px;
+  margin: 46rpx 0 30rpx 0;
+}
+.credit{
+  height: 100rpx;
+  width: 642rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: rgba(74,74,74,1);
+  border-top: 1rpx solid rgba(238,238,238,1);
+  position: relative;
+}
+.go_credit{
+  width: 150rpx;
+  height: 56rpx;
+  background: rgba(41,135,246,1);
+  color: white;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 26rpx;
+  position: absolute;
+  top: 22rpx;
+  right: 0;
+}
+
+.my_credit{
+  width: 750rpx;
+  height: 80rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  margin-top: 30rpx;
+}
+.my_credit_title{
+  width: 375rpx;
+  text-align: center;
+  line-height: 80rpx;
+  float: left;
+  font-size: 28rpx;
+}
+.my_credit_title1{
+  width: 375rpx;
+  text-align: center;
+  line-height: 80rpx;
+  float: left;
+  font-size: 28rpx;
+  color: rgba(41,135,246,1);
+  border-bottom: 6rpx solid rgba(41,135,246,1);
+  box-sizing: border-box;
+}
+
+/* 我收发的评价 */
+.res{
+  width: 630rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin: 30rpx;
+  padding: 30rpx;
+}
+.res_item{
+  height: 354rpx;
+  padding-left: 108rpx;
+  position: relative;
+}
+.res_headImg{
+  width: 88rpx;
+  height: 88rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.res_ncikname{
+  height: 36rpx;
+  font-size: 26rpx;
+  line-height: 36rpx;
+  padding-top: 10rpx;
+}
+.score{
+  height: 32rpx;
+  font-size: 22rpx;
+  line-height: 32rpx;
+  color: rgba(153,153,153,1);
+  margin-top: 10rpx;
+}
+.res_content{
+  color: rgba(102,102,102,1);
+  font-size: 24rpx;
+  line-height: 34rpx;
+  margin-top: 36rpx;
+}
+.citys_box{
+  height: 132rpx;
+  width: 522rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-top: 1rpx solid rgba(238,238,238,1);
+  padding-left:108rpx; 
+}
+.fly{
+  position: absolute;
+  width: 68rpx;
+  height: 68rpx;
+  background: rgba(239,247,252,1);
+  border-radius: 50%;
+  left: 12rpx;
+  top: 28rpx;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+}
+.fly image{
+  width: 46rpx;
+  height: 36rpx;
+  margin-left: 12rpx;
+}
+.city_to{
+  color: rgba(102,102,102,1);
+  font-size: 26rpx;
+  line-height: 36rpx;
+  margin-top: 28rpx;
+}
+.res_time{
+  color: rgba(153,153,153,1);
+  font-size: 24rpx;
+  line-height: 50rpx;
+}

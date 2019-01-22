@@ -1,0 +1,103 @@
+/**index.wxss**/
+.container{
+  padding: 0;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.title{
+  margin-top: 150rpx;
+  margin-bottom: 75rpx;
+}
+.title image{
+  width: 140rpx;
+  height: 140rpx;
+  opacity: 1;
+  /* background: rgba(41,135,246,1); */
+}
+.title view{
+  width: 140rpx;
+  height: 52rpx;
+  opacity: 1;
+  font-size: 19px;
+  font-family: PingFangSC;
+  color: rgba(74,74,74,1);
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.title_m{
+  width: 750rpx;
+  height: 44rpx;
+  opacity: 1;
+  font-size: 32rpx;
+  font-family: PingFang;
+  color: rgba(153,153,153,1);
+  line-height: 44rpx;
+  display: block;
+  text-align: center;
+  letter-spacing: 0px;  
+}
+.title_m text{
+  margin: 11rpx;
+}
+.line{
+  display: inline-block;
+  width: 132rpx;
+  border-top: 1rpx solid rgba(210,210,210,1);
+  vertical-align: middle;
+}
+
+.notice{
+  width: 621rpx;
+  margin-top: 68rpx;
+}
+.li{
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: rgba(153, 153, 153, 1);
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 80rpx;
+}
+.notice_word{
+  display: inline-block;
+  width: 580rpx;
+  margin-left: 21rpx;
+  opacity: 1;
+  font-size: 15px;
+  font-family: PingFang;
+  color: rgba(144,144,144,1);
+  line-height: 21px;
+  letter-spacing: 0px;
+  word-break: break-all;
+}
+button{
+  background: rgba(41,135,246,1);
+  color: white;
+  width: 690rpx;
+  height: 96rpx;
+  border-radius: 0;
+  margin-top: 175rpx;
+}

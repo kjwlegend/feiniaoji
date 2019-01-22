@@ -1,0 +1,8 @@
+<!--pages/my_info/phone/phone.wxml-->
+<view class='infos'>
+  <view>输入你的手机号码:</view>
+  <input placeholder='输入区号' placeholder-class='input_p'></input>
+  <text>-</text>
+  <input placeholder='输入电话' placeholder-class='input_p' style='margin-left:110rpx;width:362rpx;'></input>
+</view>
+<button>保  存</button>

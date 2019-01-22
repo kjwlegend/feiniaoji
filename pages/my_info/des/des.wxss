@@ -1,0 +1,42 @@
+page{
+  background: rgba(248,248,248,1);
+}
+.infos{
+  width: 690rpx;
+  height: 254rpx;
+  opacity: 1;
+  margin: 30rpx 0 0 30rpx;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+}
+.infos view{
+  height: 44rpx;
+  opacity: 1;
+  font-size: 32rpx;
+  font-family: PingFang;
+  color: rgba(102,102,102,1);
+  line-height: 44px;
+  letter-spacing: 0px;
+  margin: 30rpx 0 30rpx 40rpx;
+}
+.infos textarea{
+  margin-left: 30rpx;
+  height: 108rpx;
+  width: 616rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+  font-size: 36rpx;
+  padding-top: 30rpx;
+}
+.input_p{
+  color: rgba(210,210,210,1);
+}
+button{
+  width: 690rpx;
+  height: 96rpx;
+  opacity: 1;
+  background: rgba(41,135,246,1);
+  color: white;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  font-size: 36rpx;
+}
