@@ -1,0 +1,158 @@
+/* pages/order/my_order/my_order.wxss */
+page{
+  padding-bottom:30rpx; 
+}
+.header{
+  width: 690rpx;
+  height: 80rpx;
+  border: 1rpx solid rgba(41,135,246,1);
+  color: rgba(41,135,246,1);
+  margin:0 0 0 30rpx;
+  /* box-sizing: border-box; */
+}
+.header_nav{
+  width: 345rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  float: left;
+}
+.header_nav_on{
+  width: 346rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: rgba(41,135,246,1);
+  color: white;
+  font-size: 32rpx;
+  float: left;
+}
+
+.nav{
+  width: 750rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.nav view{
+  color: rgba(51,51,51,1);
+  text-align: center;
+  width: 86rpx;
+  margin-right: 15rpx;
+}
+#nav_item{
+  border-bottom: 6rpx solid rgba(41,135,246,1);
+  color: rgba(41,135,246,1);
+}
+
+/* 订单列 */
+.orders{
+  width: 654rpx;
+  height: 504rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin:20rpx 0 0 30rpx; 
+  position: relative;
+  padding-left:36rpx; 
+}
+.icon {
+  width: 8rpx;
+  height: 80rpx;
+  opacity: 1;
+  background: rgba(41, 135, 246, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.orders_head{
+  width: 618rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+.citys_box{
+  position: relative; 
+  margin-top: 30rpx;
+}
+.cityTo{
+  width: 618rpx;
+  height: 160rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.city_item{
+  width: 148rpx;
+  height: 160rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  float: left;
+}
+.citys{
+  height: 50rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  color: rgba(74,74,74,1);
+  line-height: 50rpx;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.citys_country{
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  color:rgba(153,153,153,1);
+}
+.jiantou{
+  position: absolute;
+  width: 100rpx;
+  height: 16rpx;
+  top: 38rpx;
+  left: 250rpx;
+}
+
+.order_num{
+  width: 618rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: rgba(102,102,102,1);
+  margin-top: 36rpx;
+}
+.order_money{
+  width: 618rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 24rpx;
+  color: rgba(51,51,51,1);
+  margin-top: 5rpx;
+}
+.btn{
+  width: 150rpx;
+  font-size: 26rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  color: rgba(41,135,246,1);
+  border: 1rpx solid rgba(41,135,246,1);
+  margin-top: 32rpx;
+  float: right;
+  margin-right: 36rpx;
+}
+.btn1{
+  width: 150rpx;
+  font-size: 26rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  color: white;
+  border: 1rpx solid rgba(41,135,246,1);
+  margin-top: 32rpx;
+  float: right;
+  margin-right: 36rpx;
+  background: rgba(41,135,246,1);
+}

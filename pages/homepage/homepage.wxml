@@ -1,0 +1,42 @@
+<!-- 头部内容 -->
+<view class='header'>
+  <image src='/images/banner.png'></image>
+  <view class='header_content'>
+    <view class='header_content_item' catchtap='go_find'>
+      <text>我要找人</text>
+      <view>帮我带货</view>
+      <image src='/images/help_goods.png'></image>
+    </view>
+    <view class='line'></view>
+    <view class='header_content_item' catchtap='go_release'>
+      <text>我要找人</text>
+      <view>帮我带货</view>
+      <image src='/images/help_money.png'></image>
+    </view>
+  </view>
+</view>
+<!-- 主要内容 -->
+<view class='content'>
+  <view class='icon'></view>
+  <view class='new_road'>最新行程</view>
+  <!-- 客户列 -->
+  <view class='road_list' wx:for='{{road_list}}' wx:key='{{index}}'>
+    <image src='/images/banner.png' class='list_img' bindtap='go_tripDetails'></image>
+    <view class='road_word'>
+      <text class='place'>伦敦-上海</text>
+      <view class='time'>
+        <image src='/images/home_time.png'></image>
+        2018-12-15
+      </view>
+      <view class='weight'>
+        <image src='/images/huo.png'></image>
+        15kg
+      </view>
+    </view>
+    <image class='right' src='/images/right_go.png'  bindtap='go_tripDetails'></image>
+  </view>
+  <!-- 查看更多 -->
+  <view class='more'>
+    查看更多
+  </view>
+</view>

@@ -1,0 +1,55 @@
+/* pages/release/release_success/release_success.wxss */
+page{
+  background: rgba(255,255,255,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pay_success{
+  width: 154rpx;
+  height: 154rpx;
+  display: block;
+  margin-top: 146rpx;
+  position: relative;
+}
+view{
+  width: 256rpx;
+  height: 44rpx;
+  opacity: 1;
+  font-size: 32rpx;
+  font-family: PingFang;
+  color: rgba(102,102,102,1);
+  line-height: 44rpx;
+  letter-spacing: 0px;
+  margin-top: 60rpx;
+}
+.go_home{
+  width: 690rpx;
+  height: 96rpx;
+  opacity: 1;
+  background: rgba(41,135,246,1);
+  color: white;
+  margin-top: 332rpx;
+}
+.go_order{
+  width: 690rpx;
+  height: 96rpx;
+  opacity: 1;
+  background: white;
+  color: rgba(41,135,246,1);
+  border: 1rpx solid rgba(41,135,246,1);
+  box-sizing: border-box;
+  margin-top:  30rpx;
+}
+
+.bird{
+  position: absolute;
+  top: 138rpx;
+  left: 162rpx;
+  width: 178rpx;
+height: 190rpx;
+opacity: 1;
+}
+button{
+  font-size: 36rpx;
+}

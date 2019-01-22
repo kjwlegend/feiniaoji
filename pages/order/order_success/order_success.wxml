@@ -1,0 +1,8 @@
+<!--pages/order/order_success/order_success.wxml-->
+<image src='/images/fly_bird.png' class='bird'></image>
+<image src='/images/pay_success.png' class='pay_success'></image>
+
+<view>恭喜您！下单成功</view>
+<view style='margin-top:110rpx;color:rgba(153,153,153,1);'>请等待飞鸟确认下单</view>
+<button class='go_home' bindtap='go_home'>回到首页</button>
+<button class='go_order'>查看订单详情</button>

@@ -1,0 +1,228 @@
+/* pages/find/find.wxss */
+page{
+  background: rgba(248,248,248,1);
+}
+.header{
+  width: 750rpx;
+  height: 436rpx;
+  position: relative;
+}
+.header image{  
+  width: 750rpx;
+  height: 436rpx;
+}
+.header_content{
+  width: 690rpx;
+  height: 500rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  position: absolute;
+  top: 300rpx;
+  left: 30rpx;
+  border-radius: 10rpx;
+}
+.place{
+  height: 150rpx;
+  width: 630rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  box-sizing: border-box;
+}
+.place input{
+  width: 250rpx;
+  height: 60rpx;
+  line-break: 60rpx;
+  display: inline-block;
+  /* background: red; */
+  margin-left: 30rpx;
+  /* margin-right: 30rpx; */
+  font-size: 36rpx;
+}
+.place image{
+  width: 48rpx;
+  height: 48rpx;
+  /* vertical-align: middle; */
+}
+.input_p{
+  color:rgba(210,210,210,1);
+
+}
+button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);margin-top: 58rpx;margin-left: 30rpx;}
+
+/* 热门行程 */
+.hot_trip_content{
+  width: 690rpx;
+  height: 686rpx;
+  margin-left: 30rpx;
+  margin-top: 394rpx;
+  border-radius: 10rpx;
+  position: relative;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  padding-left:20rpx; 
+}
+.icon{
+  width: 8rpx;
+  height: 110rpx;
+  opacity: 1;
+  background: rgba(41, 135, 246, 1);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.hot_trip{
+  width: 630rpx;
+  height: 114rpx;
+  line-height: 114rpx;
+  margin-left: 10rpx;
+  font-size: 34rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  letter-spacing: 0px;
+  border-bottom: 1px solid rgba(238,238,238,1);
+  margin-bottom: 20rpx;
+}
+.citys{
+  width: 304rpx;
+  height: 234rpx;
+  opacity: 1;
+  position: relative;
+  float: left;
+  margin:8rpx;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+.citys image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;left: 0;
+}
+.citys view{
+  position: relative;
+  font-size: 38rpx;
+}
+.cityName{
+  margin-top: 46rpx;
+}
+
+/* 为你推荐 */
+.recommed_content{
+  width: 690rpx;
+  height: 912rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  margin-top: 86rpx;
+  margin-left: 30rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+}
+.recommed{
+  width: 630rpx;
+  height: 114rpx;
+  line-height: 114rpx;
+  margin-left: 10rpx;
+  font-size: 34rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  letter-spacing: 0px;
+  border-bottom: 1px solid rgba(238,238,238,1);
+  margin-bottom: 20rpx;
+}
+.road_list{
+  width: 630rpx;
+  height: 156rpx;
+  border-bottom: 1px solid rgba(238,238,238,1);
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+  position: relative;
+}
+.list_img{
+  width: 116rpx;
+  height: 116rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.road_word{
+  display: inline-block;
+  width: 440rpx;
+  height: 116rpx;
+  margin-left: 136rpx;
+}
+.to_place{
+  height: 48rpx;
+  opacity: 1;
+  font-size: 34rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  letter-spacing: 0px;
+}
+.time{
+  width: 146rpx;
+  height: 34rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(153,153,153,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  padding-left: 32rpx;
+  position: relative;
+}
+.time image{
+  width:  20rpx;
+  height: 20rpx;
+  position: absolute;
+  left: 0;
+  top: 7rpx;
+}
+.weight{
+  width: 146rpx;
+  height: 34rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(153,153,153,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  padding-left: 32rpx;
+  position: relative;
+}
+.weight image{
+  width:  20rpx;
+  height: 20rpx;
+  position: absolute;
+  left: 0;
+  top: 7rpx;
+}
+.loading{
+  margin-top: 38rpx;
+  text-align: center;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(153,153,153,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+}
+.loading image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.right{
+  position: absolute;
+  width: 24rpx;
+  height: 28rpx;
+  right: 10rpx;
+  top: 60rpx;
+}

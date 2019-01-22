@@ -1,0 +1,195 @@
+/* pages/mytrip/mytrip.wxss */
+page{
+  background: rgba(248,248,248,1);
+} 
+/* 头部nav */
+.nav{
+  width: 750rpx;
+  height: 80rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+}
+.nav_item{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  width: 86rpx;
+  text-align: center;
+  font-weight: bold;
+  font-family: PingFang;
+  color: rgba(51,51,51,1);
+}
+.nav_item1{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  width: 86rpx;
+  text-align: center;
+  font-weight: bold;
+  font-family: PingFang;
+  color: rgba(41,135,246,1);
+  border-bottom: 6rpx solid rgba(41,135,246,1);
+  box-sizing: border-box;
+}
+
+/* 列表 */
+.list_box{
+  width: 660rpx;
+  margin:30rpx 0 0 30rpx;
+  padding-left:30rpx; 
+  padding-top:30rpx; 
+  padding-bottom:30rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
+  position: relative;
+}
+.list{
+  /* height: 124rpx; */
+  
+  width: 630rpx;
+  font-size: 28rpx;
+  line-height: 62rpx;
+  color: rgba(74,74,74,1);
+  
+}
+.list_head{
+  height: 140rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.wait{
+  top: 30rpx;
+  position: absolute;
+  right: 36rpx;
+  color: rgba(139,195,74,1);
+}
+
+/* 城市始发地 */
+.city_box{
+  position: relative;
+  margin-top: 30rpx;
+}
+.cityTo{
+  width: 618rpx;
+  height: 160rpx;
+}
+.city_item{
+  width: 148rpx;
+  height: 160rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  float: left;
+  overflow: hidden;
+}
+.citys{
+  height: 50rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  color: rgba(74,74,74,1);
+  line-height: 50rpx;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.citys_country{
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  color:rgba(153,153,153,1);
+}
+.jiantou{
+  position: absolute;
+  width: 100rpx;
+  height: 16rpx;
+  top: 30rpx;
+  left: 260rpx;
+}
+/* 按钮 */
+.see{
+  width: 618rpx;
+  height: 76rpx;
+  opacity: 1;
+  background: rgba(255,255,255,1);
+  border-radius: 2px 2px 2px 2px;
+  border: 1rpx solid rgba(41,135,246,1);
+  color: rgba(41,135,246,1);
+  font-size: 32rpx;
+  margin-top: 20rpx;
+}
+
+/* 关联订单 */
+.relation{
+  margin-top: 62rpx;
+  position: relative;
+}
+.icon{
+  width: 8rpx;
+  height: 38rpx;
+  opacity: 1;
+  background: rgba(41, 135, 246, 1);
+  position: absolute;
+  left: -30rpx;
+  top: 5rpx;
+}
+.order_title{
+  height: 44rpx;
+  opacity: 1;
+  font-size: 32rpx;
+  font-family: PingFang;
+  color: rgba(102,102,102,1);
+  line-height: 44rpx;
+  letter-spacing: 0px;
+}
+
+.order_item{
+  border-top: 1rpx solid rgba(238,238,238,1);
+  width: 634rpx;
+  height: 72rpx;
+  margin-top: 24rpx;
+  padding-top: 28rpx;
+  position: relative;
+}
+.headImg{
+  width: 72rpx;
+  height: 72rpx;
+  position: absolute;
+  top: 28rpx;
+  left: 4rpx;
+}
+.danhao{
+  height: 34rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  letter-spacing: 0px;
+  margin-left: 84rpx;
+  line-height: 34rpx;
+  margin-bottom: 10rpx;
+}
+.wait_sure{
+  width: 130rpx;
+  height: 40rpx;
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang;
+  color: rgba(245,166,35,1);
+  line-height: 40rpx;
+  position: absolute;
+  top: 44rpx;
+  right: 10rpx;
+}
+.wait_sure image{
+  width: 25rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -5rpx;
+  margin-left: 5rpx;
+}

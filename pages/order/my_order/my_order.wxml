@@ -1,0 +1,52 @@
+<!--pages/order/my_order/my_order.wxml-->
+<view style='width:750rpx;background:white;padding-top:30rpx;'>
+  <view class='header'>
+    <view class="{{header==0?'header_nav_on':'header_nav'}}" bindtap='choose_header' data-num='0'>我是用户</view>
+    <view class="{{header==1?'header_nav_on':'header_nav'}}" bindtap='choose_header' data-num='1'>我是飞鸟</view>
+  </view>
+  <view class='nav'>
+    <view id="{{nav_choose==0?'nav_item':''}}" bindtap='choose_nav' data-num='0'>全部</view>
+    <view id="{{nav_choose==1?'nav_item':''}}" bindtap='choose_nav' data-num='1'>待确认</view>
+    <view id="{{nav_choose==2?'nav_item':''}}" bindtap='choose_nav' data-num='2'>待支付</view>
+    <view id="{{nav_choose==3?'nav_item':''}}" bindtap='choose_nav' data-num='3'>待发货</view>
+    <view id="{{nav_choose==4?'nav_item':''}}" bindtap='choose_nav' data-num='4'>待收货</view>
+    <view id="{{nav_choose==5?'nav_item':''}}" bindtap='choose_nav' data-num='5'>待评价</view>
+  </view>
+</view>
+
+<!-- 订单列 -->
+<view class='orders' wx:for='{{orders}}' wx:key='{{index}}'>
+  <view class='icon'></view>
+  <view class='orders_head'>
+    <text>飞鸟用户</text>
+    <!-- 订单状态 -->
+    <text style='color:rgba(245,129,35,1);float:right;'>待确认</text>
+  </view>
+  <!-- 国家城市始发地 -->
+  <view class='citys_box'>
+    <view class='cityTo'>
+      <view class='city_item'>
+        <text class='citys'>莫斯科</text>
+        <view class='citys_country'>俄罗斯</view>
+        <text>2018-12-31</text>
+      </view>
+      <image src='/images/jiantou.png' class='jiantou'></image>
+      <view class='city_item' style='margin-left:310rpx;'>
+        <text class='citys'>莫斯科</text>
+        <view class='citys_country'>俄罗斯</view>
+        <text>2018-12-31</text>
+      </view>
+    </view>
+  </view>
+  <!-- 订单编号 -->
+  <view class='order_num'>
+    <text>订单编号:</text>
+    <text style='float:right;'>123d9837439743</text>
+  </view>
+  <view class='order_money'>
+    <text>订单金额:</text>
+    <text style='color:red;float:right;'>￥120</text>
+  </view>
+  <!-- <view class='btn1'>支付</view> -->
+  <view class='btn'>查看详情</view>
+</view>

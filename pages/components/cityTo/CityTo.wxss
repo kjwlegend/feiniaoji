@@ -1,0 +1,43 @@
+/* pages/components/cityTo/CityTo.wxss */
+.citys_box{
+  position: relative; 
+  margin-top: 30rpx;
+}
+.cityTo{
+  width: 618rpx;
+  height: 160rpx;
+  border-bottom: 1rpx solid rgba(238,238,238,1);
+}
+.city_item{
+  width: 148rpx;
+  height: 160rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang;
+  color: rgba(74,74,74,1);
+  line-height: 34rpx;
+  letter-spacing: 0px;
+  float: left;
+}
+.citys{
+  height: 50rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFangSC;
+  color: rgba(74,74,74,1);
+  line-height: 50rpx;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.citys_country{
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  color:rgba(153,153,153,1);
+}
+.jiantou{
+  position: absolute;
+  width: 100rpx;
+  height: 16rpx;
+  top: 38rpx;
+  left: 250rpx;
+}

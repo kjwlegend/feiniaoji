@@ -1,0 +1,16 @@
+<!--pages/components/cityTo/CityTo.wxml-->
+<view class='citys_box'>
+  <view class='cityTo'>
+    <view class='city_item'>
+      <text class='citys'>{{c_from.city}}</text>
+      <view class='citys_country'>{{c_from.country}}</view>
+      <text>{{c_from.time}}</text>
+    </view>
+    <image src='/images/jiantou.png' class='jiantou'></image>
+    <view class='city_item' style='margin-left:310rpx;'>
+      <text class='citys'>{{c_to.city}}</text>
+      <view class='citys_country'>{{c_from.country}}</view>
+      <text>{{c_from.time}}</text>
+    </view>
+  </view>
+</view>

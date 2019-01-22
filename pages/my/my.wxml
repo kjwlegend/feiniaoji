@@ -1,0 +1,71 @@
+<!--pages/my/my.wxml-->
+<!-- 头像title -->
+<view class='header_back'>
+  <view class='header'>
+    <image src='{{userInfo.avatarUrl}}'></image>
+    <view>{{userInfo.nickName}}</view>
+    <image id='bianji' src='/images/bianji.png'></image>
+  </view>
+</view>
+<!-- 我的订单 -->
+<view class='order'>
+  <view class='mine'>
+    <text>我的订单</text>
+    <text style='color:rgba(153,153,153,1);font-size:28rpx;float:right;' bindtap='go_my_order'>查看详情></text>
+  </view>
+  <!-- 订单状态 -->
+  <view class='order_state'>
+    <view class='state_item'>
+      <image src='/images/sure_on.png'></image>
+      <view>待确认</view>
+    </view>
+    <view class='state_item'>
+      <image src='/images/pay_on.png'></image>
+      <view>待支付</view>
+    </view>
+    <view class='state_item'>
+      <image src='/images/send_on.png'></image>
+      <view>待发货</view>
+    </view>
+    <view class='state_item'>
+      <image src='/images/get_on.png'></image>
+      <view>待收货</view>
+    </view>
+    <view class='state_item'>
+      <image src='/images/comment_on.png'></image>
+      <view>待评价</view>
+    </view>
+  </view>
+</view>
+<!-- 我的服务 -->
+<view class='my_server'>
+  <view class='mine'>
+    <text>我的服务</text>
+  </view>
+  <view class='server_item_box'>
+    <view class='server_item' bindtap='go_mytrip'>
+      <image src='/images/my_trip.png'></image>
+      <view>我的行程</view>
+    </view>
+    <view class='server_item' bindtap='go_my_comment'>
+      <image src='/images/my_comment.png'></image>
+      <view>我的评价</view>
+    </view>
+    <view class='server_item'>
+      <image src='/images/connect.png'></image>
+      <view>联系客服</view>
+    </view>
+    <view class='server_item' style='margin-left:40rpx;'>
+      <image src='/images/FAQ.png'></image>
+      <view>FAQ</view>
+    </view>
+    <view class='server_item'>
+      <image src='/images/pay_book.png'></image>
+      <view>费用说明</view>
+    </view>
+    <view class='server_item'>
+      <image src='/images/about.png'></image>
+      <view>关于飞鸟纪</view>
+    </view>
+  </view>
+</view>

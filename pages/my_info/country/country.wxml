@@ -1,0 +1,6 @@
+<!--pages/my_info/country/country.wxml-->
+<view class='infos'>
+  <view>输入你的常驻国家:</view>
+  <input placeholder='如：俄罗斯' placeholder-class='input_p'></input>
+</view>
+<button>保  存</button>

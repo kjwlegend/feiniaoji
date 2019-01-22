@@ -1,0 +1,71 @@
+<!--pages/release/release.wxml-->
+<!-- 头部选择部分 -->
+<view class='header_back'>
+  <view class='header_content'>
+    <view class='place'>
+      <input placeholder-class='input_p' placeholder='选择出发地'></input>
+      <image src='/images/fly.png'></image>
+      <input placeholder-class='input_p' placeholder='选择目的地'></input>
+    </view>
+    <view class='place'>
+      <input placeholder-class='input_p' placeholder='选择出发日期'></input>
+      <image src='/images/date.png'></image>
+      <input placeholder-class='input_p' placeholder='选择到达日期'></input>
+    </view>
+  </view>
+</view>
+<!-- 共享空间 -->
+<view class='share'>
+  <view class='icon'></view>
+  <view class='can_share'>可共享空间</view>
+  <input placeholder-class='input_p' class="{{input?'input_on':'input_off'}}" value='24存行李箱'></input>
+  <view class='add_input'>
+    <input placeholder-class='input_p' class="{{!input?'input_on':'input_off'}}" placeholder='如:20寸行李箱'></input>
+    <image src='/images/quit.png'></image>
+  </view>
+  <view class='add'>
+    <image src='/images/add.png'></image>
+    <text>添加行李箱</text>
+  </view>
+</view>
+
+<!-- 共享重量 -->
+<view class='share_item'>
+  <view class='icon'></view>
+  <view class='can_share'>可共享重量</view>
+  <input placeholder-class='input_p' class="input_off" placeholder='请输入整数，如：6'></input>
+  <text>KG</text>
+</view>
+
+<!-- 收获类型 -->
+<view class='share_item' style='height:422rpx;'>
+  <view class='icon'></view>
+  <view class='can_share' style='margin-bottom:22rpx;'>收货类型</view>
+  <view class="{{goods_on[index]==index?'goods_class_on':'goods_class_off'}}" wx:for="{{goods_class}}" wx:key="{{index}}" bindtap='choose_goods' data-num='{{index}}'>{{item}}</view>
+</view>
+
+<!-- 备注信息 -->
+<view class='share_item' style='margin-bottom:20rpx;'>
+  <view class='icon'></view>
+  <view class='can_share'>备注信息</view>
+  <input style='width:612rpx;' placeholder-class='input_p' class="input_off" placeholder='在此输入备注信息'></input>
+</view>
+
+<view>
+  <label class='check' bindtap='agree'>
+    <checkbox color='black' ></checkbox>
+    已阅读<text style='color:rgba(41,135,246,1);' catchtap='xieyi_on'>《飞鸟协议》</text>并同意其规则
+  </label>
+</view>
+
+<button disabled='{{!can_sub}}' bindtap='go_release_success'>提交</button>
+
+<!-- 飞鸟协议弹窗 -->
+<view class='xieyi' wx:if="{{xieyi}}">
+  <view class='black'></view>
+  <view class='xieyi_content'>
+    <text>《飞鸟协议》</text>
+    <view>山东龙口静安寺开了房间阿谁离开房间凉快撒酒疯离开撒酒疯卢卡斯警方立即撒了附近撒离开房间凉快撒减肥了角色的法律开始的按理说空间的卢卡斯决定立刻就爱上了KDJ拉开时间的卢卡斯决定立刻就爱上了肯德基山东龙口静安寺开了房间阿谁离开房间凉快撒酒疯离开撒酒疯卢卡斯警方立即撒了附近撒离开房间凉快撒减肥了角色的法律开始的按理说空间的卢卡斯决定立刻就爱上了KDJ拉开时间的卢卡斯决定立刻就爱上了肯德基山东龙口静安寺开了房间阿谁离开房间凉快撒酒疯离开撒酒疯卢卡斯警方立即撒了附近撒离开房间凉快撒减肥了角色的法律开始的按理说空间的卢卡斯决定立刻就爱上了KDJ拉开时间的卢卡斯决定立刻就爱上了肯德基山东龙口静安寺开了房间阿谁离开房间凉快撒酒疯离开撒酒疯卢卡斯警方立即撒了附近撒离开房间凉快撒减肥了角色的法律开始的按理说空间的卢卡斯决定立刻就爱上了KDJ拉开时间的卢卡斯决定立刻就爱上了肯德基</view>
+  </view>
+  <image src='/images/close_window.png' bindtap='xieyi_off'></image>
+</view>
