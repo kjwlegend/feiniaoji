@@ -1,0 +1,61 @@
+<?php 
+namespace app\admin\model;
+use think\Model;
+
+class Access extends Model{
+	//权限添加
+	public function accessAddInsert($arr)
+	{
+		//实例化对象
+		$res = new access();
+		$info = $res
+			->insert($arr);
+		return $info ;
+	}
+
+	//权限列表查询
+	public function accessIndexSelect()
+	{
+		//实例化对象
+		$res = new access();
+		$info = $res
+			->select();
+		return $info; 
+	}
+
+	//权限列表修改
+	public function accessEditSelect($id)
+	{
+		//实例化对象
+		$res = new access();
+		$info = $res
+			->where(['id'=>$id])
+			->find();
+		return $info;
+	}
+
+	//权限修改操作
+	public function accessEditUpdate($id,$arr)
+	{
+		//实例化对象
+		$res = new access();
+		$info = $res
+			->where(['id'=>$id])
+			->update($arr);
+		return $info;
+	}
+
+	//权限删除操作
+	public function accessDelete($id)
+	{
+		//实例化对象
+		$res = new access();
+		$info = $res
+			->where(['id'=>$id])
+			->delete();
+		
+		return $info;
+	}
+
+	
+}

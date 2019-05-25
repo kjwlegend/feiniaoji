@@ -1,0 +1,466 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:62:"E:\xin\test\sc\public/../application/index\view\index\pay.html";i:1527491343;s:59:"E:\xin\test\sc\public/../application/index\view\layout.html";i:1527392666;s:66:"E:\xin\test\sc\public/../application/index\view\layout\header.html";i:1527493944;s:66:"E:\xin\test\sc\public/../application/index\view\layout\footer.html";i:1527468834;}*/ ?>
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="INDEX_CSS/base.css" />
+<link rel="stylesheet" href="INDEX_CSS/bootstrap.css" />
+<link rel="stylesheet" href="INDEX_CSS/common.css" />
+	<head>
+		<meta charset="UTF-8">
+
+		<title>首页</title>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="mg">
+
+				<div class="header-left left">
+					<i>您好，欢迎来到 福维克！</i>
+					<a href="login.html" class="active">登录</a>
+					<a href="register.html">注册</a>
+				</div>
+				<!--右边-->
+				<div class="header-right right">
+					<ul>
+						<li>
+							<a href="user.html">个人中心</a>
+						</li>
+						<li>
+							<a href="shop-cart.html">购物车</a>
+						</li>
+						<li>
+							<a href="user.html">收藏</a>
+						</li>
+						<li>
+							<a href="user.html">帮助</a>
+						</li>
+						<li>
+							<a href="user.html">服务热线：8488085</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--搜索-->
+		<div class="search mg ov">
+
+			<a href="index.html" class="left"><img src="UPLOADS/<?php echo $config['logo']; ?>" width="110px" height="70px"></a>
+			<div class="s-right right vf">
+				<div class="left form-left">
+					<input type="text" name="" id="" value="" />
+					<input type="button" value="搜索">
+
+					<!--搜索兰-->
+					<div class="s-nav cl">
+						<ul>
+							<li>
+								<a href="product.html">吸尘器 </a>
+							</li>
+							<li>
+								<a href="product.html"> 福维克</a>
+							</li>
+							<li>
+								<a href="product.html">扫地机</a>
+							</li>
+							<li>
+								<a href="product.html"> 清洁工具 </a>
+							</li>
+							<li>
+								<a href="product.html"> 保洁</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--搜索兰-right-->
+				<div class="left form-right vw">
+					<a href="pro_details.html"><img src="INDEX_IMAGES/index/s-pro.png" /></a>
+					<div class="left">
+
+						<span>
+					￥<i>299</i>
+				</span>
+						<p class="ov">
+							<a href="shop-cart.html">点击购买</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主菜单-->
+		<div class="mg nav">
+
+			<div class="nav-left left ov">	 
+				
+					<h2> 全部商品</h2>
+							<dl>
+						<dt>电器<i>&rang;</i></dt>
+							
+						<dd class="active">
+							<a href="pro_details.html">吸尘器</a>
+							<a href="pro_details.html"> 扫地机</a>
+							<a href="pro_details.html">洗衣机</a>
+						</dd>
+						<dd>
+							<a href="pro_details.html">拖地机</a>
+							<a href="pro_details.html">洗碗机</a>
+							<a href="pro_details.html">电饭煲</a>
+							
+							
+						</dd>
+						<dd>
+							
+							<a href="pro_details.html">电视机</a>
+          
+							<a href="pro_details.html"> 空调    </a>
+							<a href="pro_details.html">衣柜</a>
+						</dd>
+						<dd>
+							
+							<a href="pro_details.html">冰箱</a>
+							<a href="pro_details.html">热水器</a>
+							<a href="pro_details.html">抽油烟机</a>
+						</dd>
+						<dt>家具 <i>&rang;</i></dt>
+								<dd>
+							
+							<a href="pro_details.html">沙发</a>
+							<a href="pro_details.html">床</a>
+							<a href="pro_details.html">衣柜</a>
+						</dd>
+						<dd>
+							
+							<a href="pro_details.html">书桌</a>
+							<a href="pro_details.html">桌子</a>
+							<a href="pro_details.html">茶几</a>
+						</dd>
+							<dd>
+								<a href="pro_details.html">办公凳</a>
+								<a href="pro_details.html">电饭煲</a>
+								<a href="pro_details.html">橱柜</a>
+							</dd>
+							<dd>
+								<a href="pro_details.html">书柜</a>
+								<a href="pro_details.html">碗柜</a>
+								<a href="pro_details.html">电视柜</a>
+							</dd>
+						
+						<dt class="d-title">家纺<i>&rang;</i></dt>
+						    <dd>
+								<a href="pro_details.html">窗帘</a>
+								<a href="pro_details.html">床垫</a>
+								<a href="pro_details.html">枕头套</a>
+							</dd>
+							<dd>
+								<a href="pro_details.html">坐垫</a>
+								<a href="pro_details.html">杯垫</a>
+								<a href="pro_details.html">被套</a>
+							</dd>
+							<dd>
+								<a href="pro_details.html">抱枕</a>
+								<a href="pro_details.html">毯子</a>
+								<a href="pro_details.html">浴巾</a>
+							</dd>
+							<dd>
+								<a href="pro_details.html">桌布</a>
+								<a href="pro_details.html">床单</a>
+								<a href="pro_details.html">毛巾</a>
+							</dd>	
+						</dl>
+		  
+			</div>
+			<div class="nav-right">
+				<ul class="vf">
+					<li class="active">
+						<a href="<?php echo url('index/index'); ?>">首页</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>">最新商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>">热门商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>">推荐商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>">爆款推荐商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/user'); ?>"> 会员专区</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/index'); ?>">入驻商城</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+ 
+
+		<link rel="stylesheet" href="INDEX_CSS/pay.css"/>
+		<link rel="stylesheet" href="INDEX_CSS/shop-cart.css"/>
+		<title>支付</title>
+
+
+
+     <div class="pay mg ">
+     	
+     	<div class="r-title">
+     		<a href="product.html">全部商品分类&gt;</a>
+				<a href="pro_details.html">电器&gt;</a>
+				<a href="pro_details.html">吸尘器</a>
+     	</div>
+     	
+     	 <div class="order-nav ma_top">
+         	
+         		<span class="span on"></span>
+         	
+         		<span class="span on"></span>
+         		
+         		<span class="span on"></span>	
+         		<span class="on"></span>
+         		 	<p class="text-r left x-list"><a href="shop-cart.html">我的购物车</a></p>
+         		<p class="text-center left "><a href="comfire_order.html">填写订单信息</a</p>
+         			<p class="text-left left m-list"><a href="javascript:;">提交订单成功</a></p>
+         	
+      
+         </div>
+	<div class="product ov">
+		<!------------left-show------------------->
+		
+		<div class="fram ov">
+		<div class="pay-left left">
+			<img src="INDEX_IMAGES/pay/gou.png"/>
+			<div class="L-right left">
+				<h3 class="text-left">订单提交成功！</h3>
+			<p class="text-left">
+成功付款后，承诺24小时内发货<br />
+请您在提交订单2小时内完成支付，否则订单会自动取消<br />
+收货人信息：张伟   广州市荔湾区长寿路9号    1500254846</p>
+			<p>
+				<a href="ordered.html">查看订单</a>
+						
+				<a href="address.html">收货地址</a>
+				<a href="product.html">继续购物></a>
+			</p>
+			</div>
+		</div>
+		<div class="pay-right pay-p right text-left">
+			
+			<p>付款金额：<span>2100元</p>
+			<p><a href="order_details.html">订单详情</a></p>
+			     <ul class="left">
+							<li><a href="order_details.html">1</a></li>
+							<li><a href="order_details.html">2</a></li>
+			     </ul>
+		</div>
+			<!--——————————用户订单——-end-->
+			</div>
+			<!--PAY--end-->
+		 <div class="pay-com cl windon ">
+		 	<form action="pay-success.html" class="ov">
+		 		<div>
+		 	<div class="w-pay ov ">
+		 	<h3 class="text-left">网银支付</h3>
+		 	<ul class="">
+		 	   <li>
+		 			<label  class=" m-check">
+		 			<input type="radio"  class="inlineCheckbox1" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-1.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox2" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-2.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox3" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-3.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox4" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-4.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox5" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-5.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox6" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-6.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox7" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-7.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox8" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 		<input type="radio"  id="inlineCheckbox9" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 	</ul>
+		 	</div>
+		 	<div class="w-pay ov ">
+		 	<h3 class="text-left">信用卡支付</h3>
+		 		<ul class="">
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox10" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-1.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox11" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-2.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox12" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-3.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox13" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-4.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox14" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-5.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox15" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-6.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox16" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-7.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox17" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 		<input type="radio"  id="inlineCheckbox18" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 	</ul>
+		   </div>
+		 </div>
+		 <!---->
+		 <div class="pay-passw">
+		 	<label for="">支付密码：<br /><input type="password" id="pass" onblur="passw(this.value);"/>
+		 	<div id="passtip" class="Tip">密码不合法，请重输！</div></label>	
+		 	<a href="">忘记密码？</a>
+		 	
+		 	<script>
+		 		
+		 		var b=document.getElementById("passtip")
+		 		b.style.visibility="hidden";
+		 		var passw = function(v){
+			
+			var reg = /^([a-zA-Z0-9_\u4e00-\u9fa5]){6,16}$/
+			if(reg.test(v)){
+				 b.style.visibility="hidden";
+			}else{
+				 b.style.visibility="visible";
+			}
+		}
+		 	</script>
+		 </div>
+		 <div class="p-down right">
+		 <p class="right">支付金额(含运费）：<i>￥2011.00</i></p>
+		 	<input type="submit" class="right count"	 value="确认支付" onclick="return turn()"/>
+		 </div>
+		 </form>
+	</div>
+
+</div>
+</div>
+
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+	
+	<script type="text/javascript" src="INDEX_JS/pay.js"></script>
+	
+
+
+		<!--底部-->
+		<div class="footer ov">
+			<div class="footer-class content">
+
+				<div class="row ov mg">
+					<div class="col-xs-1 text-center">
+
+					</div>
+					<div class="col-xs-6">
+
+						<div class="col-xs-3 text-center">
+
+							<ul class="list-unstyled ">
+								<li>
+									<a href="javascript:;">购物指南</a>
+								</li>
+								<li>
+									<a href="javascript:;">购物流程</a>
+								</li>
+								<li>
+									<a href="register.html">新用户注册</a>
+								</li>
+								<li>
+									<a href="javascript:;">常见问题</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col-xs-3 text-center">
+							<ul class="list-unstyled">
+								<li>
+
+									<a href="javascript:;">配送方式</a>
+								</li>
+								<li>
+									<a href="javascript:;">收货指南</a>
+								</li>
+								<li>
+									<a href="javascript:;">免费配送安装</a>
+								</li>
+								<li>
+									<a href="javascript:;">物流配送费用</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class=" col-xs-3   text-center">
+							<ul class="list-unstyled">
+								<li>
+									<a href="javascript:;">售后服务</a>
+								</li>
+								<li>
+									<a href="javascript:;">退换货说明</a>
+								</li>
+								<li>
+									<a href="javascript:;">退款说明</a>
+								</li>
+								<li>
+									<a href="javascript:;">维修说明</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class=" col-sm-3 text-center">
+							<ul class="list-unstyled">
+
+								<li>
+									<a href="index.html">关于福维克</a>
+								</li>
+								<li>
+									<a href="index.html">富微克简介</a>
+								</li>
+								<li>
+									<a href="javascript:;">服务承诺</a>
+								</li>
+								<li>
+									<a href="javascript:;">推广合作</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="  col-xs-3 text-center">
+						<ul class="list-unstyled left">
+							<li>
+								<a href="javascript:;">联系我们</a>
+							</li>
+							<li>
+								<a href="javascript:;"><?php echo $contact['email']; ?></a>
+							</li>
+							<li>
+								<a href="javascript:;"><?php echo $contact['customer_line']; ?></a>
+							</li>
+							<li>
+								<a href="javascript:;"><?php echo $contact['service_line']; ?></a>
+							</li>
+
+						</ul>
+
+					</div>
+					<div class="col-xs-1">
+
+						<a href="javascript:;"><a href="pro_details.html"><img src="UPLOADS/<?php echo $contact['code']; ?>" class="img-responsive left" /></a></a>
+					</div>
+					<div class="col-xs-1"></div>
+
+				</div>
+				<div class="footer-down text-center">
+					<p><?php echo $config['copy']; ?> xcxcdfr </p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	
+</html>

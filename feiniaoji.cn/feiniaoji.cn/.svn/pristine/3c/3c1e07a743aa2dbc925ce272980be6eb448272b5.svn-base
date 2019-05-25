@@ -1,0 +1,22 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Cart extends Model{
+	// 根据购物车id查询商品信息
+	public function cartProSel($ids){
+		$info = $this->alias('c')
+			->field('c.id cid, c.*, d.*')
+			->whereIn('c.id', $ids)
+			->where('c.user_id', 1)
+			->join('pro_detail d', 'd.id = c.pro_id', 'left')
+			->select();
+		var_dump(json_decode(json_encode($info),1));
+		return $info;
+	}
+
+	// 根据购物车id删除相关信息
+	public function cartDel($ids){
+		$res = $this->whereIn('id', $ids)->delete();
+		return $res;
+	}
+}

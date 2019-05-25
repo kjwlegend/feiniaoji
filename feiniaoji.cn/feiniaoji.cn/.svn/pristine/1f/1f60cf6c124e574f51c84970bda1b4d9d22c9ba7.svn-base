@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户修改</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">用户管理</a></li>
+    <li><a href="#">角色列表</a></li>
+    <li><a href="#">角色修改</a></li>
+    </ul>
+    </div>
+
+    <div class="formbody">
+
+    <div class="formtitle"><span>基本信息</span></div>
+    <form action="{:url('admin/roleUpdate')}" method="post">
+        <ul class="forminfo">
+        <li><label>角色名</label><input name="name" type="text" value="{$role.name}" class="dfinput" /></li>
+        <li><label>权限</label>
+            {volist name="access" id="vo"}
+             {if condition="(in_array($vo.id,$arr))"}<input type="checkbox" name="access[]" value="{$vo.id}" checked>{$vo.name}
+             {else /}<input type="checkbox" name="access[]" value="{$vo.id}" ''>{$vo.name}
+             {/if}
+           
+            {/volist}
+        </li>
+        <li><label>状态</label><cite><input name="state" type="radio" value="1" {:$role.state  == '1' ? "checked" : ''} />是&nbsp;&nbsp;&nbsp;&nbsp;<input name="state" type="radio" value="0" {:$role.state == '0' ? "checked" : ''} />否</cite></li>
+        <li><label>&nbsp;</label>
+					<input type="hidden" name="id" value="{$role.id}">
+					<input name="" type="submit" class="btn" value="确认修改"/></li>
+        </ul>
+    </form>
+
+    </div>
+</body>
+</html>

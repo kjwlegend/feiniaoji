@@ -1,0 +1,16 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Contact extends Model{
+	//尾部
+	public function footer(){
+		//实例化contact模型
+		$contactModel = new Contact();
+		//数据查看
+		$res = $contactModel->find();
+		//返回$res
+		return $res;
+
+	}
+
+}

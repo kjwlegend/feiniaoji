@@ -37,15 +37,14 @@ page{
 
 /* 列表 */
 .list_box{
-  width: 660rpx;
-  margin:30rpx 0 0 30rpx;
-  padding-left:30rpx; 
-  padding-top:30rpx; 
-  padding-bottom:30rpx;
+  width: 690rpx;
+  margin:30rpx auto 40rpx;
+  padding:30rpx 0; 
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
   position: relative;
+  border-radius: 8rpx;
 }
 .list{
   /* height: 124rpx; */
@@ -54,16 +53,18 @@ page{
   font-size: 28rpx;
   line-height: 62rpx;
   color: rgba(74,74,74,1);
+  margin: 0 auto;
   
 }
 .list_head{
   height: 140rpx;
   border-bottom: 1rpx solid rgba(238,238,238,1);
+  position: relative;
 }
 .wait{
-  top: 30rpx;
+  top: 0rpx;
   position: absolute;
-  right: 36rpx;
+  right: 0rpx;
   color: rgba(139,195,74,1);
 }
 
@@ -73,11 +74,11 @@ page{
   margin-top: 30rpx;
 }
 .cityTo{
-  width: 618rpx;
+  width: 630rpx;
   height: 160rpx;
 }
 .city_item{
-  width: 148rpx;
+  width: 6em;
   height: 160rpx;
   opacity: 1;
   font-size: 24rpx;
@@ -89,6 +90,7 @@ page{
   overflow: hidden;
 }
 .citys{
+  width: 100%;
   height: 50rpx;
   opacity: 1;
   font-size: 36rpx;
@@ -97,10 +99,17 @@ page{
   line-height: 50rpx;
   letter-spacing: 0px;
   font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .citys_country{
   margin-top: 5rpx;
   margin-bottom: 5rpx;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
   color:rgba(153,153,153,1);
 }
 .jiantou{
@@ -108,7 +117,8 @@ page{
   width: 100rpx;
   height: 16rpx;
   top: 30rpx;
-  left: 260rpx;
+  left: 50%;
+  margin-left: -50rpx;
 }
 /* 按钮 */
 .see{
@@ -116,17 +126,20 @@ page{
   height: 76rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
-  border-radius: 2px 2px 2px 2px;
   border: 1rpx solid rgba(41,135,246,1);
   color: rgba(41,135,246,1);
   font-size: 32rpx;
   margin-top: 20rpx;
+  /* margin-bottom: 50rpx; */
+  border-radius: 8rpx;
 }
 
 /* 关联订单 */
 .relation{
-  margin-top: 62rpx;
+  width: 630rpx;
+  margin: 62rpx auto 0;
   position: relative;
+  min-height: 100rpx;
 }
 .icon{
   width: 8rpx;
@@ -149,7 +162,7 @@ page{
 
 .order_item{
   border-top: 1rpx solid rgba(238,238,238,1);
-  width: 634rpx;
+  width: 100%;
   height: 72rpx;
   margin-top: 24rpx;
   padding-top: 28rpx;
@@ -192,4 +205,18 @@ page{
   display: inline-block;
   margin-top: -5rpx;
   margin-left: 5rpx;
+}
+
+
+
+.order_none{
+  width: 300rpx;
+  margin: 200rpx auto;
+}
+.order_none image{
+  width: 300rpx;
+}
+.order_none view{
+  text-align: center;
+  font-size: 38rpx;
 }

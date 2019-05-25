@@ -5,25 +5,28 @@
   opacity: 1;
   background: rgba(254,247,235,1);
   padding-top: 1rpx;
+  text-align: center;
 }
 .score_title{
   font-size: 28rpx;
   margin-top: 40rpx;
   margin-left: 60rpx;
   font-weight: bold;
+  text-align: left;
+  margin-bottom: 60rpx;
 }
 .score_title text{
-  font-weight: 100;
+  font-weight: 400;
   color: gray;
 }
-.score_box image{
+/* .score_box image{
   width: 324rpx;
   height: 36rpx;
   opacity: 1;
   display: block;
   margin-top: 60rpx;
   margin-left: 216rpx;
-}
+} */
 .score_des{
   opacity: 1;
   font-size: 28rpx;
@@ -51,24 +54,26 @@
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin: 20rpx 0 42rpx 30rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 32rpx;
+  margin: 20rpx auto 42rpx;
+  text-align: center;
   color: rgba(102,102,102,1);
   line-height: 44rpx;
   position: relative;
+  font-size: 32rpx;
 }
-.my_evaluate image{
-  width: 324rpx;
+.pingfen{
+  padding: 40rpx 0 60rpx;
+  margin:  0 auto;
+  font-size: 32rpx;
+}
+ .urlse{
+  display: inline-block;
+  margin: 0 18rpx;
+}
+ .urlse image{
+  width: 36rpx;
   height: 36rpx;
   opacity: 1;
-  display: block;
-  margin-top: 60rpx;
-}
-.my_evaluate view{
-  margin-top: 40rpx;
 }
 .my_evaluate input{
   width: 616rpx;
@@ -80,6 +85,15 @@
 }
 .input_p{
   color: rgba(210,210,210,1);
+  font-weight: 600;
+}
+.textars{
+  width: 616rpx;
+  height: 100rpx;
+  overflow: auto;
+  text-align: left;
+  margin: 50rpx auto 0;
+  border-bottom: 2rpx solid rgba(238,238,238,1);
 }
 button{
   width: 690rpx;
@@ -89,6 +103,12 @@ button{
   color: white;
   font-size: 36rpx;
   margin-left:28rpx; 
+  border: none;
+  border-radius: 8rpx;
+}
+button::after{
+  border: none;
+  border-radius: 8rpx;
 }
 
 

@@ -1,0 +1,39 @@
+/***自定义单选框**/
+.register input[type="checkbox"]{visibility: hidden;}
+.register,a{color:#929292;font-size:18px;display: inline-block;}
+label{font-weight: normal;font-size: 20px;color:#000000;}
+.register  .form-down span{position:relative;top:4px;margin-right:6px;border:1px solid #009944;height:20px;width:20px;display:inline-block;line-height:20px;}
+
+.register  .form-down label input:checked + span:after{content: "\2714";line-height:20px;color:#009944;font-size:24px;}
+.register  .form-down label{font-weight: normal;display: inline-block;line-height:20px;}
+/*****/
+.register .form-top label{text-align: left;width:385px;margin:8px 0;}
+.register .form-top label input{float: right;width:243px;max-height:28px;line-height:28px;border:1px solid #6b6b6b;}
+
+.search>a{margin-left:105px;}
+.search {padding:12px 0;border-bottom:1px solid #009944}
+.search h2{padding:0 105px 0 0;margin:36px 0 0 0;}
+.search h2 a{color:#000000;font-size:30px;}
+.register{background:#FFFFFF;padding:22px 30px 22px 50px;border:1px solid #a0a0a0;width:100%;}
+.register input[type="text"]{padding:2px 5px 2px 5px;}
+.register input{font-size:}
+.register h3 {display:inline-block;float;left;font-size:28px;color:#009944;margin-right:180px;}
+.register form{display: inline-table;padding:40px 326px 68px 0;border-right:1px #a0a0a0 solid;}
+.register .form-down input[type="submit"]{height:37px;width:167px;font-size:20px;background:#009944;color:#FFFFFF;border:none;}
+.register .right{/*margin:0 60px;*/width:365px;margin:0 13px;}
+.register .right h4{border-bottom:1px solid #A0A0A0;margin:0;padding:32px 0;}
+.register .right h4>a{background:#009944;width:80px;height:40px;color:#FFFFFF;display:inline-block;line-height:40px;}
+/*down*/
+.register .down img{margin:38px auto 18px auto;display: block;}
+.register .down .more span{text-align:center;display: block;margin:50px 0 45px 0;}
+.register .down p a:nth-child(1){background:url(../images/login/weibo.png) no-repeat} 
+.register .down p a:nth-child(2){background:url(../images/login/zhifu.png) no-repeat}
+.register .down p a:nth-child(3){background:url(../images/login/qq.png) no-repeat}
+.register .down p a{height:39px;display: block;width:39px;float:right;margin:0 10px;}
+.register .down span p{text-align: center;}
+.register .down >p{padding:0px 0 17px 0;margin:0;border-bottom:1px #A0A0A0 solid;overflow: hidden;text-align: center;}
+.register .down .more p{float: none;display: inline-block;margin:0 auto;}
+label i{color:#FF0000}
+.Tip{right:-53.4%;margin-top:-29px;}
+.register .form-top{position:relative}
+.register .form-top label input:focus{border-color: #009944;}

@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="ADMIN_JS/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){	
+	//导航切换
+	$(".menuson li").click(function(){
+		$(".menuson li.active").removeClass("active")
+		$(this).addClass("active");
+	});
+	
+	$('.title').click(function(){
+		var $ul = $(this).next('ul');
+		$('dd').find('ul').slideUp();
+		if($ul.is(':visible')){
+			$(this).next('ul').slideUp();
+		}else{
+			$(this).next('ul').slideDown();
+		}
+	});
+})	
+</script>
+
+
+</head>
+
+<body style="background:#f0f9fd;">
+	<div class="lefttop"><span></span>通讯录</div>
+    
+    <dl class="leftmenu">
+        
+    <dd>
+        <div class="title">
+        <span><img src="ADMIN_IMAGES/leftico01.png" /></span>联系我们
+        </div>
+        	<ul class="menuson">
+            <li><cite></cite><a href="{:url('contact/index')}" target="rightFrame">联系列表</a><i></i></li>
+           
+            </ul>    
+    </dd>
+    <dd>
+        <div class="title">
+        <span><img src="ADMIN_IMAGES/leftico01.png" /></span>config
+        </div>
+            <ul class="menuson">
+            <li><cite></cite><a href="{:url('config/index')}" target="rightFrame">config列表</a><i></i></li>
+           
+            </ul>    
+    </dd> 
+    <dd>
+        <div class="title">
+        <span><img src="ADMIN_IMAGES/leftico01.png" /></span>颜色
+        </div>
+            <ul class="menuson">
+            <li><cite></cite><a href="{:url('color/index')}" target="rightFrame">颜色列表</a><i></i></li>
+           <li><cite></cite><a href="{:url('color/add')}" target="rightFrame">颜色添加</a><i></i></li>
+            </ul>    
+    </dd>
+    <dd>
+        <div class="title">
+        <span><img src="ADMIN_IMAGES/leftico01.png" /></span>商品
+        </div>
+            <ul class="menuson">  
+                <li>
+                    <cite></cite>
+                    <a href="{:url('ProClassify/classTopAdd')}" target="rightFrame">商品</a><i></i>
+                </li>
+                <li>
+                    <cite></cite><a href="{:url('ProClassify/index')}" target="rightFrame">商品1</a><i></i>
+                </li>
+                <li>
+                <cite></cite><a href="{:url('ProClassify/lis')}" target="rightFrame">商品分类列表</a><i></i>
+                </li>
+                <li>
+                <cite></cite><a href="{:url('Pro/index')}" target="rightFrame">商品列表</a><i></i>
+                </li>
+                <li>
+                <cite></cite><a href="{:url('Pro/add')}" target="rightFrame">商品添加</a><i></i>
+                </li>
+            </ul>  
+    </dd>    
+    <dd>
+
+    <div class="title">
+    <span><img src="ADMIN_IMAGES/leftico02.png" /></span>其他设置
+    </div>
+    <ul class="menuson">
+        <li><cite></cite><a href="#">编辑内容</a><i></i></li>
+        <li><cite></cite><a href="#">发布信息</a><i></i></li>
+        <li><cite></cite><a href="#">档案列表显示</a><i></i></li>
+        </ul>     
+    </dd> 
+    
+    
+    <dd><div class="title"><span><img src="ADMIN_IMAGES/leftico03.png" /></span>编辑器</div>
+    <ul class="menuson">
+        <li><cite></cite><a href="#">自定义</a><i></i></li>
+        <li><cite></cite><a href="#">常用资料</a><i></i></li>
+        <li><cite></cite><a href="#">信息列表</a><i></i></li>
+        <li><cite></cite><a href="#">其他</a><i></i></li>
+    </ul>    
+    </dd>  
+    
+    
+    <dd><div class="title"><span><img src="ADMIN_IMAGES/leftico04.png" /></span>日期管理</div>
+    <ul class="menuson">
+        <li><cite></cite><a href="#">自定义</a><i></i></li>
+        <li><cite></cite><a href="#">常用资料</a><i></i></li>
+        <li><cite></cite><a href="#">信息列表</a><i></i></li>
+        <li><cite></cite><a href="#">其他</a><i></i></li>
+    </ul>
+    
+    </dd>   
+    
+    </dl>
+
+
+    
+    <dl class="leftmenu">
+        
+    <dd>
+        <div class="title">
+        <span><img src="ADMIN_IMAGES/leftico02.png" /></span>用户管理
+        </div>
+        <ul class="menuson">    
+            <li><cite></cite><a href="{:url('user/add')}" target="rightFrame">用户添加</a><i></i></li>
+            <li><cite></cite><a href="{:url('user/index')}" target="rightFrame">用户列表</a><i></i></li>
+            </ul>     
+     </dd>
+
+
+    
+    <dl class="leftmenu">
+        
+    <dd>
+        <div class="title">
+        <span><img src="ADMIN_IMAGES/leftico02.png" /></span>管理员权限管理
+        </div>
+        <ul class="menuson">       
+            <li><cite></cite><a href="{:url('admin/accessAdd')}" target="rightFrame">权限添加</a><i></i></li>
+            <li><cite></cite><a href="{:url('admin/accessIndex')}" target="rightFrame">权限列表</a><i></i></li>
+             <li><cite></cite><a href="{:url('admin/roleAdd')}" target="rightFrame">角色添加</a><i></i></li>
+            <li><cite></cite><a href="{:url('admin/roleIndex')}" target="rightFrame">角色列表</a><i></i></li>
+            <li><cite></cite><a href="{:url('admin/adminAdd')}" target="rightFrame">管理员添加</a><i></i></li>
+            <li><cite></cite><a href="{:url('admin/adminIndex')}" target="rightFrame">管理员列表</a><i></i></li>
+        </ul>
+     </dd> 
+</body>
+</html>

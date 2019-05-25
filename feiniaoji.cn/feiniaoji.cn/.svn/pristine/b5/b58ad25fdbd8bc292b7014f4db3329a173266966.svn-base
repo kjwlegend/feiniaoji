@@ -1,0 +1,115 @@
+
+		<link rel="stylesheet" href="INDEX_CSS/register.css" />
+		<title>注册</title>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="mg">
+
+				<div class="header-left left">
+					<i>您好，欢迎来到福维克！</i>
+					<a href="login.html" class="active">登录</a>
+					<a href="register.html">注册</a>
+				</div>
+				<!--右边-->
+				<div class="header-right right">
+					<ul>
+						<li>
+							<a href="user.html">个人中心</a>
+						</li>
+						<li>
+							<a href="shop-cart.html">购物车</a>
+						</li>
+						<li>
+							<a href="user.html">收藏</a>
+						</li>
+						<li>
+							<a href="user.html">帮助</a>
+						</li>
+						<li>
+							<a href="ajvascript:;">服务热线：8488085</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--搜索-->
+		<div class="search mg ov">
+
+			<a href="index.html" class="left"><img src="INDEX_IMAGES/index/logn.png"></a>
+
+			<h2 class="text-center">
+					新会员注册中心`
+					
+				</h2>
+		</div>
+		<!--主菜单-->
+
+		<!--主菜单-end-->
+
+	
+			<div class="content ov">
+				<div class="mg">
+					<div class="register ov">
+					
+					<form action="login.html" method="get " class="content text-left">
+						<div class="form-top">
+
+							<label><i>*</i>会员名:<input type="text" id="user" class="inp-check" onblur="tureName(this.value);"/>
+<div id="nametip" class="Tip" >请使用字母、汉字、数字、下划线组<br />
+合，4~20个字符，且不能为纯数字</div></label><br />
+							<label><i>*</i>设置密码:<input type="password" id="pass" class="inp-check" onblur="Opass(this.value)"/>
+							<div id="passtip" class="Tip" >密码不合法，请重输！</div></label><br />
+							<label><i>*</i>确认密码:<input type="password" id="t-pass" class="inp-check" onblur="passw(this.value)"/>
+							<div id="t-passtip" class="Tip" >密码不一致，请重输！</div></label><br />
+							<label><i>*</i>EMAIL:<input type="text" id="email" class="inp-check" onblur="c_email(this.value)"/>
+							<div id="emailtip" class="Tip" >邮箱格式不对，请重输！</div></label><br />
+							<label><i>*</i>手机号码:<input type="text" id="iphone" class="inp-check" onblur="Iphone(this.value)"/>
+							<div id="iphonetip" class="Tip" >手机格式不对，请重输！</div></label><br />
+							<label><i>*</i>验证码:<input type="text" id="check" class="inp-check" onblur="y_check(this.value)"/>
+							<div id="checktip" class="Tip" >请输入验证码！</div></label><br />
+		
+						</div>
+						
+						
+						<div class="form-down text-center">
+							
+                       	 <label class="content"><input type="checkbox" name="" id="inp" value="" /><span></span>已阅读<a href="register.html">《福维克用户注册协议》</a></label><br />
+							<input type="submit" name="" id="load" value="注册" onclick="return ajurp()"/>
+						</div>
+					</form>
+					<div class="right ">
+						
+							<h4 class="text-center">
+								已注册
+								<a href="login.html">登录</a>
+							</h4>
+					<div class="down ov">
+						<img src="INDEX_IMAGES/index/erwei.jpg"/>
+						<p>微信扫一扫，快速登录</p>
+					<div class="more text-center">
+						<span>
+						使用合作账号登录：	
+						</span>
+					<p class=" class="inp-check" ov"><a href=""></a><a href=""></a><a href=""></a></p>
+					</div>
+					
+					</div>
+					</div>
+				<!-----验证------------------->
+		
+	
+		
+			
+					<!---->
+				
+				</div>
+              </div>
+			</div>
+	
+
+
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js" ></script>
+    <script type="text/javascript" src="INDEX_JS/check.js"></script>

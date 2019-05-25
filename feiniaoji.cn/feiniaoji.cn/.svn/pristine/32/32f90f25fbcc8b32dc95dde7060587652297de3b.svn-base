@@ -1,0 +1,61 @@
+.address ul li{border:1px solid #009944;margin-right:20px;width:25%;padding:17px 6px; background:url(../images/order/border.png)no-repeat center center;background-size:100%;}
+
+.address ul{margin-left:25px;]
+  }
+.product h3{font-weight: normal;}
+ .address ul li:last-child{background:none;border:1px solid #A0A0A0;}
+
+ .address ul li:last-child .com{height:225px;width:300px;position:relative;
+ 	              vertical-align:middle;
+ 						display:table-cell;
+ 						}
+ .address ul li  h3, .address ul li  h4, .address ul li  p{line-height:65px;font-size:20px;padding:0 10px;}
+ .address ul li  h3:before{content: url(../images/order/name.png);line-height:65px;margin-right:8px;}
+ .address ul li  h4:before{content: url(../images/order/address.png);line-height:65px;margin-right:8px;}
+  .address ul li  p{padding-top:30px;}
+ .address ul li  p:before{content: url(../images/order/iphone.png);line-height:65px;margin-right:8px;}
+ .address ul li  h4{border-top:#A0A0A0 1px dashed;border-bottom:#A0A0A0 1px dashed;}
+/*********添加地址*********/
+ .address ul li span{
+
+				 	display:block;margin:auto;position:relative;
+ 					border-radius:50%;border: 2px #6a6a6a solid;
+ 					height:55px;width:55px;}
+ .address ul li span a{border-width:0 0 7px 7px;position:absolute;
+  					border-style: solid;display: block;
+  				
+  					border-color:#6A6A6A;
+  					
+  					height:20px;width:20px;
+  					
+  					}
+ .address ul li span a:nth-child(1)	{right:50%;top:50%;margin:-17px -16px 0 0}
+  .address ul li span a:nth-child(2){transform: rotate(180deg);right:50%;top:50%;margin:-3px -3px 0px 0px;}
+ .address ul li:last-child{text-align: center;}
+ .address ul li i{display:inline-block;position:absolute;margin-right:-50px;right:50%;font-size:20px;color:#737373}
+ 
+/****支付********/
+.c-title{padding:0 20px;font-size:20px;color:#000000;line-height:50px;background:#f3f3f3;margin:32px 0}
+.or-pay a{margin-left:30px;border:#c3c3c3 1px solid;padding:0 40px;line-height:58px;display: inline-block;}
+.or-pay a:hover{border-color:#009944;}
+.or-pay .on{border:1px solid #009944}
+/**********选择优惠卷*****************/
+
+select{margin:0 50px;padding:0 65px 0 25px;background-position:92%;line-height:42px;}
+
+.preferentia h3{color:#000000;font-size:20px;}
+.pre-down{padding:6px 120px;}
+.pre-down label{line-height:42px;}
+.pre-down button{line-height:25px;font-size:16px;padding:0 20px;color:#000000;background:#cacaca;border:0;}
+/***************/
+.user-table{padding-right:0:}
+.text-put{margin-top:20px;}
+.preferentia textarea{ resize: none; width:750px;height:106px;float: left;padding:5px;}
+.pre-right span b{display:inline-block;width:100px;text-align:right;}
+.pre-right span em{color:#009944}
+/*****订单详情********/
+.orC-top{font-size:14px;color:#626262}
+.orC-top i{margin-left:40px;color:#FF0000}
+.orC-top .or-title i:after{content: url(../images/order/qq—or.png);position: absolute;margin-top:-5px}
+.orC-top .c-title{font-size:14px;}
+.orC-top p{padding-left:30px;line-height:35px;}

@@ -1,0 +1,73 @@
+<?php 
+namespace app\admin\model;
+use think\Model;
+
+class Role extends Model{
+	//角色添加
+	public function roleAddInsert($arr)
+	{
+		//实例化对象
+		$res = new role();
+		$info = $res
+			->insertGetId($arr);
+		return $info ;
+	}
+
+	//角色列表查询
+	public function roleIndexSelect()
+	{
+		//实例化对象
+		$res = new role();
+		$info = $res
+			->alias('r')
+			->field('r.id rid,r.name rname,a.id aid,a.name aname,a.action aaction,r.created_time rcreated_time,r.updated_time rupdated_time,r.state rstate')
+			->join('role_access ra', 'ra.role_id = r.id', 'left')
+			->join('access a', 'a.id = ra.access_id', 'left')
+			->select();
+			return json_decode(json_encode($info), 1);
+	}
+	
+	//角色列表修改默认信息
+	public function roleEditSelect($id)
+	{
+		//实例化对象
+		$res = new role();
+		$info = $res	
+			->where(['id'=>$id])
+			->find();
+		return json_decode(json_encode($info), 1);
+	}
+
+	//角色修改操作
+	public function roleEditUpdate($id,$arr)
+	{
+		//实例化对象
+		$res = new role();
+		$info = $res
+			->where(['id'=>$id])
+			->update($arr);
+		return $info;
+	}
+
+	//角色删除操作
+	public function roleDelete($id)
+	{
+		//实例化对象
+		$res = new role();
+		$info = $res
+			->where(['id'=>$id])
+			->delete();
+		return $info;
+	}
+
+	//所有的角色查询
+	public function roleSelectAll()
+	{
+		//实例化对象
+		$res = new role();
+		$info = $res
+			->field('name,id')
+			->select();
+		return $info;
+	}
+}

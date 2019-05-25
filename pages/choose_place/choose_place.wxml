@@ -1,0 +1,28 @@
+<!--pages/choose_place/choose_place.wxml-->
+<input placeholder='输入城市或国家名称搜索' bindinput='select' value='{{place}}'></input>
+<text class='cancel' bindtap='cancel'>取消</text>
+<!-- 没有搜索城市时 -->
+<image src='/images/xinsousuo.png' class='find'></image>
+<view wx:if='{{!select}}'>
+  <view class='history'>历史使用地点
+    <image src='/images/rabbish.png' bindtap='del'></image>
+  </view>
+  <view class='history_place'>
+    <view wx:for='{{history}}' wx:key='{{index}}' bindtap='choose_place' data-place='{{item.city}}' data-country='{{item.nation}}'>{{item.city}}</view>
+  </view>
+  <view class='hot_title'>热门出发地点
+    <image src='/images/fire.png'></image>
+  </view>
+  <view class='hot_place'>
+    <view wx:for='{{hot}}' bindtap='choose_place'  data-place='{{item.citys}}' data-country='{{item.nations}}' wx:key='{{index}}'>{{item.citys}}</view>
+  </view>
+</view>
+
+<!-- 当开始搜索时 -->
+<view wx:if='{{select}}'>
+  <view class='select_city' wx:for='{{country}}' wx:key='{{index}}' bindtap='choose_place' data-place='{{item.city}}' data-country='{{item.country}}' >
+    <view class='icon'>城市</view>
+    <view class='city'>{{item.city}}</view>
+    <view class='country'>{{item.country}}</view>
+  </view>
+</view>

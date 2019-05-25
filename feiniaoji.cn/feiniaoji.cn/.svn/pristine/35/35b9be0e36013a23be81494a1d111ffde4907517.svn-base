@@ -1,0 +1,449 @@
+<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="INDEX_JS/bootstrap.js"></script>
+
+
+
+<link rel="stylesheet" href="INDEX_CSS/index.css" />
+<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+
+		<!--主菜单-end-->
+		<div class="slide banner" >
+			   <!-- 轮播（Carousel）项目 -->
+                  <ul class="bd">
+                  	<li class="active">
+                  		<img src="INDEX_IMAGES/banner_1.jpg"
+                  	</li>
+                  	<li><img src="INDEX_IMAGES/banner_2.jpg"/></li>
+                  	<li><img src="INDEX_IMAGES/banner_3.jpg"/></li>
+                  </ul>			    
+					<!-- 轮播（Carousel）指标 -->
+					
+					<!-- 轮播（Carousel）指标 -->
+					<div>
+					<ol class="carousel-indicators">
+						
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+					
+					</ol>
+					</div>
+					<!--左右-->
+					
+					   <a class="prev"></a>
+					   <a class="next"></a>
+					
+					
+		</div>
+				
+		
+				<script>
+			$(document).ready(function(){
+
+			var winW = $(window).width();
+			var liLen = $(".banner .bd li").length;
+			$(".banner .bd").css({"width":winW*liLen+"px"});
+			$(".banner .bd li").width(winW+"px");
+			var a = 0;
+			$(".banner ol li").eq(0).addClass("active");
+
+			$(".banner .next").click(function(){
+				a = $(".banner ol li .active").index();
+				a +=1;
+				if(a>liLen-1){
+					a = 0;
+				}
+				$(".banner .bd").animate({"left":-winW*a+"px"},700);
+				$(".banner ol li").removeClass("active").eq(a).addClass("active");
+			})
+
+			$(".banner .prev").click(function(){
+				a = $(".banner ol li  .active").index();
+				a -=1;
+				if(a<0){
+					a = liLen-1;
+				}
+				$(".banner .bd").animate({"left":-winW*a+"px"},700);
+				$(".banner ol li").removeClass("active").eq(a).addClass("active");
+			})
+
+			$(".banner ol li").click(function(){
+				a = $(this).index();
+				$(".banner .bd").animate({"left":-winW*a+"px"},700);
+				$(".banner ol li").removeClass("active").eq(a).addClass("active");
+			})
+
+			$(".banner").mouseover(function(){
+				clearInterval(lun);
+			})
+			$(".banner").mouseout(function(){
+				lun = setInterval(show,3000);
+			})
+			function show(){
+				a = a + 1;
+				if(a>liLen-1){
+					a = 0;
+				}
+				$(".banner .bd").animate({"left":-winW*a+"px"},700);
+				$(".banner ol li").removeClass("active").eq(a).addClass("active");
+			}
+			var lun = setInterval(show,3000);
+          });
+					
+				</script>
+		<div class="content ov">
+			<div class="mg">
+				<div class="introduct ov">
+					<div class="title left">
+						<img src="INDEX_IMAGES/index/today.png" />
+						<p class="text-center">
+							今日推荐
+						</p>
+					</div>
+					<ul class="row vf left">
+						<li class="col-xs-3">
+							<div class="com">
+								<a href="{:url('index/pro_details')}"><img src="INDEX_IMAGES/index/tui-1.png" /></a>
+								<h3><a href="{:url('index/pro_details')}">福维克尘器</a><b><a href="pro_details.html">八折</a></b></h3>
+							</div>
+						</li>
+						<li class="col-xs-3">
+							<div class="com">
+								<a href="pro_details.html"><img src="INDEX_IMAGES/index/tui-2.png" /></a>
+								<h3><a href="pro_details.html">福维克尘器</a><b><a href="pro_details.html">六折</a></b></h3>
+							</div>
+						</li>
+						<li class="col-xs-3">
+							<div class="com">
+								<a href="pro_details.html"><img src="INDEX_IMAGES/index/tui-3.png" /></a>
+								<h3><a href="pro_details.html">福维克尘器</a><b><a href="pro_details.html">九折</a></b></h3>
+							</div>
+						</li>
+						<li class="col-xs-3">
+							<div class="com">
+								<a href="pro_details.html"><img src="INDEX_IMAGES/index/tui-4.png" /></a>
+								<h3><a href="pro_details.html">福维克尘器</a><b><a href="pro_center.html">一折</a></b></h3>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+				<!--推荐-end-->
+				<!--最新商品-->
+				<div class="news ov  content pro-on">
+					<div class="title-text left cl">
+						<h2><span><i>N</i>ew</span>最新商品</h2>
+					</div>
+					<!--标题-->
+					<div class="new-content pic">
+						<ul class="row ov">
+							<li class="pro col-xs-6 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-on.jpg" /></a>
+									<h3><a href="pro_details.html">福维克肆世代吸尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_02.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic3.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic4.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic1.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic6.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic7.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic8.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+                </div>
+					<!--最新商品-end-->
+					<!--——————————Hot 热销产品———-—————————-->
+					<div class="product content mg-ov pro-on">
+						<!--标题-->
+						<div class="title-text left cl">
+							<h2><span><i>H</i>ot</span>热门商品</h2>
+						</div>
+
+						<div class="pro-content pic pro-on">
+ 							<ul class="row ov">
+ 								<li class="pro  col-xs-6 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot-on.jpg" /></a>
+									<h3><a href="pro_details.html">福维克肆世代吸尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+	
+ 								
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_01.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_02.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+						
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_03.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_04.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="news_center.html"><img src="INDEX_IMAGES/index/hot_05.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="news_center.html"><img src="INDEX_IMAGES/index/hot_06.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="news_center.html"><img src="INDEX_IMAGES/index/hot_07.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="news_center.html"><img src="INDEX_IMAGES/index/hot_08.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+						</ul>
+						</div>
+
+						<!--——————————Hot 热销产品———-end-->
+					</div>
+				
+				<!--推荐商品-->
+				  
+   					<div class="intro-pro product content mg-ov cl">
+						<!--标题-->
+						<div class="title-text left cl">
+							<h2><span><i>C</i>ommend</span>推荐商品</h2>
+						</div>
+
+						<div class="pro-content pic ">
+ 							<ul class="row ov">
+ 								<li class="pro col-xs-3">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+	
+ 								
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_02.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							
+ 								<li class="pro col-xs-3">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+	
+ 								
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_02.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip-5.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip-6.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip-5.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip-6.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic1.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic6.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic7.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic8.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+
+						</ul>
+						</div>
+
+						<!--——————————Hot 热销产品———-end-->
+					</div>
+								  
+				
+				<!--推荐商品-end-->
+                <!--爆款产品-->
+                	<div class="burst product content mg-ov cl pro-on">
+						<!--标题-->
+						<div class="title-text left cl">
+							<h2><span><i>B</i>urst</span>爆款商品</h2>
+						</div>
+
+						<div class="pro-content pic ">
+ 							<ul class="row ov">
+ 								
+ 							<li class="pro col-xs-6 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/bao-on1 (2).jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							<li class="pro col-xs-6 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/bao-on1.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>  
+							
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_05.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_06.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_06.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+								</div>
+							</li>
+							<li class="pro col-xs-3 ">
+								<div class="com">
+									<a href="pro_details.html"><img src="INDEX_IMAGES/index/hot_07.jpg" /></a>
+									<h3><a href="pro_details.html">福维克尘器</a><b>￥<a href="pro_details.html">1999</a></b></h3>
+						s		</div>
+							</li>
+
+						</ul>
+						</div>
+
+						<!--——————————Hot 热销产品———-end-->
+					</div>
+				<!--爆款产品-end-->
+				
+			</div>
+
+		</div>

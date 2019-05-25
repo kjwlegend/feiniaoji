@@ -1,0 +1,37 @@
+<?php
+namespace app\admin\controller;
+use think\Controller;
+use think\Db;
+
+class Pro extends Controller{
+//商品列表
+	public function index(){
+		//调用pro_classify模型
+		$proModel = model('Pro');
+		//调用proClass方法
+		$res = $proModel -> index();
+		//绑定变量
+		$this->assign('pro',$res);
+		//调用页面
+		return $this->fetch();
+
+	}
+	public function add(){
+		//连接数据库
+		$ProClassify = Db::name('pro_classify')->where('parent_id',0)->select();
+		// dump($ProClassify);
+		//绑定变量
+		$this->assign('ProClassify',$ProClassify);
+		
+		//调用页面
+		return $this->fetch();
+	}
+	//添加执行
+	public function insert(){
+		dump($_POST);die;
+		//调用pro模型
+		$proModel = model('Pro');
+		//调用proinsert方法
+		$res = $proModel -> insert();
+	}
+}

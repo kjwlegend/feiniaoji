@@ -1,0 +1,10 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Address extends Model{
+	// 根据adddressid 查询相关信息
+	public function getAddress($id){
+		$info = $this->where(['id' => $id])->find();
+		return $info;
+	}
+}

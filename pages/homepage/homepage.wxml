@@ -1,16 +1,27 @@
 <!-- 头部内容 -->
 <view class='header'>
-  <image src='/images/banner.png'></image>
+  <swiper class='banners' autoplay="true" interval="4000" duration="500" circular="true" bindchange="changese">
+    <block wx:for="{{swipers}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src='{{item}}'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='header_bies'>
+    <view class='indicats'>
+      <view wx:for="{{swipers}}" class="{{indes==index?'chose':''}}" wx:key="{{index}}"></view>
+    </view>
+  </view>
   <view class='header_content'>
     <view class='header_content_item' catchtap='go_find'>
-      <text>我要找人</text>
+      <text>我要找飞鸟</text>
       <view>帮我带货</view>
       <image src='/images/help_goods.png'></image>
     </view>
     <view class='line'></view>
     <view class='header_content_item' catchtap='go_release'>
-      <text>我要找人</text>
-      <view>帮我带货</view>
+      <text>我要当飞鸟</text>
+      <view>带货赚钱</view>
       <image src='/images/help_money.png'></image>
     </view>
   </view>
@@ -20,23 +31,29 @@
   <view class='icon'></view>
   <view class='new_road'>最新行程</view>
   <!-- 客户列 -->
-  <view class='road_list' wx:for='{{road_list}}' wx:key='{{index}}'>
-    <image src='/images/banner.png' class='list_img' bindtap='go_tripDetails'></image>
+  <view class='road_list' wx:for='{{birds}}' wx:key='{{index}}' bindtap='go_tripDetails' data-id='{{item.bid}}'>
+    <image src='{{item.uheaderimg}}' class='list_img'></image>
     <view class='road_word'>
-      <text class='place'>伦敦-上海</text>
+      <view class='place'>
+        <text>{{item.bstart}}</text>
+        <text class='place_xia'>-</text>
+        <text>{{item.bends}}</text>
+      </view>
       <view class='time'>
         <image src='/images/home_time.png'></image>
-        2018-12-15
+        {{item.bstarttime}}
       </view>
       <view class='weight'>
         <image src='/images/huo.png'></image>
-        15kg
+        {{item.btotalweight}}kg
       </view>
     </view>
-    <image class='right' src='/images/right_go.png'  bindtap='go_tripDetails'></image>
+    <image class='right' src='/images/right_go.png'></image>
   </view>
   <!-- 查看更多 -->
-  <view class='more'>
-    查看更多
+  <view class="{{select=='查看更多'?'more':'more mores'}}" bindtap='get_more'>
+    {{select}}
   </view>
 </view>
+
+<view class="{{isIphoneX?'iphone':''}}"></view>

@@ -1,0 +1,30 @@
+<?php
+namespace app\admin\Model;
+use think\Model;
+class Combo extends Model{
+    //查询套餐信息
+    public function ComboSelect(){
+        //实例化套餐
+        $ComboModel = new Combo();
+        $Combo = $ComboModel -> select();
+        return $Combo;
+    }
+    public function ComboInsert($info){
+        //实例化套餐
+        $ComboModel = new Combo();
+        $Combo = $ComboModel -> save($info);
+        return $Combo;
+    }
+    //查询指定套餐信息
+    public function ComboFind($id){
+        $ComboModel = new Combo();
+        $combo = $ComboModel->find($id);
+        return $combo;
+    }
+    //修改套餐信息
+    public function ComboUpdate($info){
+        $ComboModel = new Combo();
+        $Combo = $ComboModel -> update($info);
+        return $Combo;
+    }
+}

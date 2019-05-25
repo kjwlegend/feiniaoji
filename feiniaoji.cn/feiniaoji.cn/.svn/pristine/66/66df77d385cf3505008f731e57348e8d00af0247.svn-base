@@ -1,0 +1,66 @@
+<?php
+namespace app\admin\Controller;
+use think\Controller;
+use think\Db;
+
+/**
+ * 套餐
+ */
+class Combo extends Controller{
+    public function index(){
+        $Combo = model('Combo')->ComboSelect();
+        $this -> assign('Combo',$Combo);
+        return $this->fetch();
+    }
+    public function add(){
+        return $this -> fetch();
+    }
+    public function insert(){
+        //获取添加信息
+        $info = [
+            'name'            => $_POST['name'],
+            'state'           => $_POST['state'],
+            'combo_price'     => $_POST['combo_price'],
+            'combo_cost'      => $_POST['combo_cost']
+        ];
+        //调用combo模板下的ComboInsert方法
+        $res = model('Combo')->ComboInsert($info);
+        if($res){
+            $this->success('添加成功',url('admin/Combo/index'));
+        }else{
+            $this->error('添加失败');
+        }
+    }
+    public function edit(){
+        $id = $_GET['id'];
+        $Combo = model('Combo')->ComboFind($id);
+        $this ->assign('Combo',$Combo);
+        return $this->fetch();
+    }
+    //修改套餐
+    public function update(){
+        $info = [
+            'id'            => $_POST['id'],
+            'state'         => $_POST['state'],
+            'name'          => $_POST['name'],
+            'combo_price'   => $_POST['combo_price'],
+            'combo_cost'    => $_POST['combo_cost']
+        ];
+        $res = model('Combo')->ComboUpdate($info);
+        if($res){
+            $this->success('修改成功',url('admin/Combo/index'));
+        }else{
+            $this->error('修改失败');
+        }
+    }
+    //删除套餐
+    public function delete(){
+        $id = $_GET['id'];
+        $res = Db::table('combo')->delete($id);
+        if($res){
+            $this->success('删除成功',url('admin/Combo/index'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
+}

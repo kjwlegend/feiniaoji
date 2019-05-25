@@ -8,16 +8,20 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"uglifyFileName": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.3",
-	"appid": "wx6e96177410e72b3e",
-	"projectname": "%E9%A3%9E%E9%B8%9F%E9%A1%B9%E7%9B%AE",
+	"appid": "wx044cb6546edbd8a2",
+	"projectname": "%E9%A3%9E%E9%B8%9F%E7%BA%AA",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -27,13 +31,46 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": 0,
+					"name": "12",
+					"pathName": "pages/order/order_evaluate/order_evaluate",
+					"query": "bid=120&numbers=15549669851000&userid=2&username=12",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "pages/main/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "12333",
+					"pathName": "pages/regist/regist",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "12333",
+					"pathName": "pages/search_res/search_res",
+					"query": "endDate=2019-4-27&end_country=中国&end_place=北京&startDate=2019-4-26&start_country=俄罗斯&start_place=圣彼得堡",
+					"scene": null
+				}
+			]
 		}
 	}
 }

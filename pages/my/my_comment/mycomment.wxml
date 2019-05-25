@@ -1,21 +1,29 @@
 <!--pages/my/my_comment/mycomment.wxml-->
 <view class='myself'>
   <view class='head'>
-    <image class='headImg' src='/images/find_on.png'></image>
-    <view class='myname'>飞鸟用户1995</view>
-    <view class='mycountry'>国家：美国</view>
-    <view class='yi'>已认证 <image src='/images/gougou_white.png'></image></view>
+    <image mode='widthFix' class='headImg' src='{{user.headerimg}}'></image>
+    <view class='headmode'>
+      <view class='myname'>{{user.username}}</view>
+      <view class='mycountry'>国家：{{user.nation}}</view>
+      <view class='yi'>已认证 <image src='/images/gougou_white.png'></image></view>
+    </view>
   </view>
-  <view class='des'>本人常年往返上海纽约，只带小件，大件不带，做事不拖拉，欢迎信任~</view>
+  <view class='des'>{{user.describe}}</view>
   <!-- 信用等级 -->
-  <view class='credit'>信用等级:</view>
+  <view class='credit'>
+    <view class='demhji'>信用等级: </view>
+    <view class='credit_vies' wx:for='{{urlse}}' wx:key='{{index}}' wx:for-item="its"  wx:for-index='ins'>
+      <image mode='widthFix' wx:if='{{(scoreImg-1)>=ins}}' src='/images/gou1.png'></image>
+      <image mode='widthFix' wx:else src='/images/gou2.png'></image>
+    </view>
+  </view>
   <view class='credit'>待评价的飞鸟订单:
-    <text style='color:red;'>4</text>
-    <view class='go_credit'>去评价</view>
+    <text style='color:red;'>{{userbirds}}</text>
+    <view class='go_credit' bindtap='go_order' data-is_bird='1'>去评价</view>
   </view>
   <view class='credit'>待评价的用户订单:
-    <text style='color:red;'>4</text>
-    <view class='go_credit'>去评价</view>
+    <text style='color:red;'>{{userorders}}</text>
+    <view class='go_credit' bindtap='go_order' data-is_bird='0'>去评价</view>
   </view>
 </view>
 
@@ -26,41 +34,37 @@
 </view>
 
 <!-- 我收到的评价 -->
-<view class='res' wx:if='{{choose==0}}'>
+<view class='res' wx:for='{{choose==0?ucomments:mcomments}}' wx:key='{{index}}'>
+<!-- <view class='res'> -->
   <view class='res_item'>
-    <image class='res_headImg' src='/images/find_on.png'></image>
-    <view class='res_ncikname'>
-      <text>昵称Yuki717</text>  
-      <text style='color:rgba(153,153,153,1);float:right;'>2018-12-31 12:12:13</text>
+    <image  mode='widthFix' class='res_headImg' src='{{item.uheaderimg}}'></image>
+    <!-- <image  mode='widthFix' class='res_headImg' src='{{user.headerimg}}'></image> -->
+    <view class='res_modlue'>
+      <view class='res_ncikname'>
+        <text class='res_nanes'>{{item.unickname}}</text>  
+        <!-- <text class='rights'>2018-12-31 12:12:13</text> -->
+        <text class='rights'>{{item.bdateline}}</text>
+      </view>
+      <view class='score'>评分:
+        <view class='credit_vies' wx:for='{{urlse}}' wx:key='{{index}}' wx:for-item="its"  wx:for-index='ins'>
+          <image mode='widthFix' wx:if='{{(item.cstar-1)>=ins}}' src='/images/xing3.png'></image>
+          <image mode='widthFix' wx:else src='/images/xing2.png'></image>
+        </view>
+      </view>
     </view>
-    <view class='score'>评分：</view>
-    <view class='res_content'>这里是评价内容这里是评价内容这里是评价内容这里是评价内容这里是评价内容</view>
+    <view class='res_content'>{{item.ccomment||'此用户没有填写评价。'}}</view>
     <view class='citys_box'>
       <view class='fly'>
-        <image src='/images/fly.png'></image>
+        <image mode='widthFix' src='/images/fly.png'></image>
       </view>
-      <view class='city_to'>上海-纽约</view>
-      <view class='res_time'>2018-12-08 15:23:45 </view>
+      <view class='citys_lefts'>
+        <view class='city_to'>
+          <view>{{item.bstart}}</view>-<view>{{item.bends}}</view>
+        </view>
+        <view class='res_time'>{{item.bdateline}}</view>
+      </view>
     </view>
   </view>
 </view>
 
-<!-- 我发出的评价 -->
-<view class='res' wx:if='{{choose==1}}'>
-  <view class='res_item'>
-    <image class='res_headImg' src='/images/find_on.png'></image>
-    <view class='res_ncikname'>
-      <text>昵称Yuki717</text>  
-      <text style='color:rgba(153,153,153,1);float:right;'>2018-12-31 12:12:13</text>
-    </view>
-    <view class='score'>评分：</view>
-    <view class='res_content'>这里是评价内容这里是评价内容这里是评价内容这里是评价内容这里是评价内容</view>
-    <view class='citys_box'>
-      <view class='fly'>
-        <image src='/images/fly.png'></image>
-      </view>
-      <view class='city_to'>上海-纽约</view>
-      <view class='res_time'>2018-12-08 15:23:45 </view>
-    </view>
-  </view>
-</view>
+<view class="{{isIphoneX?'iphone':''}}"></view>

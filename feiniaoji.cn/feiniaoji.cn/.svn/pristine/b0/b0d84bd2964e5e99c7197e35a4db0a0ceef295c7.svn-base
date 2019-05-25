@@ -1,0 +1,39 @@
+
+
+		<link rel="stylesheet" href="INDEX_CSS/pay.css"/>
+		<title>支付成功</title>
+	
+
+	<div class="mg product ov">
+		<!------------left-show------------------->
+		
+		<div class="pay-left left">
+			<img src="INDEX_IMAGES/cheng.png"/>
+			<div class="L-right left">
+				<h3 class="text-left">订单支付成功，我们会尽快为您发货！</h3>
+			<p class="text-left">网银支付：2011.00元丨您的订单正在处理中...</p>
+			<p>
+				<a href="order_details.html">查看订单</a>
+				<a href="address.html">收货地址</a>
+				<a href="product.html">继续购物></a>
+			</p>
+			</div>
+		</div>
+		<div class="pay-right right text-left">
+			<img src="INDEX_IMAGES/p-erwei.jpg" alt="" />
+			<p>扫描关注微信公众号</p>
+			<p>随时查看物流，享受更多的优惠和特权</p>
+		</div>
+			<!--——————————用户订单——-end-->
+
+			<!--PAY--end-->
+		 
+	</div>
+
+
+		
+
+	
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+

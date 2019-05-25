@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户添加</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">用户管理</a></li>
+    <li><a href="#">用户列表</a></li>
+    <li><a href="#">用户修改</a></li>
+    </ul>
+    </div>
+
+    <div class="formbody">
+
+    <div class="formtitle"><span>基本信息</span></div>
+    <form action="{:url('user/update')}" method="post">
+        <ul class="forminfo">
+        <li><label>用户</label><input name="username" type="text" value="{$info.username}" class="dfinput" /></li>
+        <li><label>密码</label><input name="password" type="text" value="{$info.password}" class="dfinput" /></li>
+        <li><label>邮箱</label><input name="email" type="text" value="{$info.email}" class="dfinput" /></li>
+        <li><label>电话</label><input name="phone" type="text" value="{$info.phone}" class="dfinput" /></li>
+		<li><label>余额</label><input name="balance" type="text" class="dfinput" value="{$info.balance}" /></li>
+		<li><label>积分</label><input name="integral" type="text" class="dfinput" value="{$info.integral}" /></li>
+        <li><label>优惠券</label><input name="discounts" type="text" class="dfinput" value="{$info.discounts}" /></li>
+				<li><label>地址</label><input name="address" type="text" class="dfinput" value="{$info.address}" /></li>
+        <li><label>状态</label><cite><input name="state" type="radio" value="1" {:$info.state  == '1' ? "checked" : ''} />是&nbsp;&nbsp;&nbsp;&nbsp;<input name="state" type="radio" value="0" {:$info.state == '0' ? "checked" : ''} />否</cite></li>
+        <li><label>&nbsp;</label>
+					<input type="hidden" name="id" value="{$info.id}">
+					<input name="" type="submit" class="btn" value="确认修改"/></li>
+        </ul>
+    </form>
+
+    </div>
+</body>
+</html>

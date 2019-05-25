@@ -1,0 +1,56 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+//获取pro_classify数据库
+class ProClassify extends Model{
+	public function classTopAdd(){
+		//实例化pro_classify模型
+		$classTopAdd = new ProClassify();
+		//查看数据
+		$res = $classTopAdd->where(['parent_id' => 0])->select();
+		//返回$res
+		return $res;
+		
+	}
+	//查询顶级菜单
+	public function getClasses(){
+		//实例化pro_classify模型
+		$class = new ProClassify();
+		//查看数据
+		$res = $class->select();
+		//返回$res
+		return $res;
+	}
+	//修改查看
+	public function classEdit($id){
+		//实例化pro_classify模型
+		$classEditModel = new ProClassify();
+		//查询数据
+		$res = $classEditModel->find($id);
+		//返回$res
+		return $res;
+
+	}
+	//修改数据执行
+	public function classUpdate($info,$id){
+		//实例化pro_classify模型
+		$classUpdateModel = new ProClassify();
+		//修改数据
+		$res = $classUpdateModel->save($info,['id'=>$id]);
+		//返回$res
+		return $res;
+
+	}
+	//删除的执行
+	public function classDelete($id){
+		//实例化pro_classify模型
+		$classDeleteModel = new ProClassify();
+		//修改数据
+		$res = $classDeleteModel ->where(['id'=>$id])->delete();
+		//返回$res
+		return $res;
+	}
+	
+	
+	
+}

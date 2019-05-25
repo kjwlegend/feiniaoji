@@ -1,0 +1,59 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:71:"E:\xin\test\sc\public/../application/admin\view\pro_classify\index.html";i:1527732246;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="ADMIN_JS/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#top').change(function(){
+				var id = $(this).val();
+				$.post("<?php echo url('ProClassify/carryOut'); ?>",{id: id},function(data){
+					// alert(data);
+					var arr = eval(data);
+					// console.log(arr);
+					$('#two option[value != ""]').remove();
+					for(var i=0;i<arr.length;i++){
+						var vals = $('<option value="'+arr[i].id+'">'+arr[i].name+'</option>');
+						console.log(vals);
+						$('#two').append(vals);
+					}
+				})
+			})
+			// $('#two').change(function(){
+			// 	var id = $(this).val();
+			// 	$.post("<?php echo url('ProClassify/carryOut'); ?>",{id: id},function(data){
+			// 	var arr = eval(data);
+			// 	$('#three option[value !=""]').remove();
+			// 	for(var i=0;i<arr.length;i++){
+			// 		var vals = $('<option value="'+arr[i].id+'">'+arr[i].name+'</option>');
+			// 		$('#three').append(vals);
+			// 	}
+			// })
+			// })
+			
+		})
+	</script>
+</head>
+<body>
+	<select id="top">
+		<option value="">请选择顶级分类</option>
+		<?php if(is_array($ProClassify) || $ProClassify instanceof \think\Collection || $ProClassify instanceof \think\Paginator): $i = 0; $__LIST__ = $ProClassify;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+			<option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+		<?php endforeach; endif; else: echo "" ;endif; ?>
+		
+	</select>
+	
+		<select id="two">
+		<option value="">请选择二级分类</option>
+	</select>
+
+	
+
+	<!-- <select id="three">
+		<option value="">请选择三级分类</option>
+	</select> -->
+	
+
+</body>
+</html>

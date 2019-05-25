@@ -1,0 +1,128 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:60:"E:\xin\test\sc\public/../application/admin\view\pro\add.html";i:1528184347;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系添加</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="ADMIN_JS/jquery.js"></script>
+	<!-- 配置文件 -->
+    <script type="text/javascript" src="UEDITOR/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="UEDITOR/ueditor.all.js"></script>
+    <!-- 语言 -->
+    <script type="text/javascript" src="UEDITOR/lang/zh-ch/zh-ch.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$('#top').change(function(){
+				var id = $(this).val();
+				$.post("<?php echo url('ProClassify/carryOut'); ?>",{id: id},function(data){
+					// alert(data);
+					var arr = eval(data);
+					// console.log(arr);
+					$('#two option[value != ""]').remove();
+					for(var i=0;i<arr.length;i++){
+						var vals = $('<option value="'+arr[i].id+'">'+arr[i].name+'</option>');
+						console.log(vals);
+						$('#two').append(vals);
+					}
+				})
+			})
+			// $('#two').change(function(){
+			// 	var id = $(this).val();
+			// 	$.post("<?php echo url('ProClassify/carryOut'); ?>",{id: id},function(data){
+			// 	var arr = eval(data);
+			// 	$('#three option[value !=""]').remove();
+			// 	for(var i=0;i<arr.length;i++){
+			// 		var vals = $('<option value="'+arr[i].id+'">'+arr[i].name+'</option>');
+			// 		$('#three').append(vals);
+			// 	}
+			// })
+			// })
+			
+		})
+	</script>
+
+</head>
+<body>
+	<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">表单</a></li>
+    </ul>
+    </div>
+
+    <div class="formbody">
+
+    <div class="formtitle"><span>分类添加</span></div>
+	<select id="top" class="dfinput">
+		<option value="">请选择顶级分类</option>
+		<?php if(is_array($ProClassify) || $ProClassify instanceof \think\Collection || $ProClassify instanceof \think\Paginator): $i = 0; $__LIST__ = $ProClassify;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+			<option value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></option>
+		<?php endforeach; endif; else: echo "" ;endif; ?>
+		
+	</select>
+	<form action="<?php echo url('pro/insert'); ?>" method="post" enctype="multipart/form-data">
+		<select  name="class_id" class="dfinput" id="two">
+		<option value="">请选择二级分类</option>
+	</select>
+  <ul class="forminfo">
+       <li>
+            <label>商品名</label>
+            <input type="text" name="name" class="dfinput"  />
+        </li>
+        <li>
+            <label>商品图片</label>
+            <input type="file" name="image" value="">
+            <img src="">
+        </li>
+        <li>
+            <label>商品价格</label>
+            <input type="text" name="price" class="dfinput" value="">
+        </li>
+        <li>
+            <label>商品描述</label>
+            <input type="text" name="desc" class="dfinput" value="">
+        </li>
+         <li>
+            <label>其他类型(如：赠品)</label>
+            <input type="text" name="gift" class="dfinput" value="">
+        </li>
+        <li>
+            <label>爆款</label>
+            <input type="radio" name="faddish"  value="1">是爆款
+            <input type="radio" name="faddish"  value="0">不是爆款
+
+        </li>
+        <li>
+        	<b>商品详情</b>
+		<!-- 编辑器写产品详情 -->
+		
+		
+			<!-- 加载编辑器的容器 -->
+			<script id="container" name="text" type="text/plain" style="width: 600px;height: 200px;">
+	
+			</script>
+
+		    <!-- 实例化编辑器 -->
+		    <script type="text/javascript">
+		        var ue = UE.getEditor('container');
+		    </script>
+	
+        </li>
+
+        <li>
+            <label></label>
+            <input name="" type="submit" class="btn" value="确认保存"/>
+        </li>
+        </ul>
+    </form>
+
+    </div>
+</body>
+</html>
+

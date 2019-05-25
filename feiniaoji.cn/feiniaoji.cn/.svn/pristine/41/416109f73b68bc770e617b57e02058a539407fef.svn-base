@@ -1,0 +1,17 @@
+.pro-praise .prise-down .com-list{padding:0;}
+.prise-down .list .list-left{border-right:1px #D5D5D5 solid;padding:0 42px;margin:20px 0; }
+.prise-down .list .list-right{padding:12px 0px 12px 20px; width:83.45%}
+.prise-down .list .list-left h4{color:#D5D5D5;font-size:16px;}
+.prise-down .list .list-left span{font-size:30px;color:#FF0000;margin:0 auto;text-align:center;display:block;}
+.prise-down .list .list-left p img{float:left}
+.prise-down .list .list-right span{margin-right:10px;display:inline-block;width:32px;line-height:18px;color:#D5D5D5}
+.prise-down .list .list-right a{float:left;background:#03C559;margin:10px 18px;color: #FF0000;font-size:16px;padding:0 15px;line-height: 28px;}
+.prise-down .list .list-title .m-check span:after{margin:-3px 0 0 -3px;height:6px;width:6px;}
+.prise-down .list .list-title .m-check span{border-color:#009944;height:12px;width:12px;top:0;background:#FFFFFF}
+.prise-down .list label{color:#000000;font-size:16px;}
+.prise-down .list .list-title{background:#79e6a9}
+.prise-down .list .com-list>{width:100%;}
+.prise-down ul>li a img{float: left;margin:10px;}
+.prise-down  .com-list ul li{padding:30px 20px;border-bottom: 1px dashed #a0a0a0;}
+.prise-down  .com-list ul li:last-child{border:0;}
+.prise-down  .com-list ul li a:last-child{margin:-70px 20px 0 0;}

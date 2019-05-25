@@ -1,22 +1,25 @@
 <!--pages/order/order_evaluate/order_evaluate.wxml-->
 <view class='score_box'>
-  <view class='score_title'>用户yuki717
+  <view class='score_title'>{{ucomment.uusername}}
     <text>对订单的评价:</text>
   </view>
-  <image src="{{is_evaluate?'/images/star4.png':'/images/star0.png'}}"></image>
-  <view class="{{is_evaluate?'score_des':'score_des_off'}}">暂无评价</view>
-</view>
-<view class='my_evaluate'>
-  <view>对订单评分</view>
-  <image src='{{starImg}}'></image>
-  <view style='margin-top:70rpx;'>对订单评价</view>
-  <input placeholder='请输入你的评价' placeholder-class='input_p'></input>
-  <!-- 评分按钮 -->
-  <view class='btn0 btn' bindtap='btn' data-num='0'></view>
-  <view class='btn1 btn' bindtap='btn' data-num='1'></view>
-  <view class='btn2 btn' bindtap='btn' data-num='2'></view>
-  <view class='btn3 btn' bindtap='btn' data-num='3'></view>
-  <view class='btn4 btn' bindtap='btn' data-num='4'></view>
+  <view class='urlse' wx:for='{{xingurl}}' wx:key='{{index}}'>
+    <image mode='widthFix' src="/images/xing3.png" wx:if='{{ucomment.cstar>index}}'></image>
+    <image mode='widthFix' src="/images/xing2.png" wx:else></image>
+  </view>
+  <view class="score_des_off" wx:if='{{!is_evaluate}}'>暂无评价</view>
+  <view class="score_des" wx:if='{{is_evaluate}}'>{{ucomment.ccomment}}</view>
 </view>
 
-<button>确定</button>
+
+<view class='my_evaluate'>
+  <view class='pingfen'>对订单评分</view>
+  <view class='urlse' wx:for='{{xingurl}}' wx:key='{{index}}' bindtap='btn' data-num='{{index}}'>
+    <image mode='widthFix' src="/images/xing3.png" wx:if='{{inse>index}}'></image>
+    <image mode='widthFix' src="/images/xing1.png" wx:else></image>
+  </view>
+  <view style='margin-top:50rpx;'>对订单评价</view>
+  <textarea class='textars' value='{{placeho}}' placeholder='请输入您的评价' placeholder-class='input_p' bindinput='inputchange'></textarea>
+</view>
+
+<button bindtap='sub'>确定</button>

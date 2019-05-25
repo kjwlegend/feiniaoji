@@ -7,9 +7,41 @@ page{
   height: 436rpx;
   position: relative;
 }
+
+.banners{
+  width: 100%;
+  height: 436rpx;
+}
+.indicats{
+  width: 90%;
+  height: 8rpx;
+  margin: 0 auto;
+  padding-top: 247rpx;
+  text-align: right;
+}
+.indicats view{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-block;
+  margin: 0 6rpx;
+}
+.indicats .chose{
+  width: 24rpx;
+  border-radius: 400px;
+}
 .header image{  
   width: 750rpx;
   height: 436rpx;
+}
+.header_bies{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(255,255,255,0) 45%, rgba(255,255,255,1));
 }
 .header_content{
   width: 690rpx;
@@ -20,17 +52,16 @@ page{
   position: absolute;
   top: 300rpx;
   left: 30rpx;
-  border-radius: 10rpx;
+  border-radius: 8rpx;
 }
 .header_content_item{
   width: 314rpx;
   height: 140rpx;
-  margin:30rpx 0 0 30rpx;
+  margin:14rpx 0 0 30rpx;
   float: left;
   position: relative;
 }
 .header_content_item text{
-  width: 104rpx;
   height: 36rpx;
   opacity: 1;
   font-size: 26rpx;
@@ -54,10 +85,10 @@ page{
 }
 .header_content_item image{
   position: absolute;
-  width: 140rpx;
-  height: 140rpx;
+  width: 172rpx;
+  height: 172rpx;
   top: 0rpx;
-  right:30rpx;
+  right:0rpx;
 }
 .line{
   position: absolute;
@@ -72,7 +103,7 @@ page{
 /* 主要内容 */
 .content{
   width: 690rpx;
-  height: 1000rpx;
+  /* height: 1000rpx; */
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
@@ -81,6 +112,7 @@ page{
   position: relative;
   margin-bottom: 30rpx;
   border-radius: 10rpx;
+  padding-bottom: 30rpx;
 }
 .icon{
   width: 8rpx;
@@ -119,28 +151,37 @@ page{
 }
 .road_word{
   display: inline-block;
-  width: 440rpx;
+  width: 460rpx;
   height: 116rpx;
   margin-left: 136rpx;
 }
 .place{
   height: 48rpx;
-  opacity: 1;
   font-size: 34rpx;
-  font-family: PingFang;
   color: rgba(74,74,74,1);
-  /* line-height: 48rpx; */
-  letter-spacing: 0px;
+  line-height: 30rpx;
+}
+.place text{
+  display: inline-block;
+  max-width: 45%;
+  overflow: hidden;
+  font-size: 32rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.place .place_xia{
+  margin: 0 6rpx;
 }
 .time{
-  width: 146rpx;
+  /* width: 146rpx; */
   height: 34rpx;
   opacity: 1;
   font-size: 24rpx;
-  font-family: PingFang;
   color: rgba(153,153,153,1);
   line-height: 34rpx;
-  letter-spacing: 0px;
+  letter-spacing: 1rpx;
   padding-left: 32rpx;
   position: relative;
 }
@@ -189,4 +230,10 @@ page{
   letter-spacing: 0px;
   border:1rpx solid rgba(41,135,246,1);
   margin:28rpx auto;
+  padding-left: 10rpx;
+  padding-right: 10rpx; 
+}
+.mores{
+  color: #999999;
+  border:none;
 }

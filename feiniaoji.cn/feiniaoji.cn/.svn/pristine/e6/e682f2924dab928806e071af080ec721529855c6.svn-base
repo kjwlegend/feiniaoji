@@ -1,0 +1,264 @@
+
+		<link rel="stylesheet" href="INDEX_CSS/user.css"/>
+        <link rel="stylesheet" href="INDEX_CSS/comment.css"/>
+        <script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+    <script type="text/javascript" src="INDEX_JS/comment.js"></script>
+	
+
+	<div class="mg product ov row">
+		<!------------left-show------------------->
+		<div class="left-show col-xs-2">
+				<!--l-nav-->
+				<div class="l-nav left">
+				<a href=""><img src="INDEX_IMAGES/user.jpg" alt="" /></a>
+				<p>你好,<i class="n-user">欢迎来到福维克</i></p>
+				</div>
+		                 <!--l-nav-end-->
+		          <div class="mine ov">
+                		<h3 class="text-left"><a href="user.html">我的福维克</a>  </h3>
+                	<ul>
+                		<li>
+                			<a href="ordered.html">我的订单</a>
+                		</li>
+                		<li>
+                			<a href="javascript:;">我的收藏</a>
+                		</li>
+                		<li>
+                			<a href="user.html">我的现金卷</a>
+                		</li>
+                		
+                		<li>
+                			<a href="user.html">我的会员等级</a>
+                		</li>
+                		
+                	
+                		
+                		
+                	</ul>
+                	
+                </div>
+                
+               <div class="mine ov">
+                	<h3 class="text-right">个人账号管理</h3>
+                	<ul>
+                		<li>
+                			<a href="user.html">我的余额</a>
+                		</li>
+                		<li>
+                			<a href="javascript:;">我的礼品</a>
+                		</li>
+                		<li>
+                			<a href="javascript:;">设置及账号信息</a>
+                		</li>
+                		
+                		<li>
+                			<a href="javascript:;">修改密码</a>
+                		</li>
+                		
+                	</ul>
+                	
+                </div>
+                <div class="mine ov">
+                	<h3 class="text-left">售后服务   </h3>
+                	<ul>
+                		<li>
+                			<a href="javascript:;">我的售后与服务</a>
+                		</li>
+                		<li>
+                			<a href="javascript:;">退款</a>
+                		</li>
+                	
+                	</ul>
+                	
+                </div>
+			</div>				
+			<!------------left-show-end------------------>
+
+				
+						<!----right-show------------------->
+						<div class="right-show col-xs-10">
+							<!--<!--头部-->
+							
+							<!--资料-end--------------------------------------->
+					<div class="u-com">
+						<div class="down-title">
+						<ul class="ov">
+							<li class="on"><a href="javascript:;">全部订单</a></li>
+							<li><a href="javascript:;">待收货<i>（1200）</i></a></li>
+							<li><a href="javascript:;">待付款<i>（1800）</i></a></li>
+							<li><a href="javascript:;">待评价</a></li>
+							<li><a href="javascript:;">已完成</a></li>
+						</ul>
+					</div>
+					
+				<!-----------address---------------------->
+				<div class="list">
+				<div class=" top-message">
+						  <div class="address ov ">
+							  	
+         	              <h2 class="text-left c-title">订单状态</h2>
+         	 	          <p><i>订单已发货</i><a>联系卖家</a></p>
+                           </div>
+                             <div class="address thing ov ">
+							  	
+         	              <h2 class="text-left c-title">物流信息</h2>
+         	 	          <p><i>发货方式：</i><a>暂无</a></p>
+         	 	           <p><i>物流公司：</i><a>暂无</a></p>
+         	 	            <p><i>快递单号：</i><a>联系卖家</a></p>
+         	 	             <p><i>物流跟踪：</i><a>暂无</a></p>
+                           </div>
+                           <div class="address thing ov ">
+							  	
+         	              <h2 class="text-left c-title">订单信息</h2>
+							<p>
+								订单号：N1851614614641 <span>交易号：1516164168483</span> 创建时间：2015-11-11 20：04</p>
+							<p>发货时间：暂无 <span>付款时间：2015-11-11 20：13 </sapn></p>
+                           <p>收货信息：李四 ，13422558485 ，广州市荔湾区长寿路9号</p> 
+                        	<p>配送方式：普通快递</p>
+                        	 <p>备注：请快点发货！</p>
+							                       
+                           </div>
+                          </div>
+					<div class="user-table">
+								<table class="table table-striped">
+					 
+					   <thead>
+					      <tr>
+					      	<th></th>
+					         <th>订单信息</th>
+					         <th></th>
+					         <th>数量</th>
+					         <th>订单状态</th>
+					         <th>订单金额</th>
+					         <th>交易操作</th>
+					       
+					      </tr>
+					   </thead>
+					   <tbody>
+					      <tr>
+					         <td>订单号：N1851425</td>
+					         <td><a href="pro_details.html"><img src="INDEX_IMAGES/mo-1.png"/></a></td>
+					         <td><p class="text-left"><a href="pro_details.html"><span>福维克吸尘器D48</span>
+					         	卧式吸尘器/持久吸力/家
+								具保洁神器/居家必备/呵
+								护家人<br />
+								颜色<img src="INDEX_IMAGES/mo-1.png" alt="" />
+								</a></p></td>
+								<td>1件</td>
+						        <td>已付款</td>
+						        <td>￥1999.00<br />
+								 <i>(含运费）</i></td>
+								 <td><a href="javascript:;">去评论</a>
+								 <a href="user.html">追加评论</a></td> 
+					         </tr>  
+					     </tbody>
+					    </table>
+					</div>
+					</div>
+					<div class="list">待收货页面</div>
+					<div class="list">代付款页面</div>
+					<div class="list">待评价面</div>
+					<div class="list">已完成面</div>
+					</div>
+					
+				
+				</div>
+
+			<!--——————————用户订单——-end-->
+
+			<!--爆款产品-end-->
+		</div>
+	</div>
+
+
+	
+      <div class="bg">
+      	
+      </div>
+      
+      <div class="windon mg">
+      	<h3 class="text-left">宝贝评价</h3>
+      	<div class="ov win-lg">
+      		<div class="win-left  left">
+      			<a href="pro_details.html"><img src="INDEX_IMAGES/mo-1.png" alt="" /></a>
+      		<h4 class="text-left"><a href="pro_details.html" >福维克吸尘器D48</a></h3>
+      			
+      		<p class="text-left"><a href="pro_details.html">卧式吸尘器/持久吸力/家具保洁神</a><br />
+            器/居家必备/呵护家人</p>
+			</div>
+      		<div class="win-right right">
+      			<div class="win-top left">
+      			<label  class="m-check">
+      				<input type="radio" name="nrao"/>
+      				<span></span>
+      			</label>
+      			<label  class="m-check">
+      				<input type="radio" name="nrao" />
+      				<span></span>
+      			</label>
+      			<label  class="m-check">
+      				<input type="radio" name="nrao"/>
+      				<span></span>
+      			</label>
+      			</div>
+      		<div>
+      			<textarea name="" rows="" cols="" placeholder="请输入你对商品的评价"></textarea>
+      			</div>
+      			<div class="win-down right">
+      			   <label  class="m-check">
+      				<input type="radio" name="n1"/><span></span>公开</label>
+      					<label  class="m-check">
+      				<input type="radio" name="n1" /><span></span>匿名
+      				
+      			</label>
+      			</div>
+      			
+      		</div>
+      		
+      	</div>
+      	<div class="down-win cl">
+      				<p class="ov">
+      					<b>商品与描述相符</b>
+                       <span>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					
+      					</span>
+      				</p>
+      				<p class="ov"><b>图片与实物相符</b>
+      					<span>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					
+      					</span>
+      				</p>
+      				<p class="ov"><b>快递评价</b>
+      					<span>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					<img class="img" src="INDEX_IMAGES/comment/xing.png"/>
+      					
+      					</span>
+      				</p>
+      				
+      			</div>
+      			
+      					<input type="submit" name="" id="esc" value="发表评论" />
+      				
+      	
+      </div>
+	</body>
+	
+	
+
+ 
+</html>

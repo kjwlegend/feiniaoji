@@ -1,0 +1,62 @@
+<?php
+namespace app\admin\controller;
+use think\Controller;
+class Index extends Controller{
+  //后台index页面
+  public function index(){
+    //调用页面
+    return $this->fetch();
+  }
+  //后台main页面
+  public function main(){
+  	//调用页面
+  	return $this->fetch();
+  }
+  //后台left页面
+  public function left(){
+  	//调用页面
+  	return $this->fetch();
+  }
+  //后台top页面
+  public function top(){
+
+    //调用页面
+    return $this->fetch();
+  }
+  public function login(){
+    
+    //调用页面
+    return $this->fetch();
+  }
+  public function checkLogin(){
+    //获取登录传过来的post内容
+    $info = [
+      'name' => $_POST['name'],
+      'password' => $_POST['password']
+    ];
+    //调用user模型
+    $adminModel = model('Admin');
+    //调用indexCheck方法
+    $res = $adminModel->indexCheck($info);
+
+
+    //判断
+    if($res){
+      // 根据用户id查询roeids
+      $roles = $adminModel->getRoles($res['id']);
+      $newRoles = [];
+      if($roles){
+        foreach($roles as $k => $v){
+          $newRoles[$k] = $v['role_id'];
+        }
+        session('roles', $newRoles);
+      }
+
+      session('name',$info['name']);
+      session('password',$info['password']);
+      echo 1;
+    }else{
+      echo 0;
+    }
+  }
+}

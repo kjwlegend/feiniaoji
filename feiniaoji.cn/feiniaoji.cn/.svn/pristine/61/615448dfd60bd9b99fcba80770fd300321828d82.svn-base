@@ -1,0 +1,49 @@
+<?php 
+namespace app\admin\model;
+use think\Model;
+
+class RoleAccess extends Model
+{
+	//插入 操作
+	public function roleAccessInsert($arr)
+	{
+		//实例化对象
+		$res = new RoleAccess();
+		$info = $res
+			->saveAll($arr);
+		return $info;
+	}
+
+	//查找修改时默认信息
+	public function roleAccessEditSelect($id)
+	{
+		//实例化对象
+		$res = new RoleAccess();
+		$info = $res
+			->field('access_id')
+			->where(['role_id'=>$id])
+			->select();
+		return json_decode(json_encode($info), 1);
+	}
+
+	//删除关联的权限
+	public function roleAccessDelete($id)
+	{
+		//实例化对象
+		$res = new RoleAccess();
+		$info = $res 
+			->where(['role_id'=>$id])
+			->delete();
+		return $info;
+	}
+
+	//添加新关联的权限
+	public function roleAccessAdd($id,$arr)
+	{
+		//实例化对象
+		$res = new RoleAccess();
+		$info = $res
+			->where(['role_id'=>$id])
+			->insertAll($arr);
+	}
+}

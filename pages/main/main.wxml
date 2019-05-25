@@ -1,0 +1,11 @@
+<!--pages/info/info.wxml-->
+<view>
+<view wx:for='{{friends}}' wx:key='{{index}}' data-username="{{item.uwxaccount}}" class='friends' bindtap="into_room" bindlongpress="shanchu" data-openid="{{item.uopenid}}" data-urls='{{item.uheaderimg}}'>
+  <view class='touxiang'>
+      <view class='hong' wx:if='{{item.hongse}}'></view>
+      <image src='{{item.uheaderimg}}'></image>
+  </view>
+  <view class='names'>{{item.uwxaccount}}({{item.uusername}})</view>
+</view>
+</view>
+<view class="{{isIphoneX?'iphone':''}}"></view>

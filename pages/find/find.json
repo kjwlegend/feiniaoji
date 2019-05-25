@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "发现"
+  "navigationBarTitleText": "发现",
+  "usingComponents": {
+    "Date": "/pages/components/date/Date"
+  }
 }

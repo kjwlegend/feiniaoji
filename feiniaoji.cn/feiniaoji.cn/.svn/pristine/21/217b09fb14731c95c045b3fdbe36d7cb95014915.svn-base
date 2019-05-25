@@ -1,0 +1,94 @@
+<?php
+namespace app\admin\controller;
+use think\Controller;
+use think\Db;
+/**
+ * banner资源
+ *
+ */
+class Banner extends Controller{
+    public function index(){
+      //查询banner信息
+      $banner = model('banner')->indexSelect();
+      $this->assign('banner',$banner);
+      return $this->fetch();
+    }
+    public function add()
+    {
+
+      return $this->fetch();
+    }
+    public function upload(){
+    // 获取表单上传文件
+    $file = request()->file('image');
+
+        // 移动到框架应用根目录/uploads/ 目录下
+        $info = $file->move('./static/uploads');
+        if($info){
+            // 成功上传后 获取上传信息
+            // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+            $image = $info->getSaveName();
+            return $image;
+        }else{
+            // 上传失败获取错误信息
+            echo $file->getError();
+        }
+
+}
+    public function Insert()
+    {
+    //获取图片上传路径
+     $image = $this -> upload();
+      //获取表单数据
+      $data = [
+          'image'       => $image,
+          'target_id'   => $_POST['target_id'],
+          'state'       => $_POST['state'],
+          'created_time'=> date('Y-m-d H,i,s')
+      ];
+      $add  = model('banner')->add($data);
+        if($add){
+            //添加成功,跳转到首页
+            $this -> success('添加成功',url('index'));
+        }else{
+            //添加失败,跳转到添加页面
+            $this -> error('添加失败',url('add'));
+        }
+    }
+    public function edit(){
+        $id = $_GET['id'];
+        $info = model('banner')->indexFind($id);
+        $this -> assign('banner',$info);
+        return $this -> fetch();
+    }
+    public function Update(){
+        //获取图片上传路径
+        $image = $this -> upload();
+        //获取表单数据
+        $data = [
+            'image'       => $image,
+            'target_id'   => $_POST['target_id'],
+            'state'       => $_POST['state'],
+            'updated_time'=> date('Y-m-d H,i,s')
+        ];
+        $res = model('banner')->edit($data);
+        if($res){
+            //修改成功,跳转到首页
+            $this -> success('修改成功',url('index'));
+        }else{
+            //修改失败,跳转到修改页面
+            $this -> error('修改失败');
+        }
+    }
+    public function delete(){
+        $id = $_GET['id'];
+        $info = Db::table('banner')->delete($id);
+        if($info){
+            //删除成功,跳转到首页
+            $this -> success('删除成功',url('index'));
+        }else{
+            //删除失败,跳转到修改页面
+            $this -> error('删除失败');
+        }
+    }
+}

@@ -1,38 +1,43 @@
 /* pages/my/my_comment/mycomment.wxss */
 
 .myself {
-  width: 630rpx;
-  height: 572rpx;
+  width: 690rpx;
   opacity: 1;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
-  margin: 30rpx 0 0 30rpx;
-  padding: 30rpx;
+  margin: 30rpx auto 0 ;
+  padding: 30rpx 0;
   padding-bottom:10rpx; 
+  border-radius: 8rpx;
 }
 
 .head {
+  width: 618rpx;
+  margin: 0 auto;
   height: 128rpx;
   position: relative;
-  padding-left: 160rpx;
+}
+.headmode{
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 10rpx;
 }
 
 .headImg {
   width: 128rpx;
   height: 128rpx;
-  position: absolute;
-  top: 0;
-  left: 0;
+  vertical-align: middle;
 }
 
 .myname {
+  width: 400rpx;
   height: 48rpx;
-  opacity: 1;
   font-size: 34rpx;
-  font-family: PingFangSC;
   color: rgba(74, 74, 74, 1);
   line-height: 48rpx;
-  letter-spacing: 0px;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .mycountry{
   height: 36rpx;
@@ -41,6 +46,10 @@
   color: rgba(102,102,102,1);
   line-height: 36rpx;
   margin:10rpx 0 10rpx 0;
+  width: 400rpx;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .yi{
   width: 100rpx;
@@ -61,24 +70,36 @@
 }
 
 .des{
-  width: 642rpx;
-  height: 72rpx;
+  width: 618rpx;
   opacity: 1;
   font-size: 26rpx;
-  font-family: PingFang;
   color: rgba(155,155,155,1);
   line-height: 36rpx;
   letter-spacing: 0px;
-  margin: 46rpx 0 30rpx 0;
+  margin: 46rpx auto 30rpx;
 }
 .credit{
   height: 100rpx;
-  width: 642rpx;
+  width: 618rpx;
   line-height: 100rpx;
   font-size: 28rpx;
   color: rgba(74,74,74,1);
   border-top: 1rpx solid rgba(238,238,238,1);
   position: relative;
+  margin: 0 auto;
+}
+.credit_vies{
+  display: inline-block;
+  margin: 0 6rpx 0 0;
+  font-size: 0;
+}
+.credit .demhji{
+  display: inline-block;
+  margin-right: 10rpx;
+}
+.credit_vies image{
+  width: 36rpx;
+  height: 36rpx;
 }
 .go_credit{
   width: 150rpx;
@@ -91,6 +112,7 @@
   position: absolute;
   top: 22rpx;
   right: 0;
+  border-radius: 8rpx;
 }
 
 .my_credit{
@@ -120,24 +142,28 @@
 
 /* 我收发的评价 */
 .res{
-  width: 630rpx;
+  width: 690rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin: 30rpx;
-  padding: 30rpx;
+  margin: 30rpx auto;
+  padding: 30rpx 0;
+  border-radius: 8rpx;
 }
 .res_item{
-  height: 354rpx;
-  padding-left: 108rpx;
+  width: 618rpx;
+  margin: 0 auto;
   position: relative;
 }
 .res_headImg{
   width: 88rpx;
-  height: 88rpx;
-  position: absolute;
-  left: 0;
-  top: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.res_modlue{
+  margin-left: 18rpx;
+  display: inline-block;
+  vertical-align: middle;
 }
 .res_ncikname{
   height: 36rpx;
@@ -145,50 +171,85 @@
   line-height: 36rpx;
   padding-top: 10rpx;
 }
+.res_ncikname .res_nanes{
+  width: 100rpx;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.res_ncikname .rights{
+  position: absolute;
+  right: 0;
+  color:rgba(153,153,153,1);
+}
 .score{
   height: 32rpx;
   font-size: 22rpx;
   line-height: 32rpx;
   color: rgba(153,153,153,1);
   margin-top: 10rpx;
+  position: relative;
 }
+.score view{
+  margin: 0 0 0 10rpx;
+}
+.score view image{
+  width: 20rpx;
+  height: 20rpx;
+}
+/* .score image{
+  width: 160rpx;
+  height: 25rpx;
+  opacity: 1;
+  position: absolute;
+  left: 75rpx;
+  top: 5rpx;
+} */
 .res_content{
   color: rgba(102,102,102,1);
   font-size: 24rpx;
   line-height: 34rpx;
-  margin-top: 36rpx;
+  padding: 30rpx 0;
 }
 .citys_box{
-  height: 132rpx;
-  width: 522rpx;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  width: 618rpx;
+  padding:20rpx 0;
   border-top: 1rpx solid rgba(238,238,238,1);
-  padding-left:108rpx; 
 }
 .fly{
-  position: absolute;
   width: 68rpx;
   height: 68rpx;
   background: rgba(239,247,252,1);
   border-radius: 50%;
-  left: 12rpx;
-  top: 28rpx;
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
 }
 .fly image{
   width: 46rpx;
-  height: 36rpx;
-  margin-left: 12rpx;
+  margin: 11rpx 0 0;
+  display: inline-block;
+}
+.citys_lefts{
+  width: 520rpx;
+  margin-left: 25rpx;
+  display: inline-block;
+  vertical-align: middle;
 }
 .city_to{
   color: rgba(102,102,102,1);
-  font-size: 26rpx;
-  line-height: 36rpx;
-  margin-top: 28rpx;
+  width: 100%;
+}
+.city_to view{
+  display: inline-block;
+  max-width: 45%;
+  overflow: hidden;
+  font-size: 32rpx;
+  vertical-align: middle;
+  height: 48rpx;
+  line-height: 48rpx;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .res_time{
   color: rgba(153,153,153,1);

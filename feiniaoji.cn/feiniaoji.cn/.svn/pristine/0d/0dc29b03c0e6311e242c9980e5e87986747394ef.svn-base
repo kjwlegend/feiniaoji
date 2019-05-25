@@ -1,0 +1,37 @@
+.product .pay-passw a{display: inline-block;font-size:16px;color:#A0A0A0}
+.product{margin:40px auto;padding:30px;}
+.product .pay-left img{float: left;}
+.product .pay-left h3{color:#000000;font-size:28px;padding-bottom:20px;line-height:30px}
+.product .pay-left p{color:#343434;line-height:30px;}
+.product .pay-left a{padding:10px 40px 0 0;clear:both;display: inline-block;color:#343434}
+.product .pay-left a:nth-last-child(1){color:#FF0000}
+.L-right{padding-left:30px ;}
+.pay-right p {font-size:20px;line-height:40px;}
+.pay-right p span{color:#FF0000}
+.pay-p >p:nth-last-child(2) a{display: inline;padding-left:85px;}
+.pay-p >p:nth-last-child(2){font-size:16px;color:#535353;background:url(../images/pay/center.png) no-repeat right center;}
+.pay-right >p:nth-last-child(1){font-size:16px;color:#535353}
+.pay-right>p:first-child{font-size:20px;}
+/*支付*/
+.pay .product{padding:30px 0;}
+.fram{padding:30px;background:#f6f6f6;border:1px #a0a0a0 solid;border-bottom:none;}
+.pay-com{padding:0 0 25px 0;}
+.pay-com form>div:first-child{background:#f6f6f6;border:1px #a0a0a0 solid;}
+.pay-com ul li label{background:#ffffff;border:1px solid #a0a0a0;}
+.pay .w-pay ul li{margin:20px 33.47222204px;}
+.pay .w-pay h3{padding:20px 0 20px 33px;}
+.pay .w-pay{border-bottom:1px #a0a0a0 solid;}
+.pay .m-check input[type="radio"]:checked + span:after{content:"";
+					background:#009944;
+					border-radius:50%;height:10px;width:10px;left:50%;top:50%;
+					margin:-5px 0 0 -5px;display: block;}
+.product .pay-passw {padding:20px 0 0 33px;}
+.product .p-down p{margin-top:20px;}					
+.product .p-down input[type="submit"]{clear:both;margin-top:20px;background:#009944;color:#FFFFFF;font-size:18px;border:0;line-height:50px;padding:0 26px;}
+.product .p-down p i{color:#FF0000}
+.product .pay-passw input[type="password"]{width:294px;line-height:32px;}
+.product .pay-passw label{line-height:33px;margin-right:10px;}
+.pay-right{position: relative;}
+.pay-p ul{width:100%;display:none;position: absolute;z-index: 10;}
+.pay-p ul li{width:150px;width:100%;text-align: center;padding:5px 0;}
+.pay-p ul li a{width:100%;display: block;background:rgba(0,153,68,.6)}

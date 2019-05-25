@@ -1,0 +1,46 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Pro extends Model{
+	public function pro($id){
+	//实例化pro模型
+		$proNewModel = new Pro();
+
+		switch ($id) {
+			//最新商品
+			case 1:
+				$res = $proNewModel
+            	->order('id desc')->limit('9')
+            	->select();
+				break;
+			//热门商品
+			case 2:
+				$res = $proNewModel
+				->order('sold_out desc ')->limit('9')
+				->select();
+				break;
+				//推荐商品
+			case 3:
+				
+				$res = $proNewModel
+				->order('recommend desc')->limit('9')
+				->select();
+				break;
+				// dump($res);
+			default:
+				
+				break;
+		} 
+		return $res;
+	
+	}
+	//热卖商品
+	public function proHot(){
+		$proHotModel = new Pro();
+		$res = $proHotModel
+			   ->order('sold_out desc')
+			   ->limit('3');
+		//返回$res
+		return $res;
+	}
+}

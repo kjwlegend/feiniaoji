@@ -1,0 +1,11 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Banner extends Model{
+    //查询banner图
+    public function BannerSelect(){
+        $bannerModel = new Banner();
+        $banner = $bannerModel -> select();
+        return $banner;
+    }
+}

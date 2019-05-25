@@ -1,0 +1,34 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+/**
+ *banner操作
+ */
+class Banner extends Model
+{
+    public function indexSelect(){
+        //查询banner数据
+        $bannerModel = new Banner();
+        $banner = $bannerModel -> select();
+        return $banner;
+    }
+    public function indexFind($id){
+        //查询指定banner数据
+        $bannerModel = new Banner();
+        $banner = $bannerModel -> find($id);
+        return $banner;
+    }
+    public function add($data){
+      //添加banner信息
+      $bannerModel = new Banner();
+      $banner = $bannerModel->save($data);
+      return $banner;
+    }
+
+    public function edit($data){
+        //修改banner信息
+        $bannerModel = new Banner();
+        $banner      = $bannerModel -> update($data);
+        return $banner;
+    }
+}

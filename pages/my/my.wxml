@@ -2,38 +2,46 @@
 <!-- 头像title -->
 <view class='header_back'>
   <view class='header'>
-    <image src='{{userInfo.avatarUrl}}'></image>
-    <view>{{userInfo.nickName}}</view>
-    <image id='bianji' src='/images/bianji.png'></image>
+    <image src='{{userInfo.headerimg}}'></image>
+    <view>{{userInfo.username}}</view>
+    <image id='bianji' src='/images/bianji.png' bindtap='go_myinfo'></image>
   </view>
 </view>
 <!-- 我的订单 -->
 <view class='order'>
   <view class='mine'>
-    <text>我的订单</text>
-    <text style='color:rgba(153,153,153,1);font-size:28rpx;float:right;' bindtap='go_my_order'>查看详情></text>
+    <text>我的订单</text> 
+    <view bindtap='go_my_order'>
+      <text>查看详情</text>
+      <image src='/images/right_gray.png'></image>
+    </view>
   </view>
   <!-- 订单状态 -->
   <view class='order_state'>
-    <view class='state_item'>
+    <view class='state_item' bindtap='go_order' data-num='1'>
       <image src='/images/sure_on.png'></image>
       <view>待确认</view>
+      <text wx:if='{{order1>0}}'>{{order1}}</text>
     </view>
-    <view class='state_item'>
+    <view class='state_item' bindtap='go_order' data-num='2'>
       <image src='/images/pay_on.png'></image>
       <view>待支付</view>
+      <text wx:if='{{order2>0}}'>{{order2}}</text>
     </view>
-    <view class='state_item'>
+    <view class='state_item' bindtap='go_order' data-num='3'>
       <image src='/images/send_on.png'></image>
       <view>待发货</view>
+      <text wx:if='{{order3>0}}'>{{order3}}</text>
     </view>
-    <view class='state_item'>
+    <view class='state_item' bindtap='go_order' data-num='4'>
       <image src='/images/get_on.png'></image>
       <view>待收货</view>
+      <text wx:if='{{order4>0}}'>{{order4}}</text>
     </view>
-    <view class='state_item'>
+    <view class='state_item' bindtap='go_order' data-num='5'>
       <image src='/images/comment_on.png'></image>
       <view>待评价</view>
+      <text wx:if='{{order5>0}}'>{{order5}}</text>
     </view>
   </view>
 </view>
@@ -51,21 +59,33 @@
       <image src='/images/my_comment.png'></image>
       <view>我的评价</view>
     </view>
-    <view class='server_item'>
+    
+    <button class='server_item server_bts' open-type="contact" bindcontact="handleContact">
       <image src='/images/connect.png'></image>
       <view>联系客服</view>
-    </view>
-    <view class='server_item' style='margin-left:40rpx;'>
+    </button>
+    <view class='server_item' style='margin-left:40rpx;' bindtap='feiyong' data-ids='0'>
       <image src='/images/FAQ.png'></image>
       <view>FAQ</view>
     </view>
-    <view class='server_item'>
+    <view class='server_item' bindtap='feiyong' data-ids='1'>
       <image src='/images/pay_book.png'></image>
       <view>费用说明</view>
     </view>
-    <view class='server_item'>
+    <view class='server_item' bindtap='feiyong' data-ids='2'>
       <image src='/images/about.png'></image>
       <view>关于飞鸟纪</view>
     </view>
   </view>
 </view>
+<view class='xieyi' wx:if="{{xieyi}}">
+  <view class='black' catchtouchmove="return"></view>
+  <view class='xieyi_content'>
+    <view>《{{names[indexs]}}》</view>
+    <text>{{faqs[indexs]}}</text>
+  </view>
+  <image src='/images/close_window.png' bindtap='xieyi_off'></image>
+</view>
+
+
+<view class="{{isIphoneX?'iphone':''}}"></view>

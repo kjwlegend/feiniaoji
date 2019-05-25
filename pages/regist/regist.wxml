@@ -2,24 +2,24 @@
 <view class='header_back'>
   <view class='header'>
     <image src='{{userInfo.avatarUrl}}'></image>
-    <view>{{userInfo.nickName}}</view>
+    <view>你好呀  ,  {{userInfo.nickName}}</view>
   </view>
 </view>
 <!-- 注册内容部分 -->
-<view class='content'>
+<view class='content' bindtap='clopses'>
   <!-- 姓名、性别 -->
   <view class='content_item'>
     <view class='icon'></view>
     <view class='item_1'>
       <text >姓名</text>
       <text style='color:red;' wx:if='{{isname}}'>*</text>
-      <input bindinput='name'></input>
+      <input bindinput='name' placeholder='输入真实姓名'placeholder-style="color:#ccc;"></input>
     </view>
     <view class='item_1'>
       <text>性别</text>
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        <!-- <view class="picker">{{array[index]}}</view> -->
-        <input placeholder-class='input_p' class="picker" value='{{array[index]}}' placeholder='选择'></input>
+        <view class="picker">{{array[index]}}</view>
+        <!-- <input placeholder-class='input_p' class="picker" value='{{array[index]}}' placeholder='选择'></input> -->
       </picker>
     </view>
   </view>
@@ -30,9 +30,24 @@
       <view>手机号码
         <text style='color:red;' wx:if='{{isphone}}'>*</text>
       </view>
-      <input placeholder-class='input_p' bindinput='qu' placeholder='输入区号' style='width:146rpx;'></input>
+      <view class='quhaos'>
+        <input placeholder-class='input_p' bindinput='qu' value='{{quhaos}}' placeholder='国家区号'></input>
+        <view class='keuxanze' wx:if='{{prefix.length>0}}'>
+          <view wx:for='{{prefix}}' wx:key='' bindtap='prefis' data-ites='{{item}}'>{{item.prefix}}({{item.country}})</view>
+        </view>
+      </view>
       <text class='to'>-</text>
       <input placeholder-class='input_p' bindinput='phone' placeholder='输入手机号码'></input>
+    </view>
+  </view>
+  <!-- 微信账号 -->
+  <view class='content_item'>
+    <view class='icon'></view>
+    <view class='item_3'>
+      <view>微信账号
+        <text style='color:red;' wx:if='{{is_weixin}}'>*请填写正确的微信账号</text>
+      </view>
+      <input bindinput='weixin' placeholder-class='input_p' placeholder='请填写您的微信账号'></input>
     </view>
   </view>
   <!-- 国家 -->
@@ -56,4 +71,4 @@
 </view>
 <!-- 提交按钮 -->
 <view class='notice'>注：带<text style='color:red;'>*</text>号的为必填</view>
-<button class='sub' disabled="{{is_sub?'':'true'}}" bindtap='go_homepage'>提交</button>
+<button class='sub' disabled="{{is_sub?'':'true'}}" bindtap='go_homepage'>提  交</button>

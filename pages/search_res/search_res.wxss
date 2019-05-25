@@ -10,42 +10,62 @@ page{
   opacity: 1;
   background: rgba(41, 135, 246, 1);
   margin-bottom: 82rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .header_content {
   width: 690rpx;
-  height: 150rpx;
-  opacity: 1;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
-  position: absolute;
-  top: 30rpx;
-  left: 30rpx;
-  border-radius: 10rpx;
-  display: flex;
-  justify-content: space-around;
+  position: relative;
+  border-radius: 8rpx;
+  overflow: hidden;
+  padding: 30rpx 0;
+  margin-top: 36rpx;
 }
 .place{
+  width: 36%;
+  float: left;
   font-size: 24rpx;
-  margin-top: 30rpx;
   line-height: 40rpx;
+  margin:0  20rpx;
+
+}
+.place text{
+  display: inline-block;
+  width: 100%;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow: hidden;
+}
+.citys{
+  line-height:48rpx;
 }
 .jiantou{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 20rpx;
+}
+.jiantou image{
   width: 100rpx;
   height: 16rpx;
-  margin-top: 50rpx;
+  display: inline-block;
 }
 
 .search_content{
   width: 690rpx;
-  height: 386rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin: 30rpx 0 0 30rpx;
+  margin: 30rpx auto;
   position: relative;
   overflow: hidden;
-  border-radius: 5rpx;
+  padding: 0 0 30rpx 0;
+  border-radius: 8rpx;
 }
 
 .icon{
@@ -69,16 +89,15 @@ background: rgba(239,247,252,1);
 
 .citys_box{
   position: relative; 
-  margin-top: 30rpx;
-  margin-left: 30rpx;
 }
 .cityTo{
   width: 618rpx;
   height: 160rpx;
+  margin: 20rpx auto 0;
   border-bottom: 1rpx solid rgba(238,238,238,1);
 }
 .city_item{
-  width: 148rpx;
+  width: 37%;
   height: 160rpx;
   opacity: 1;
   font-size: 24rpx;
@@ -87,6 +106,13 @@ background: rgba(239,247,252,1);
   line-height: 34rpx;
   letter-spacing: 0px;
   float: left;
+}
+.city_item text{
+  display: inline-block;
+  width: 100%;
+text-overflow:ellipsis;
+white-space:nowrap;
+overflow: hidden;
 }
 .citys{
   height: 50rpx;
@@ -108,7 +134,7 @@ background: rgba(239,247,252,1);
   width: 68rpx;
   height: 68rpx;
   top: 30rpx;
-  left: 250rpx;
+  left: 300rpx;
   border-radius: 50%;
   background: rgba(239,247,252,1);
   display: flex;
@@ -170,4 +196,31 @@ background: rgba(239,247,252,1);
   display: inline-block;
   margin-top: 5rpx;
   margin-left: 10rpx;
+}
+
+.no_search{
+  width: 100%;
+  text-align: center;
+}
+.no_search image{
+  width: 218rpx;
+  height: 76rpx;
+  margin-top: 230rpx;
+}
+.no_search view{
+  width: 224rpx;
+  height: 44rpx;
+  color: rgba(153,153,153,1);
+  line-height: 44rpx;
+  font-size: 32rpx;
+  margin: 138rpx auto 0;
+}
+.no_search button{
+  width: 690rpx;
+  height: 96rpx;
+  color: white;
+  opacity: 1;
+  background: rgba(41,135,246,1);
+  font-size: 36rpx;
+  margin: 148rpx auto 0;
 }

@@ -1,0 +1,35 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+
+class Admin extends Model
+{
+	//查看数据
+	public function show(){
+		//实例化user模型
+		$adminModel = new Admin();
+		//查看数据
+		$res = $adminModel->find();
+		//返回$res
+		return $res;
+	}
+
+	public function indexCheck($info){
+		//实例化user模型
+		$adminModel = new Admin();
+		//查看数据
+		$res = $adminModel->where($info)->find();
+		//返回$res
+		return $res;
+	}
+
+	// 获取角色ids
+	public function getRoles($adminId){
+		$roleAdminModel = new RoleAdmin();
+		$roles = $roleAdminModel
+			->field('role_id')
+			->where(['admin_id' => $adminId])->select();
+		return $roles;
+	}
+}
+?>

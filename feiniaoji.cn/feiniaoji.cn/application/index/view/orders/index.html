@@ -1,0 +1,321 @@
+
+<style type="text/css">
+  .col-sm-4{
+    margin-bottom: 10px; 
+  }
+  .col-sm-1{
+    margin: 10px; 
+  } 
+  .title_left{
+  /*color:#5c5c5c;*/
+    font-size: 24px;
+    font-family:'宋体';
+  }
+
+  .panel-title{
+    color:#5c5c5c;
+    font-family:'宋体';
+  }
+</style>
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>飞鸟带货行程</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+         
+        </div>
+      </div>
+    </div>
+<main class="main-container" id="main-container">
+
+    <section class="section-header">
+        <div class="container-fluid">
+        
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3 class="panel-title">飞鸟带货行程</h3></div>
+                        <div class="panel-body">
+
+
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label">飞鸟昵称</label>
+                            <div class="col-sm-4">
+                                <div class="form-control" id="name"></div>
+                            </div>
+
+                          </div>
+
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label" >行程编号</label>
+                            <div class="col-sm-4">
+                                <div class="form-control">{$birds.btripnumbers}</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label">出发地</label>
+                            <div class="col-sm-4">
+                               <div class="form-control">{$birds.bstart}</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label">出发时间</label>
+                            <div class="col-sm-4">
+                               <div class="form-control">{$birds.bstarttime}</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label" ">终点</label>
+                            <div class="col-sm-4">
+                                <div class="form-control">{$birds.bends}</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label">到达时间</label>
+                            <div class="col-sm-4">
+                               <div class="form-control">{$birds.bendtime}</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label">个人备注</label>
+                            <div class="col-sm-4">
+                                <div class="form-control">{$birds.bdesc}</div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="formGroupInputLarge" class="col-sm-2 control-label">行程状态</label>
+                            <div class="col-sm-4">
+                              {switch name="birds.bstate"}
+                                {case value="0"}<div class="form-control">待出发</div>{/case}
+                                {case value="1"}<div class="form-control">进行中 </div>{/case}
+                                {case value="2"}<div class="form-control">已完成</div>{/case}
+                                {case value="3"}<div class="form-control">已取消</div>{/case}
+
+                                {default /}<div class="form-control">待出发</div> 
+                              {/switch}
+                        
+                               
+                            </div>
+                          </div>
+
+
+                          <input type="hidden" name="tripnumbers" id="tripnumbers" value="{$birds.btripnumbers}">
+                          <input type="hidden" name="nickname" id="nickname" value="{$birds.unickname}">
+
+    
+                          <div id="" style="margin-top: 220px;">
+                            <a href="{:url('birds/orders')}?id={$birds.bid}"><button style="background-color:  #FF8C00; border-color: #FF8C00;" class="btn btn-primary">订单取消</button></a>
+                            <a href="{:url('birds/publish')}?id={$birds.bid}"><button class="btn btn-primary">修改飞鸟带货行程</button></a>
+                            <a href="{:url('birds/delete')}"><button style="background-color:  red; border-color: red;" class="btn btn-primary">删除飞鸟带货行程</button></a>
+                            <a href="{:url('comments/index')}?id={$id}"><button class="btn btn-primary">查看行程相关评论</button></a>
+                          </div>
+
+                    
+                            <div class="col-sm-12" style=""><h2 style="color: black;" class="">相关订单列表</h2></div>
+                            飞鸟昵称 用户昵称 行程编号 订单号,创建时间, 搜索时间格式是 2019/1/11进行搜索  搜索时注意空格哦
+                            <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%"></table>
+                            <input type="hidden" name="id" id="birdsid" value="{$id}">
+                            
+
+                        </div>
+                        <div class="panel-footer">Panel footer</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+var authorize = {
+        removeData : 1
+    };
+
+$(function(){
+$('#toolbar > button').on('click',function(){
+  window.location.href = "{:url('orders/index')}";
+});
+  var birdsid=$('#birdsid').val();
+  var base64= $('#nickname').val();
+  var base = new Base64();
+
+$("#name").html(base.decode(base64));
+
+var app = {
+      pageList     : "{:url('orders/pages')}?birdsid="+birdsid,// 列表分页显示
+      pageEdit     : "{:url('orders/publish')}", // 修改页面
+      pageAjax     : "{:url('orders/ajax')}",//在列表修改页面
+      pageRemove   : "{:url('orders/delete')}",//在列表删除页面
+
+    // pagingType   : 'server', //分页方式 server | client {server : {"total":24,"rows":[…]} | client : {"data":[...]}}
+      pageSize     :  10,
+      uniqueId     : 'oid',
+      sortOrder    : 'desc',
+      controlTable :  $('#datatable'),
+      columns : [{
+        field: 'oid',
+        title: '编号',
+        align: 'center',
+        editable: false
+      },{
+        field: 'nickname',
+        title: '飞鸟昵称',
+        width: '10%',
+        align: 'center',
+        formatter: operatenickname
+      },{
+        field: 'unickname',
+        title: '用户昵称',
+        width: '10%',
+        align: 'center',
+        formatter: operateunickname
+      },{
+        field: 'tripnumbers',
+        title: '行程编号',
+        width: '10%',
+        align: 'center',
+        formatter: operatetripnumbers
+      },{
+        field: 'oordernumber',
+        title: '订单号',
+        width: '10%',
+        align: 'center',
+        editable: false
+      },{
+        field: 'omoney',
+        title: '钱',
+        width: '10%',
+        align: 'center',
+        editable: true
+      },{
+        field: 'odesc',
+        title: '备注',
+        width: '10%',
+        align: 'center',
+        editable: true
+      },{
+        field: 'ostate',
+        title: '状态',
+        width: '10%',
+        align: 'center',
+        // editable:false,
+        editable: {
+          type: 'select',
+          title: '状态',
+          source: [{ value: 0, text: "待确认" }, { value: 1, text: "待支付" }, { value: 2, text: "待发货" }, { value: 3, text: "待收货" }, { value: 4, text: "待评论" }, { value: 5, text: "已完成" }, { value: 6, text: "已取消" }],
+
+        }
+      },{
+        field: 'odateline',
+        title: '创建时间',
+        // width: '20%',
+        align: 'center',
+        // editable: false
+        formatter: operatedateline
+      },{
+        field: 'operate',
+        title: '编辑',
+        // width: '300px',
+        align: 'center',
+        formatter: operateFormatter
+      }]
+      
+  };
+
+var oTable = new TableInit(app);
+    oTable.Init();
+
+var oButtonInit = new ButtonInit(app);
+    oButtonInit.Init();
+});
+function operatedateline(value, row, index)
+{
+  return new Date(parseInt(row.odateline) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');            
+}
+
+function operatenickname(value, row, index)
+{
+  var nickname;
+  // if(row.nickname!=null){
+    var base64= $('#nickname').val();
+    var base = new Base64();
+   nickname='<a class = "view"  href="javascript:void(0)">'+base.decode(base64)+'</a>';
+   
+   
+
+    // name = '<i>'+base+' </i>';
+  // }            
+  return nickname;
+}
+function operateunickname(value, row, index)
+{
+  var unickname;
+  if(row.unickname!=null){
+    var base64= row.unickname;
+    var base = new Base64();
+   unickname='<a class = "view"  href="javascript:void(0)">'+base.decode(base64)+'</a>';
+   
+   
+
+    // name = '<i>'+base+' </i>';
+  }            
+  return unickname;
+}
+
+
+
+function operatetripnumbers(value, row, index)
+{
+
+
+  var tripnumbers;
+  // if(row.img!=null){
+    // var url = row.img;
+    var tripnumbers = $('#tripnumbers').val();
+    tripnumbers = '<a class = "view"  href="javascript:void(0)">'+tripnumbers+'</a>';
+  // }            
+  return tripnumbers; 
+}
+
+// function operatestate(value, row, index)
+// {
+//   var ostate;
+
+//   if(row.ostate==0){
+//     ostate = '<a class = "view"  href="javascript:void(0)">'+'待确认'+'</a>';
+//   }else if(row.ostate==1){
+//     ostate = '<a class = "view"  href="javascript:void(0)">'+'待支付'+'</a>';
+//   }else if(row.ostate==2){
+//     ostate = '<a class = "view"  href="javascript:void(0)">'+'待发货'+'</a>';
+//   }else if(row.ostate==3){
+//     ostate = '<a class = "view"  href="javascript:void(0)">'+'待收货'+'</a>';
+//   }else if(row.ostate==4){
+//     ostate = '<a class = "view"  href="javascript:void(0)">'+'待评论'+'</a>';
+//   }else{
+//     ostate = '<a class = "view"  href="javascript:void(0)">'+'待确认'+'</a>';
+//   }     
+//   return ostate; 
+// }
+
+</script>
+<script type="text/javascript" src="ADMIN/base64.js"></script>
+</script>
+<script type="text/javascript" src="ADMIN/js/orders.js"></script>
+
+
+
+
+
+
+

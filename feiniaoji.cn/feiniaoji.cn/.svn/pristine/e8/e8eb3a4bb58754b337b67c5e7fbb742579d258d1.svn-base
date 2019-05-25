@@ -1,0 +1,32 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+class Config extends Model{
+	//数据库查看
+	public function configIndex(){
+		//实例化config模型
+		$configModel = new Config();
+		//数据库查看
+		$res = $configModel->select();
+		//返回$res
+		return $res;
+	}
+
+	//查询修改的数据
+	public function configEdit($id){
+		//实例化config模型
+		$configModel = new Config();
+		//数据查询
+		$res = $configModel->find($id);
+		//返回$res
+		return $res;
+	}
+	public function configUpdate($info,$id){
+		//实例化config模型
+		$configModel = new Config();
+		//数据修改
+		$res = $configModel->save($info,['id'=>$id]);
+		//返回$res
+		return $res;
+	}
+}

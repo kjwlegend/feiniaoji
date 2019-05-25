@@ -1,0 +1,373 @@
+<?php 
+namespace app\admin\controller;
+use app\common\Common;
+
+class Admin extends Common
+{
+	//管理员添加 页面
+	public function adminAdd()
+	{
+		//查询所有角色
+		$role = model('role')->roleSelectAll(); 
+		$this->assign('role',$role);
+		return $this->fetch();
+	}
+
+	//管理员及关联角色添加操作
+	public function adminInsert()
+	{
+		//管理员信息重组数据
+		$arr['name'] 			=	$_POST['name'];
+		$arr['password']		=	$_POST['password'];
+		$arr['state']			=	$_POST['state'];
+		$arr['created_time']	=	date('Y-m-d H:i:s'); 
+		//管理员信息插入
+		$info = model('admin')->adminAddInsert($arr);
+
+		//管理员角色数据
+		$arr2 = [];	
+		foreach($_POST['role'] as $k =>$v){
+			$arr2[$k]['admin_id']		= $info;
+			$arr2[$k]['role_id']		= $v;
+		}
+		//管理员角色插入
+		$role = model('roleAdmin')->roleAdminInsert($arr2);
+
+		if($info && $role){
+			$this->success('添加成功','admin/adminIndex');
+		}else{
+			$this->error('添加失败','admin/adminAdd');
+		}
+	}
+
+	//管理员及关联角色列表 页面
+	public function adminIndex()
+	{
+		//查询页面所需要的信息 
+		$info = model('admin')->adminIndexSelect();
+		$newInfo = [];
+		foreach ($info as $k => $v) {
+			$newInfo[$v['aid']]['aid']				=	$v['aid'];
+			$newInfo[$v['aid']]['aname']			=	$v['aname'];
+			$newInfo[$v['aid']]['apassword']		=	$v['apassword'];
+			$newInfo[$v['aid']]['astate']			=	$v['astate'];
+			$newInfo[$v['aid']]['acreated_time']	=	$v['acreated_time'];
+			$newInfo[$v['aid']]['aupdated_time']	=	$v['aupdated_time'];
+			$newInfo[$v['aid']]['rname'][$k]		=	$v['rname'];
+		}
+		foreach($newInfo as $k => $v){
+			$newInfo[$k]['rname'] = implode(',',$v['rname']); 
+		}
+		$this->assign('newInfo',$newInfo);
+		return $this->fetch();
+	}
+
+	//管理员及关联角色修改 页面
+	public function adminEdit()
+	{
+		//g管理员id
+		$id = $_GET['id'];
+		//管理员原信息
+		$info = model('admin')->adminEditSelect($id);
+		//原角色信息
+		$oldRole = model('roleAdmin')->roleAdminSelect($id);
+		//所有的角色信息
+		$allRole = model('role')->roleSelectAll();
+		
+		$role = [];
+		foreach ($oldRole as $k => $v) {
+			$role[$k] = $v['role_id'];
+		}
+
+		$this->assign('info',$info);
+		$this->assign('role',$role);
+		$this->assign('allRole',$allRole);
+		return $this->fetch();
+	}
+	
+	//管理员及关联角色修改 操作
+	public function adminUpdate()
+	{
+		//管理员id
+		$id		=	$_POST['id'];
+
+		//重组数据
+		$arr['name']			=	$_POST['name'];
+		$arr['password']		=	$_POST['password'];
+		$arr['state']			=	$_POST['state'];
+		$arr['updated_time']	=	date('Y-m-d H:i:s');
+		//修改管理信息
+		$info = model('admin')->adminEditUpdate($id,$arr);
+		//删除原有角色
+		$delete = model('roleAdmin')->roleAdminDelete($id);
+
+		
+		//重组新角色数组
+		$newArr = [];
+		foreach($_POST['role'] as $k => $v){
+			$newArr[$k]['role_id']			=	$v;
+			$newArr[$k]['admin_id']			=	$id;
+		}	
+			//添加新角色
+		$add = model('roleAdmin')->roleAdminInsert($newArr);
+
+		if(count($add)>0){
+			$this->success('修改成功','admin/adminIndex');
+		}else{
+			$this->error('修改失败','admin/adminIndex');
+		}
+	
+	}
+
+	//管理员及关联角色删除操作
+	public function adminDelete()
+	{
+		//删除id
+		$id 	=	$_GET['id'];
+		//删除管理员信息
+		$res = model('admin')->adminDelete($id);
+		//删除原有角色
+		$delete = model('roleAdmin')->roleAdminDelete($id);
+		if($res){
+			$this->success('删除成功','admin/adminIndex');
+		}else{
+			$this->error('修改失败','admin/adminIndex');
+		}
+	}
+
+
+
+
+
+ 
+	//角色
+
+	//角色添加 页面
+	public function roleAdd()
+	{
+		$access = model('access')->accessIndexSelect();
+		$this->assign('access',$access);
+		return $this->fetch();
+	}
+
+
+	//角色，及其对应权限的 添加操作
+	public function roleInsert()
+	{
+		//重组数据
+		$arr['name'] 			=	$_POST['name'];
+		$arr['state']			=	$_POST['state'];
+		$arr['created_time']	=	date('Y-m-d H:i:s'); 
+
+		//插入角色
+		$info = model('role')->roleAddInsert($arr);
+		
+		//重组数据
+		$newArr = [];
+		foreach($_POST['access_id'] as $k =>$v){
+			$newArr[$k]['role_id']			=	$info;
+			$newArr[$k]['access_id']		=	$v;
+			$newArr[$k]['created_time']		=	date('Y-m-d H:i:s');
+		}
+
+		//插入角色权限表
+		$info2 = model('role_access')->roleAccessInsert($newArr);
+		if($info && $info2){
+			$this->success('添加成功','admin/roleIndex');
+		}else{
+			$this->error('添加失败','admin/roleAdd');
+		}
+	}
+
+	//角色列表 页面
+	public function roleIndex()
+	{
+		//查询所有角色权限数据
+		$info = model('role')->roleIndexSelect();
+		// dump($info);
+		$newInfo = [];
+		foreach($info as $k => $v){
+			$newInfo[$v['rid']]['rid']				=	$v['rid'];		//角色id
+			$newInfo[$v['rid']]['rname']			=	$v['rname'];
+			$newInfo[$v['rid']]['aid']				=	$v['aid'];
+			$newInfo[$v['rid']]['aname'][$k]		=	$v['aname'];	
+			$newInfo[$v['rid']]['aaction'][$k]		=	$v['aaction'];
+			$newInfo[$v['rid']]['rcreated_time']	=	$v['rcreated_time'];
+			$newInfo[$v['rid']]['rupdated_time']	=	$v['rupdated_time'];
+			$newInfo[$v['rid']]['rstate']			=	$v['rstate'];
+
+		}
+		// dump($newInfo);die;
+		foreach($newInfo as $k => $v){
+			$newInfo[$k]['aaction']	=	implode(',',$v['aaction']);
+		}
+		foreach($newInfo as $k => $v){
+			$newInfo[$k]['aname']	=	implode(',',$v['aname']);
+		}
+
+		$this->assign('newInfo',$newInfo);
+		return $this->fetch();
+	}
+
+	//角色及权限修改 页面
+	public function roleEdit()
+	{
+		//修改id
+		$id = $_GET['id'];
+		//查询角色的名字
+		$role = model('role')->roleEditSelect($id);
+		//查询原有权限
+		$roleAccess = model('roleAccess')->roleAccessEditSelect($id);
+		//查询所有权限
+		$access = model('access')->accessIndexSelect();
+		//重组原有权限id数组
+		$arr = [];
+		foreach ($roleAccess as $k => $v) {
+			$arr[$k] = $v['access_id'];  
+		}
+
+		$this->assign('arr',$arr);
+		$this->assign('role',$role);
+		$this->assign('access',$access);
+		return $this->fetch();
+	}
+	
+	//角色及权限修改 操作
+	public function roleUpdate()
+	{
+		//修改id
+		$id		=	$_POST['id'];
+
+		//重组数据
+		$arr['name']			=	$_POST['name'];
+		$arr['state']			=	$_POST['state'];
+		$arr['updated_time']	=	date('Y-m-d H:i:s');
+		//修改角色
+		$info = model('role')->roleEditUpdate($id,$arr);
+
+		//删除原有的权限
+		$delete = model('roleAccess')->roleAccessDelete($id);
+		
+		//重组新上传的权限
+		foreach ($_POST['access'] as $k => $v) {
+			$newarr[$k]['role_id']		=	$id;
+			$newarr[$k]['access_id']	= 	$v;
+		}
+		//添加新的权限
+		$add = model('roleAccess')->roleAccessAdd($id,$newarr);
+
+		if($info && $delete ){
+			$this->success('修改成功','admin/roleIndex');
+		}else{
+			$this->error('修改失败','admin/roleIndex');
+		}
+	}
+
+	//角色,及权限删除操作
+	public function roleDelete()
+	{
+		//删除id
+		$id 	=	$_GET['id'];
+
+		$res = model('role')->roleDelete($id);
+
+		$res2 = model('roleAccess')->roleAccessDelete($id);
+		if($res && $res2){
+			$this->success('删除成功','admin/roleIndex');
+		}else{
+			$this->error('修改失败','admin/roleIndex');
+		}
+	}
+
+
+
+
+
+	//权限
+	//权限添加 页面
+	public function accessAdd()
+	{
+		return $this->fetch();
+	}
+
+	//权限添加操作
+	public function accessInsert()
+	{
+		//重组数据
+		$arr['name'] 			=	$_POST['name'];
+		$arr['action']			=	$_POST['action'];
+		$arr['state']			=	$_POST['state'];
+		$arr['created_time']	=	date('Y-m-d H:i:s'); 
+
+		$info = model('access')->accessAddInsert($arr);
+
+		if($info){
+			$this->success('添加成功','admin/accessIndex');
+		}else{
+			$this->error('添加失败','admin/accessAdd');
+		}
+	}
+
+	//权限列表 页面
+	public function accessIndex()
+	{
+		$info = model('access')->accessIndexSelect();
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+
+	//权限修改 页面
+	public function accessEdit()
+	{
+		//修改id
+		$id = $_GET['id'];
+		$info = model('access')->accessEditSelect($id);
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+	
+	//权限修改 操作
+	public function accessUpdate()
+	{
+		//修改id
+		$id		=	$_POST['id'];
+
+		//重组数据
+		$arr['name']			=	$_POST['name'];
+		$arr['action']			=	$_POST['action'];
+		$arr['state']			=	$_POST['state'];
+		$arr['updated_time']	=	date('Y-m-d H:i:s');
+
+		$info = model('access')->accessEditUpdate($id,$arr);
+
+		if($info){
+			$this->success('修改成功','admin/accessIndex');
+		}else{
+			$this->error('修改失败','admin/accessIndex');
+		}
+	}
+
+	//权限删除操作
+	public function accessDelete()
+	{
+		//删除id
+		$id 	=	$_GET['id'];
+
+		$res = model('access')->accessDelete($id);
+		if($res){
+			$this->success('删除成功','admin/accessIndex');
+		}else{
+			$this->error('修改失败','admin/accessIndex');
+		}
+	}
+
+	//管理对应角色添加 页面
+	public function roleAdmin()
+	{
+		$admin = model('admin')->adminIndexSelect();
+		$role = model('role')->modelIndexSelect();
+		$this->assign('role',$role);
+		$this->assign('admin',$admin);
+		return $this->display();
+	}
+}

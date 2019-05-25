@@ -1,0 +1,38 @@
+.product .u-com{margin-top:0;}
+.product .table>thead>tr>th{background:#F3F3F3;border:none;}
+.product .table>tbody>tr>td{border-bottom:none;}
+.product .u-com .down-title>ul>li a{background:#79e6a9}
+.product .u-com .down-title>ul .on a,.product .u-com .down-title>ul li:hover a{background:#ffffff}
+.product .top-message,.product .top-message .address h2{font-size:14px;}
+.product .top-message .address h2{background:#F3F3F3;line-height:36px;padding:0 54px;}
+.product .top-message .address>p{padding-left:72px;line-height:52px;}
+.product .top-message .address>p a{display: inline-block;color:#FF0000;margin-left:40px;}
+.product .top-message div:nth-child(1) p:after{content: url(../images/order/qq—or.png);position: absolute;margin-top:5px;}
+.product .top-message .address>p span{margin:0 60px;}
+.table > thead > tr > th{color:#000000;font-weight: normal;border:0;background:#f3f3f3;}
+.table {color:#;font-size:14px;}
+
+/********好评*****/
+body{position:relative;}
+body>.bg{position:absolute;top:0;bottom:0;right:0;left:0;background:rgba(0,0,0,.5);}
+.windon{padding:30px 50px;left:50%;margin-left:-600px;top:260px;position: absolute;background:#79e6a9;}
+.windon h3{color:#000000;font-size:28px;line-height:30px;padding-bottom:30px;}
+.windon textarea{padding:5px;margin-top:10px;resize: none;width:650px;height:152px;}
+.windon .win-lg{background:#FFFFFF;padding:0 45px 20px 30px;}
+.windon .win-lg>div img{border:1px #A0A0A0 solid;width:200px;height:182px}
+.windon>div .win-left p{font-size:14px;}
+.windon>div .win-left h4{margin-top:20px;font-size:14px;color:#009944;
+}
+.windon>div .win-left {margin-top:20px;}
+.windon .down-win{width:295px;margin:20px auto}
+.windon .win-top label{width:105px;padding:20px 0;margin:0 25px;float:left;display:inline-block;background:url(../images/comment/haoping.png) no-repeat right;}
+.windon .win-top label:last-child{background:url(../images/comment/chaping.png) no-repeat right;}
+.windon .win-top label:nth-child(2){background:url(../images/comment/zhongping.png) no-repeat right;}
+.windon .down-win p span{float:right;}
+.windon .down-win p b{float: left;fonnt-size:16px;color:#009944}
+.windon .down-win p{text-align:right;line-height:30px;}
+.windon .down-win p span>img{cursor:pointer;float:left;display: inline-block;}
+.windon input[type="submit"]{background:#009944;font-size:14px;color:#FFFFFF;line-height:30px;
+						padding:0 25px;border:0;float: right;margin-right:75px;}
+	/***************input处理*****************/
+ 

@@ -1,0 +1,27 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class ProDetail extends Model{
+
+	//获取商品详情的内容
+	public function index($id){
+		//获取proid
+		$details = new ProDetail();
+		//获取SQL语句
+		//三表查询   产品表  颜色表   详情表
+		$res = $details
+		->alias('pd')
+		->where('pd.pro_id',$id)
+		// ->join('pro p','pd.pro_id = p.id')
+		// ->join('combo cb','pd.combo_id=cb.id')
+		// ->join('color c','pd.color_id = c.id')
+		// ->field('pd.id pdid,pd.pro_id pdpro_id,pd.name pdname,pd.desc pddesc,pd.color_id pdcolor_id,pd.color pdcolor,pd.color_image pdcolor_image')
+		->select();
+		// dump($res);
+		return $res;
+
+	}
+
+
+	
+}

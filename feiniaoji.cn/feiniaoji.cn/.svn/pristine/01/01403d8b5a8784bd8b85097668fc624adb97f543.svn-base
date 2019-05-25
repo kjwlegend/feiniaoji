@@ -1,0 +1,137 @@
+		<link rel="stylesheet" href="INDEX_CSS/user.css"/>
+		<link rel="stylesheet" href="INDEX_CSS/address.css"/>
+		<link rel="stylesheet" href="INDEX_CSS/comfire_order.css"/>
+<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+	<div class="mg product ov row">
+		<!------------left-show------------------->
+		<div class="left-show col-xs-2">
+				<!--l-nav-->
+				<div class="l-nav">
+				<a href=""><img src="INDEX_IMAGES/user.jpg" alt="" /></a>
+				<p>你好</p>
+				</div>
+		                 <!--l-nav-end-->
+		          <div class="mine ov">
+                	<h3 class="text-left">我的福维克</h3>
+                	<ul>
+                		<li>
+                			<a href="ordered.html">我的订单</a>
+                		</li>
+                		<li>
+                			<a href="user.html">我的收藏</a>
+                		</li>
+                		<li>
+                			<a href="user.html">我的现金卷</a>
+                		</li>
+                		
+                		<li>
+                			<a href="user.html">我的会员等级</a>
+                		</li>
+                		
+                	
+                		
+                		
+                	</ul>
+                	
+                </div>
+                
+               <div class="mine ov">
+                	<h3 class="text-right">个人账号管理   </h3>
+                	<ul>
+                		<li>
+                			<a href="user.html">我的余额</a>
+                		</li>
+                		<li>
+                			<a href="user.html">我的礼品</a>
+                		</li>
+                		<li>
+                			<a href="javascript:;">设置及账号信息</a>
+                		</li>
+                		
+                		<li>
+                			<a href="javascript:;">修改密码</a>
+                		</li>
+                		
+                	</ul>
+                	
+                </div>
+                <div class="mine ov">
+                	<h3 class="text-left">售后服务</h3>
+                	<ul>
+                		<li>
+                			<a href="javascript:;">我的售后与服务</a>
+                		</li>
+                		<li>
+                			<a href="javascript:;">退款</a>
+                		</li>
+                	
+                	</ul>
+                	
+                </div>
+			</div>				
+			<!------------left-show-end------------------>
+
+				
+						<!----right-show------------------->
+		<div class="right-show col-xs-10">
+							<!--<!--头部-->
+							<div>
+		   <div class="address ov ">
+         	<h2 class="text-left c-title">我的收货地址</h2>
+         	 	<ul>
+         		<li class="">
+         			
+         			<h3>张伟</h3>
+         			<h4>广州荔湾区长寿路9号</h4>
+         			<p>150254846</p>
+         			
+         		</li>
+         		<li class="">
+         			
+         			<h3>李四</h3>
+         			<h4>广州天河区中山路1号</h4>
+         			<p>153486348746</p>
+         			
+       
+         		</li>
+         		<li class="">
+         			<div class="com">
+         				<span>
+         				<a>
+         				</a>
+         				<a href=""></a>
+         				</span>
+         				<i>添加新地址</i>
+         			</div>
+         			
+         		</li>
+         		
+         	</ul>
+         </div>
+		<div class="mess-add ">
+			
+					<h2 class="text-left c-title">添加新地址</h2>
+			<form action="comfire_order.html"  class="text-center  windon" >
+				
+				
+			
+					<div><label for="">所在地：</label><input type="text" placeholder="中国"/></div>
+					<div><label for="">详细地址：</label><input type="text" placeholder="请写详细街道信息"/></div>
+					<div><label for="">邮政编码：</label><input type="text" /></div>
+					<div><label for="">收货人姓名：</label><input type="text" placeholder="请写常用手机号码"/></div>
+					<div><label for="">手机号码：</label><input type="text" /></div>
+					<label  class="m-check"><input type="checkbox" name="" id="" value=""/><span></span>设为默认地址</label><br />
+					<input for="" type="submit" value="保存"/>
+					<input type="reset" value="重置"/>
+			</form>
+				</div>	
+			
+			<!--——————————用户订单——-end-->
+
+			<!--爆款产品-end-->
+			</div>
+		</div>
+	</div>
+
+

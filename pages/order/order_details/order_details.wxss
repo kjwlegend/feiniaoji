@@ -2,7 +2,7 @@
 /* 头部 */
 .head{
   width: 750rpx;
-  height: 144rpx;
+  height: 174rpx;
   background: rgba(41,135,246,1);
   padding-top:1rpx; 
   position: relative;
@@ -11,8 +11,8 @@
 .state_box{
   display: flex;
   justify-content: space-around;
-  width: 630rpx;
-  margin-left: 60rpx;
+  width: 630rpx;margin: 0 auto;
+  padding-top: 20rpx;
 }
 .state{
   width: 74rpx;
@@ -21,26 +21,23 @@
   margin-top: 26rpx;
 }
 .state_img{
-  height: 40rpx;
-  width: 40rpx;
+  width: 50rpx;
 }
 .state_img1{
-  height: 40rpx;
-  width: 40rpx;
+  width: 50rpx;
   opacity: 0.5;
 }
 .state_word{
-  width: 74rpx;
   text-align: center;
   font-size: 24rpx;
-  line-height: 34rpx;
+  line-height: 40rpx;
   color: white;
 }
 .state_word1{
   width: 74rpx;
   text-align: center;
   font-size: 24rpx;
-  line-height: 34rpx;
+  line-height: 40rpx;
   color: white;
   opacity: 0.5;
 }
@@ -49,13 +46,13 @@
   width: 52rpx;
   height: 2rpx;
   opacity: 0.5;
-  margin-top: 46rpx;
+  margin-top: 51rpx;
 }
 .line1{
   background: rgba(255,255,255,1);
   width: 52rpx;
   height: 2rpx;
-  margin-top: 46rpx;
+  margin-top: 51rpx;
 }
 /* 订单已完成的头部 */
 .yiwan{
@@ -67,42 +64,50 @@
 }
 .yiwan_time{
   font-size: 24rpx;
-  color: rgba(255,255,255,1);
+  color: rgba(255,255,255,0.8);
   margin-left: 60rpx;
   margin-top: 20rpx;
 }
 .is_complete_img{
   position: absolute;
-  width: 164rpx;
-  height: 110rpx;
-  top: 13rpx;
+  width: 180rpx;
+  top: 34rpx;
   right: 50rpx;
 }
 .score_box{
   width: 750rpx;
-  height: 276rpx;
   opacity: 1;
+  padding: 40rpx 0;
   background: rgba(254,247,235,1);
-  padding-top: 1rpx;
+  text-align: center;
 }
 .score_title{
   font-size: 28rpx;
-  margin-top: 40rpx;
-  margin-left: 60rpx;
+  margin: 0 0 60rpx 60rpx;
   font-weight: bold;
+  text-align: left;
 }
 .score_title text{
   font-weight: 100;
   color: gray;
 }
-.score_box image{
+.score_box .xingxing{
+  display: inline-block;
+  margin: 0 18rpx;
+  
+}
+.score_box .xingxing image{
+  width: 36rpx;
+  
+}
+/* .score_box image{
   width: 324rpx;
   height: 36rpx;
   opacity: 1;
   display: block;
   margin-top: 60rpx;
   margin-left: 216rpx;
-}
+} */
 .score_des{
   opacity: 1;
   font-size: 28rpx;
@@ -127,27 +132,25 @@
 }
 
 .info1{
-  width: 660rpx;
+  width: 690rpx;
   height: 402rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-left: 30rpx;
+  margin: 30rpx auto;
   position: relative;
-  padding-left:30rpx; 
   padding-top: 36rpx;
-  margin-top: 20rpx;
+  border-radius: 8rpx;
 }
 .info{
-  width: 660rpx;
-  height: 402rpx;
+  width: 690rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-left: 30rpx;
+  margin: 0 auto 36rpx;
   position: relative;
-  padding-left:30rpx; 
-  padding-top: 36rpx;
+  padding: 36rpx 0;
+  border-radius: 8rpx;
 }
 .icon {
   width: 8rpx;
@@ -160,27 +163,38 @@
 }
 .info_title{
   font-size: 32rpx;
-  margin-bottom: 40rpx;
+  width: 618rpx;
+  margin: 0 auto 40rpx;
 }
 .info_list{
+  width: 618rpx;
   font-size: 28rpx;
   line-height: 40rpx;
   color: rgba(74,74,74,1);
-  margin-top: 20rpx;
+  margin: 20rpx auto;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
   
+}
+.info_list view{
+  display: inline-block;max-width: 400rpx;
+  vertical-align: middle;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
 }
 /* 行程信息 */
 .trip{
-  width: 660rpx;
+  width: 690rpx;
   height: 336rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-left: 30rpx;
+  margin: 30rpx auto;
   position: relative;
-  margin-top: 30rpx;
-  padding-left:30rpx; 
   padding-top: 36rpx;
+  border-radius: 8rpx;
 }
 .info_title text{
   color: rgba(41,135,246,1);
@@ -192,89 +206,127 @@
   height: 20rpx;
   width: 20rpx;
   float: right;
-  margin-right: 51rpx;
+  margin-right: 8rpx;
   display: block;
   margin-top: 10rpx;
 }
 
 /* 飞鸟信息 */
 .bird{
-  width: 660rpx;
+  width: 690rpx;
   height: 434rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-left: 30rpx;
+  margin: 30rpx auto;
   position: relative;
-  margin-top: 30rpx;
-  padding-left:30rpx; 
   padding-top: 36rpx;
+  border-radius: 8rpx;
 }
 .user{
   height: 120rpx;
-  padding-left: 108rpx;
   position: relative; 
-  width: 618rpx;
+  width:618rpx;
   border-bottom: 1px solid rgba(238,238,238,1);
   padding-top:1rpx; 
+  margin: 0 auto;
 }
 .headImg{
   width: 88rpx;
   height: 88rpx;
-  position: absolute;
-  top: 0;
-  left: 0;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.user_names{
+  width: 500rpx;
+  display: inline-block;
+  vertical-align: middle;
 }
 .userName{
-  height: 36rpx;
-  line-height: 36rpx;
+  height: 34rpx;
+  line-height: 34rpx;
   font-size: 26rpx;
-  margin-top: 8rpx;
+  width: 80%;
+  vertical-align: middle;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow: hidden;
 }
 .rank{
-  width: 182rpx;
-  height: 28rpx;
+  padding: 0 8rpx;
   background: rgba(254,247,235,1);
-  font-size: 18rpx;
+  font-size: 0;
+  display: inline-block;
+  
   color: rgba(245,166,35,1);
-  margin-top: 5rpx;
+}
+/* .rank text{
+  font-size: 20rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  vertical-align: middle;
+  padding: 0 8rpx;
+  color: rgba(245,166,35,1);
+
+} */
+.rank text{
+  vertical-align: middle;
+  padding: 0 12rpx 0 8rpx;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+}
+.rank view{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2rpx;
 }
 .rank image{
-  width: 100rpx;
-  height: 15rpx;
+  width: 16rpx;
 }
 .bird_info{
-  margin-top: 20rpx;
   color: rgba(153,153,153,1);
   width: 618rpx;
   font-size: 24rpx;
   line-height: 24rpx;
+  margin: 20rpx auto;
+}
+.bird_info view{
+  width: 318rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.bird_info text{
+  width: 300rpx;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    text-align: right;
 }
 
 .money{
-  width: 660rpx;
+  width: 690rpx;
   height: 90rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-left: 30rpx;
   position: relative;
-  margin-top: 30rpx;
-  padding-left:30rpx; 
-  padding-top: 36rpx;
+  padding: 36rpx 0 0;
+  border-radius: 8rpx;
+  margin: 36rpx auto;
 }
 .money1{
-  width: 660rpx;
+  width: 690rpx;
   height: 90rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-left: 30rpx;
   position: relative;
-  margin-top: 30rpx;
-  padding-left:30rpx; 
-  padding-top: 36rpx;
-  margin-bottom: 80rpx;
+  padding: 36rpx 0 0;
+  margin: 36rpx auto;
+  border-radius: 8rpx;
 }
 .is_money{
   color: red;
@@ -295,13 +347,13 @@
 .foot view{
   width: 210rpx;
   height: 76rpx;
-  border-radius: 1px 1px 1px 1px;
   text-align: center;
   margin-top: 22rpx;
   float: right;
   margin-right: 32rpx;
   font-size: 32rpx;
   line-height: 76rpx;
+  border-radius: 8rpx;
 }
 .btn2{
   border: 1px solid rgba(210,210,210,1);

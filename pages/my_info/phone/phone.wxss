@@ -1,4 +1,8 @@
-page{
+.pages{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;top: 0;
   background: rgba(248,248,248,1);
 }
 .infos{
@@ -10,46 +14,73 @@ page{
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
   position: relative;
 }
-.infos view{
+.infos .titles{
   height: 44rpx;
   opacity: 1;
   font-size: 32rpx;
   font-family: PingFang;
   color: rgba(102,102,102,1);
   line-height: 44px;
-  letter-spacing: 0px;
   margin: 40rpx 0 30rpx 36rpx;
 }
 .infos input{
-  margin-left: 30rpx;
   height: 128rpx;
   line-height: 128rpx;
-  width: 146rpx;
+  width: 180rpx;
   border-bottom: 1rpx solid rgba(238,238,238,1);
   font-size: 36rpx;
-  /* padding-left: 20rpx; */
   display: inline-block;
+  vertical-align: middle;
 }
 .input_p{
   color: rgba(210,210,210,1);
 }
-button{
+.buttons{
   width: 690rpx;
   height: 96rpx;
-  opacity: 1;
   background: rgba(41,135,246,1);
   color: white;
-  margin-left: 30rpx;
-  margin-top: 30rpx;
+  margin: 30rpx auto;
   font-size: 36rpx;
+  border-radius: 8rpx;
+  line-height: 96rpx;
+  text-align: center;
 }
 text{
   font-size: 36rpx;
-  font-family: PingFangSC;
   color: rgba(210,210,210,1);
-  line-height: 36rpx;
-  letter-spacing: 0px;
+  vertical-align: middle;
+  margin: 0 35rpx;
+}
+
+.infos .quhaos{
+  float: left;
+  vertical-align: middle;
+  margin-left: 30rpx;
+  position: relative
+}
+.infos .haomas{
+  float: left;
+  vertical-align: middle;
+}
+.infos .haomas input{
+  width: 362rpx;
+}
+.xialaikuang{
+  width: 100%;
   position: absolute;
-  left: 222rpx;
-  top: 124rpx;
+  top: 128rpx;
+  left: -10rpx;
+  padding: 10rpx;
+  height: 200rpx;
+  border: 1rpx solid #345;
+  background: #fff;
+  overflow: auto;
+}
+.xialaikuang view{
+  font-size: 30rpx;
+  color: #666;
+  border-bottom: 1rpx solid #999;
+  line-height: 50rpx;
+  height: 50rpx;
 }

@@ -1,0 +1,150 @@
+
+
+		<link rel="stylesheet" href="INDEX_CSS/pay.css"/>
+		<link rel="stylesheet" href="INDEX_CSS/shop-cart.css"/>
+		<title>支付</title>
+
+
+
+     <div class="pay mg ">
+     	
+     	<div class="r-title">
+     		<a href="product.html">全部商品分类&gt;</a>
+				<a href="pro_details.html">电器&gt;</a>
+				<a href="pro_details.html">吸尘器</a>
+     	</div>
+     	
+     	 <div class="order-nav ma_top">
+         	
+         		<span class="span on"></span>
+         	
+         		<span class="span on"></span>
+         		
+         		<span class="span on"></span>	
+         		<span class="on"></span>
+         		 	<p class="text-r left x-list"><a href="shop-cart.html">我的购物车</a></p>
+         		<p class="text-center left "><a href="comfire_order.html">填写订单信息</a</p>
+         			<p class="text-left left m-list"><a href="javascript:;">提交订单成功</a></p>
+         	
+      
+         </div>
+	<div class="product ov">
+		<!------------left-show------------------->
+		
+		<div class="fram ov">
+		<div class="pay-left left">
+			<img src="INDEX_IMAGES/pay/gou.png"/>
+			<div class="L-right left">
+				<h3 class="text-left">订单提交成功！</h3>
+			<p class="text-left">
+成功付款后，承诺24小时内发货<br />
+请您在提交订单2小时内完成支付，否则订单会自动取消<br />
+收货人信息：张伟   广州市荔湾区长寿路9号    1500254846</p>
+			<p>
+				<a href="ordered.html">查看订单</a>
+						
+				<a href="address.html">收货地址</a>
+				<a href="product.html">继续购物></a>
+			</p>
+			</div>
+		</div>
+		<div class="pay-right pay-p right text-left">
+			
+			<p>付款金额：<span>2100元</p>
+			<p><a href="order_details.html">订单详情</a></p>
+			     <ul class="left">
+							<li><a href="order_details.html">1</a></li>
+							<li><a href="order_details.html">2</a></li>
+			     </ul>
+		</div>
+			<!--——————————用户订单——-end-->
+			</div>
+			<!--PAY--end-->
+		 <div class="pay-com cl windon ">
+		 	<form action="pay-success.html" class="ov">
+		 		<div>
+		 	<div class="w-pay ov ">
+		 	<h3 class="text-left">网银支付</h3>
+		 	<ul class="">
+		 	   <li>
+		 			<label  class=" m-check">
+		 			<input type="radio"  class="inlineCheckbox1" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-1.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox2" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-2.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox3" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-3.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox4" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-4.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox5" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-5.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox6" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-6.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox7" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-7.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox8" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 		<input type="radio"  id="inlineCheckbox9" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 	</ul>
+		 	</div>
+		 	<div class="w-pay ov ">
+		 	<h3 class="text-left">信用卡支付</h3>
+		 		<ul class="">
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox10" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-1.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox11" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-2.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox12" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-3.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox13" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-4.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox14" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-5.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox15" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-6.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox16" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-7.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 			<input type="radio"  id="inlineCheckbox17" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 		<li><label  class="m-check">
+		 		<input type="radio"  id="inlineCheckbox18" name="option1" /><span></span> <img src="INDEX_IMAGES/pay/y-8.jpg"/></label></li>
+		 	</ul>
+		   </div>
+		 </div>
+		 <!---->
+		 <div class="pay-passw">
+		 	<label for="">支付密码：<br /><input type="password" id="pass" onblur="passw(this.value);"/>
+		 	<div id="passtip" class="Tip">密码不合法，请重输！</div></label>	
+		 	<a href="">忘记密码？</a>
+		 	
+		 	<script>
+		 		
+		 		var b=document.getElementById("passtip")
+		 		b.style.visibility="hidden";
+		 		var passw = function(v){
+			
+			var reg = /^([a-zA-Z0-9_\u4e00-\u9fa5]){6,16}$/
+			if(reg.test(v)){
+				 b.style.visibility="hidden";
+			}else{
+				 b.style.visibility="visible";
+			}
+		}
+		 	</script>
+		 </div>
+		 <div class="p-down right">
+		 <p class="right">支付金额(含运费）：<i>￥2011.00</i></p>
+		 	<input type="submit" class="right count"	 value="确认支付" onclick="return turn()"/>
+		 </div>
+		 </form>
+	</div>
+
+</div>
+</div>
+
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+	
+	<script type="text/javascript" src="INDEX_JS/pay.js"></script>
+	
+

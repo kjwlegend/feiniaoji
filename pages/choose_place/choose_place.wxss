@@ -1,0 +1,136 @@
+/* pages/choose_place/choose_place.wxss */
+page{
+  background: rgba(255,255,255,1);
+}
+input{
+  display: inline-block;
+  width: 512rpx;
+  height: 72rpx;
+  font-size: 32rpx;
+  line-height: 72rpx;
+  opacity: 1;
+  background: rgba(240,240,240,1);
+  margin-left: 30rpx;
+  padding-left: 62rpx;
+}
+.cancel{
+  vertical-align: top;
+  font-size: 32rpx;
+  line-height: 72rpx;
+  margin-left: 30rpx;
+  display: inline-block;
+  height: 72rpx;
+}
+.find {
+  position: absolute;
+  top: 22rpx;
+  left: 46rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.history{
+  height: 42rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-top: 30rpx;
+}
+.history image{
+  width: 42rpx;
+  height: 42rpx;
+  vertical-align: middle;
+  float: right;
+  margin-right: 48rpx;
+}
+.history_place{
+  width: 656rpx;
+  margin-left: 30rpx;
+  min-height: 120rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.history_place view{
+  width: auto;
+  min-width: 64rpx;
+  background: rgba(244,244,244,1);
+  font-size: 26rpx;
+  height: 64rpx; 
+  line-height: 64rpx;
+  text-align: center;
+  color: rgba(0,0,0,1);
+  float: left;
+  margin: 20rpx 20rpx 0 0;
+  padding: 0 20rpx 0 20rpx;
+}
+.hot_title{
+  height: 42rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-top: 30rpx;
+  position: relative;
+}
+.hot_title image{
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  left: 200rpx;
+  top: 0;
+}
+.hot_place{
+  width: 656rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.hot_place view{
+  width: auto;
+  min-width: 64rpx;
+  background: rgba(244,244,244,1);
+  font-size: 26rpx;
+  height: 64rpx; 
+  line-height: 64rpx;
+  text-align: center;
+  color: rgba(0,0,0,1);
+  float: left;
+  margin: 20rpx 20rpx 0 0;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.select_city{
+  width: 676rpx;
+  height: 68rpx;
+  opacity: 1;
+  margin-left: 46rpx;
+  margin-top: 30rpx;
+  line-height: 68rpx;
+  border-bottom: 1px solid #d2d2d2;
+}
+.select_city view{
+  float: left;
+}
+.icon{
+  width: 56rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 20rpx;
+  background: rgba(41,135,246,1);
+  text-align: center;
+  color: white;
+  margin-top: 6rpx;
+}
+.city{
+  margin-top: 0;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  height: 44rpx;
+  margin-left: 20rpx;
+}
+.country{
+  line-height: 36rpx;
+  height: 36rpx;
+  font-size: 26rpx;
+  color: rgba(153,153,153,1);
+  margin-top:8rpx;
+  margin-left: 16rpx;
+}

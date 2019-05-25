@@ -1,0 +1,22 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+//获取pro数据库
+class Pro extends Model{
+//商品查看
+	public function index(){
+		//实例化pro模型
+		$proModel = new Pro();
+		//两表查询
+		$res = $proModel
+			->alias('p')
+			->join('pro_classify pc','p.class_id=pc.id','LEFT')
+            ->join('pro_classify c','pc.parent_id=c.id','LEFT')
+            ->field('p.id pid,p.name pname,p.image pimage,p.desc pdesc,p.faddish pfaddish,p.text ptext,p.state pstate,pc.id pcid,pc.name pcname,c.id cid,c.name cname')
+            ->select();
+            // dump($res);
+            //返回$res
+            return $res;
+	}
+
+}

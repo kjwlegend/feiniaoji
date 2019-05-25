@@ -1,0 +1,22 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class ProClassify extends Model{
+	//调用分类内容
+	public function proClass(){
+		//实例化pro_classify模型
+		$proClassModel = new ProClassify();
+		//查看数据库
+		$classes = $proClassModel
+		// ->fetchSql(true)
+		->alias('p')
+		->where(['p.parent_id' => 0])
+	    ->join('pro_classify c','c.parent_id=p.id','right')
+	    ->field('p.id pid,p.name pname,p.parent_id,c.id cid,c.name cname,c.parent_id cparent_id')
+	    ->select();
+		//返回$res
+		
+		// var_dump($classes);
+		return json_decode(json_encode($classes), 1);
+	}
+}

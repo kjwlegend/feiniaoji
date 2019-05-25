@@ -1,0 +1,38 @@
+<?php 
+namespace app\admin\model;
+use think\Model;
+class RoleAdmin extends Model
+{
+	// protected $table = 'role_admin';
+	//管理员角色插入
+	public function roleAdminInsert($arr)
+	{
+		//实例化对象
+		$info = $this->saveAll($arr);
+		return $info;
+	}
+
+	//管理员原角色查询
+	public function roleAdminSelect($id)
+	{
+		//实例化对象
+		$res = new $this;
+		$info = $res
+			->field('role_id')
+			->where(['admin_id'=>$id])
+			->select();
+		return json_decode(json_encode($info),1);
+	}
+
+	//删除原有角色
+	public function roleAdminDelete($id)
+	{
+		//实例化对象
+		$res = new $this;
+		$info = $res
+			->where(['admin_id'=>$id])
+			->delete();
+	}
+
+	
+} 

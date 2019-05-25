@@ -7,6 +7,14 @@ page{
   height: 436rpx;
   position: relative;
 }
+.header .header_bei{
+  width: 100%;
+  height: 436rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(255,255,255,0) 45%, rgba(255,255,255,1));
+}
 .header image{  
   width: 750rpx;
   height: 436rpx;
@@ -20,50 +28,52 @@ page{
   position: absolute;
   top: 300rpx;
   left: 30rpx;
-  border-radius: 10rpx;
+  border-radius:8rpx;
 }
 .place{
-  height: 150rpx;
+  height: 128rpx;
   width: 630rpx;
-  border-bottom: 1rpx solid rgba(238,238,238,1);
+  border-bottom: 2rpx solid rgba(238,238,238,1);
   display: flex;
   align-items: center;
   margin-left: 30rpx;
   box-sizing: border-box;
+  padding-top: 30rpx;
 }
-.place input{
-  width: 250rpx;
+.place view{
+  width: 45%;
   height: 60rpx;
-  line-break: 60rpx;
+  line-height: 60rpx;
   display: inline-block;
-  /* background: red; */
-  margin-left: 30rpx;
-  /* margin-right: 30rpx; */
-  font-size: 36rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color:#d2d2d2;
+  white-space:nowrap;
+       overflow:hidden;
+       text-overflow:ellipsis;
 }
 .place image{
   width: 48rpx;
   height: 48rpx;
-  /* vertical-align: middle; */
+  margin:0 30rpx;
 }
 .input_p{
   color:rgba(210,210,210,1);
 
 }
-button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);margin-top: 58rpx;margin-left: 30rpx;}
-
+button{width: 630rpx;height: 96rpx;line-height: 96rpx; color: white;background: rgba(41,135,246,1);margin: 58rpx auto 0;border-radius: 8rpx;}
+button::after{ border: none; }
 /* 热门行程 */
 .hot_trip_content{
   width: 690rpx;
   height: 686rpx;
   margin-left: 30rpx;
   margin-top: 394rpx;
-  border-radius: 10rpx;
+  border-radius: 8rpx;
   position: relative;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  padding-left:20rpx; 
 }
 .icon{
   width: 8rpx;
@@ -75,10 +85,10 @@ button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);m
   top: 0;
 }
 .hot_trip{
-  width: 630rpx;
-  height: 114rpx;
-  line-height: 114rpx;
-  margin-left: 10rpx;
+  width: 650rpx;
+  height: 110rpx;
+  padding-left: 40rpx;
+  line-height: 110rpx;
   font-size: 34rpx;
   font-family: PingFang;
   color: rgba(74,74,74,1);
@@ -86,27 +96,37 @@ button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);m
   border-bottom: 1px solid rgba(238,238,238,1);
   margin-bottom: 20rpx;
 }
+
+.sitys_all{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
 .citys{
   width: 304rpx;
   height: 234rpx;
   opacity: 1;
+  display: inline-block;
   position: relative;
-  float: left;
   margin:8rpx;
   color: white;
-  display: flex;
   flex-direction: column;
   align-items: center;  
 }
 .citys image{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;left: 0;
+  width: 304rpx;
+  height: 234rpx;
 }
-.citys view{
-  position: relative;
+.citys_zhe{
   font-size: 38rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0));
+  text-align: center;
+  font-weight: 800;
 }
 .cityName{
   margin-top: 46rpx;
@@ -115,21 +135,18 @@ button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);m
 /* 为你推荐 */
 .recommed_content{
   width: 690rpx;
-  height: 912rpx;
-  opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin-top: 86rpx;
-  margin-left: 30rpx;
+  margin: 40rpx auto 90rpx;
   position: relative;
-  margin-bottom: 30rpx;
-  border-radius: 10rpx;
+  border-radius: 8rpx;
+  padding-bottom: 40rpx;
 }
 .recommed{
   width: 630rpx;
   height: 114rpx;
   line-height: 114rpx;
-  margin-left: 10rpx;
+  margin-left: 30rpx;
   font-size: 34rpx;
   font-family: PingFang;
   color: rgba(74,74,74,1);
@@ -154,7 +171,7 @@ button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);m
 }
 .road_word{
   display: inline-block;
-  width: 440rpx;
+  width: 460rpx;
   height: 116rpx;
   margin-left: 136rpx;
 }
@@ -164,10 +181,24 @@ button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);m
   font-size: 34rpx;
   font-family: PingFang;
   color: rgba(74,74,74,1);
-  letter-spacing: 0px;
+  line-height: 30rpx;
+}
+
+.to_place text{
+  display: inline-block;
+  max-width:45%;
+  overflow: hidden;
+  font-size: 32rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.place_xia{
+  margin: 0 6rpx;
 }
 .time{
-  width: 146rpx;
+  /* width: 146rpx; */
   height: 34rpx;
   opacity: 1;
   font-size: 24rpx;
@@ -225,4 +256,26 @@ button{width: 630rpx;height: 96rpx;color: white;background: rgba(41,135,246,1);m
   height: 28rpx;
   right: 10rpx;
   top: 60rpx;
+}
+
+
+
+/*选择时间后字体改变 */
+.chasize{
+  font-size: 32rpx !important;
+  font-weight: 600!important;
+  color: #000 !important;
+}
+
+
+.butts{
+  width: 630rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  color: white;
+  background: #d2d2d2;
+  margin: 58rpx auto 0;
+  border-radius: 8rpx;
+  text-align: center;
+  background: rgba(41, 135, 246, 1);
 }

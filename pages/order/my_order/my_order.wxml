@@ -1,8 +1,8 @@
 <!--pages/order/my_order/my_order.wxml-->
 <view style='width:750rpx;background:white;padding-top:30rpx;'>
   <view class='header'>
-    <view class="{{header==0?'header_nav_on':'header_nav'}}" bindtap='choose_header' data-num='0'>我是用户</view>
-    <view class="{{header==1?'header_nav_on':'header_nav'}}" bindtap='choose_header' data-num='1'>我是飞鸟</view>
+    <view class="{{is_user==0?'header_nav_on':'header_nav'}}" bindtap='choose_header' data-num='0'>我是用户</view>
+    <view class="{{is_user==1?'header_nav_on':'header_nav'}}" bindtap='choose_header' data-num='1'>我是飞鸟</view>
   </view>
   <view class='nav'>
     <view id="{{nav_choose==0?'nav_item':''}}" bindtap='choose_nav' data-num='0'>全部</view>
@@ -18,35 +18,57 @@
 <view class='orders' wx:for='{{orders}}' wx:key='{{index}}'>
   <view class='icon'></view>
   <view class='orders_head'>
-    <text>飞鸟用户</text>
+    <text style=''>{{item.uusername}}</text>
     <!-- 订单状态 -->
-    <text style='color:rgba(245,129,35,1);float:right;'>待确认</text>
+    <text style='color:rgba(245,129,35,1);float:right;' wx:if='{{item.ostate==0}}'>待确认</text>
+    <text style='color:rgba(245,129,35,1);float:right;' wx:if='{{item.ostate==1}}'>待支付</text>
+    <text style='color:rgba(139,195,74,1);float:right;' wx:if='{{item.ostate==2}}'>待发货</text>
+    <text style='color:rgba(245,129,35,1);float:right;' wx:if='{{item.ostate==3}}'>待收货</text>
+    <text style='color:rgba(245,129,35,1);float:right;' wx:if='{{item.ostate==4}}'>待评价</text>
+    <text style='color:rgba(245,129,35,1);float:right;' wx:if='{{item.ostate==5}}'>已完成</text>
+    <text style='color:rgba(245,129,35,1);float:right;' wx:if='{{item.ostate==6}}'>已取消</text>
   </view>
   <!-- 国家城市始发地 -->
   <view class='citys_box'>
     <view class='cityTo'>
       <view class='city_item'>
-        <text class='citys'>莫斯科</text>
-        <view class='citys_country'>俄罗斯</view>
-        <text>2018-12-31</text>
+        <text class='citys'>{{item.bstart}}</text>
+        <view class='citys_country'>{{item.bstartpoint}}</view>
+        <text>{{item.bstarttime}}</text>
       </view>
       <image src='/images/jiantou.png' class='jiantou'></image>
-      <view class='city_item' style='margin-left:310rpx;'>
-        <text class='citys'>莫斯科</text>
-        <view class='citys_country'>俄罗斯</view>
-        <text>2018-12-31</text>
+      <view class='city_item' style='float:right;'>
+        <text class='citys'>{{item.bends}}</text>
+        <view class='citys_country'>{{item.bendpoint}}</view>
+        <text>{{item.bendtime}}</text>
       </view>
     </view>
   </view>
   <!-- 订单编号 -->
   <view class='order_num'>
     <text>订单编号:</text>
-    <text style='float:right;'>123d9837439743</text>
+    <text style='float:right;'>{{item.oordernumber}}</text>
   </view>
   <view class='order_money'>
     <text>订单金额:</text>
-    <text style='color:red;float:right;'>￥120</text>
+    <text style='color:red;float:right;'>￥{{item.omoney}}</text>
   </view>
-  <!-- <view class='btn1'>支付</view> -->
-  <view class='btn'>查看详情</view>
+  <!-- 飞鸟时 -->
+  <view class='btn' style='background:rgba(41,135,246,1);color:white;' bindtap='sure_order' data-id='{{item.oid}}' wx:if='{{item.ostate==0&&is_user==1}}'>确认订单</view>
+  <view class='btn' style='background:rgba(41,135,246,1);color:white;' bindtap='sure_goods' data-id='{{item.oid}}' data-start='3' data-urls='birdsorders' wx:if='{{item.ostate==2&&is_user==1}}'>确认发货</view>
+  <view class='btn' style='background:rgba(41,135,246,1);color:white;' bindtap='go_evaluate' data-bid='{{item.bid}}' data-userid='{{item.buserid}}' data-numbers='{{item.oordernumber}}' data-username='{{item.uusername}}' wx:if='{{item.ostate==4&&is_user==1&&item.obstate==0}}'>评价</view>
+  
+  <!-- 用户时 -->
+  <view class='btn' style='background:rgba(41,135,246,1);color:white;' bindtap='go_order_details' wx:if='{{item.ostate==1&&is_user==0}}' data-id='{{item.oid}}'>支付</view>
+  <view class='btn' style='background:rgba(41,135,246,1);color:white;' bindtap='sure_goods' data-id='{{item.oid}}' data-start='4' data-urls='orders' wx:if='{{item.ostate==3&&is_user==0}}'>确认收货</view>
+  <view class='btn' style='background:rgba(41,135,246,1);color:white;' bindtap='go_evaluate' data-bid='{{item.bid}}' data-userid='{{item.buserid}}' data-numbers='{{item.oordernumber}}' data-username='{{item.uusername}}' wx:if='{{item.ostate==4&&is_user==0&&item.oustate==0}}'>评价</view>
+  <view class='btn' bindtap='go_order_details' data-id='{{item.oid}}'>查看详情</view>
 </view>
+
+<!-- 如果没有订单 -->
+<view wx:if='{{orders.length<1}}' class='order_none'>
+  <image mode='widthFix' src='/images/cry2.png'></image>
+  <view>没有相关订单</view>
+</view>
+
+<view class="{{isIphoneX?'iphone':''}}"></view>

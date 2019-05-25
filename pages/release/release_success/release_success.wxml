@@ -4,4 +4,4 @@
 
 <view>恭喜您！发布成功</view>
 <button class='go_home' bindtap='go_home'>回到首页</button>
-<button class='go_order'>查看订单详情</button>
+<button class='go_order' bindtap='go_order'>查看行程详情</button>

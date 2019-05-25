@@ -1,0 +1,63 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+//获取pro数据库
+class Pro extends Model{
+//商品查看
+	public function index(){
+		//实例化pro模型
+		$proModel = new Pro();
+		//两表查询
+		$res = $proModel
+			->alias('p')
+			->join('pro_classify pc','p.class_id=pc.id','LEFT')
+            ->join('pro_classify c','pc.parent_id=c.id','LEFT')
+            ->field('p.id pid,p.name pname,p.image pimage,p.desc pdesc,p.faddish pfaddish,p.text ptext,p.state pstate,pc.id pcid,pc.name pcname,c.id cid,c.name cname')
+            ->select();
+            // dump($res);
+            //返回$res
+            return $res;
+	}
+	public function insert($arr){
+		//实例化pro模型
+		$proModel = new Pro();
+		//添加数据
+		$res = $proModel ->save($arr);
+		//返回$res
+		return $res;
+
+	}
+	//商品删除
+	public function delete(){
+		//实例化pro模型
+		$proModel = new Pro();
+		//删除数据
+		$res = $proModel->delete();
+		//返回$res
+		return $res;
+	}
+	//修改页面
+	public function findEdit($id){
+		//实例化pro模型
+		$proModel = new Pro();
+		//两表查询
+		$res = $proModel
+			->alias('p')
+			->join('pro_classify pc','p.class_id=pc.id','LEFT')
+            ->join('pro_classify c','pc.parent_id=c.id','LEFT')
+            ->field('p.id pid,p.name pname,p.image pimage,p.desc pdesc,p.faddish pfaddish,p.text ptext,p.state pstate,p.gift pgift,pc.id pcid,pc.name pcname,c.id cid,c.name cname')
+            ->find($id);
+		//返回$res
+		return $res;
+	}
+	//商品修改
+	public function proUpdate($arr,$id){
+		//实例化pro模型
+		$proModel = new Pro();
+		//修改数据
+		$res = $proModel->save($arr,['id'=>$id]);
+		//返回$res
+		return $res;
+	}
+
+}

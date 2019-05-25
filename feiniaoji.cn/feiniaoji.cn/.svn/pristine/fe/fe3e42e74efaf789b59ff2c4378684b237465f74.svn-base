@@ -1,0 +1,95 @@
+
+
+		<link rel="stylesheet" href="INDEX_CSS/shop-cart.css"/>
+		<title>购物车</title>
+	
+
+	<div class="mg product ov row">
+		<!------------left-show------------------->
+		<div class="r-title">
+				<a href="">全部商品分类&gt;</a>
+				<a href="">电器&gt;</a>
+				<a href="">吸尘器&gt;</a>
+				<a href="">福维克跨时代吸尘器D4&gt;</a>
+				<a href="">我的购物车</a>
+			</div>
+         <!--cart-->
+         <div class="order-nav ma_top">
+         	
+         		<span class="span on"></span>
+         	
+         		<span class="span"></span>
+         		
+         		<span class="span"></span>	
+         		<span></span>
+         		 	<p class="text-r left x-list">我的购物车</p>
+         		<p class="text-center left ">填写订单信息</p>
+         			<p class="text-left left m-list">提交订单成功</p>
+         	
+      
+         </div>
+         <div class="user-table ">
+					<table class="table table-striped" >
+					 
+					   <thead>
+					      <tr>
+					      	<th></th>
+					         <th colspan="2">商品信息</th>
+					        
+					          <th>单价</th>
+					         <th>数量</th>
+					        
+					         <th>金额</th>
+					         <th>操作</th>
+					       
+					      </tr>
+					   </thead>
+					   <tbody id="toby">
+					      <!--<tr>
+					         <td><label class="m-check"><input type="checkbox" name="" class="bar" id="bar" value="" /><span></span></label></td>
+					         <td><a href="pro_details.html"><img src="INDEX_IMAGES/mo-1.png"/></a></td>
+					         <td><p class="text-cl"><a href="pro_details.html"><span>福维克吸尘器D48</span>
+					         	卧式吸尘器/持久吸力/家<br />
+								具保洁神器/居家必备/呵<br />
+								护家人<br />
+								颜色<img src="INDEX_IMAGES/mo-1.png" alt="" />
+								</a></p></td>
+								<td>￥1999.00</td>
+						        <td>
+						        	<span class="delt">-</span><input type="text" value="1" class="txt"/><span class="add">+</span>
+						        </td>
+						        <td>￥1999.00
+								 </td>
+								 <td><a href="user.html">收藏</a>
+								 <a class="m-delt">删除</a></td>
+								 
+					      </tr>-->
+					       
+					    
+					   </tbody>
+					</table>
+					<span class="right  content">商品总价:<i id="count-price"></i></span>
+					<div class="order-down ov">
+						 <label class="m-check"><input type="checkbox" name="" class="selectAll" id="selectAll" value="" /><span></span>全选</label>
+						<a  class="left " id="select">删除选中产品</a>
+						<a class="left " href="user.html">移入收藏夹</a>
+						<span class="right">应付金额<b>(不含运费)</b>：<i id="T-price"></i></span>
+						
+					</div>
+					      <a href="comfire_order.html" id="count" class=" right ma_top">去结算</a>
+					</div>
+					
+				
+				</div>
+
+			<!--——————————用户订单——-end-->
+
+			<!--爆款产品-end-->
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+
+	<script type="text/javascript" src="INDEX_JS/loaddown.js"></script>	
+	<script type="text/javascript" src="INDEX_JS/shop-cart.js"></script>

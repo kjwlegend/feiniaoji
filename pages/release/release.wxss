@@ -14,46 +14,45 @@ page{
   width: 750rpx;
   height: 176rpx;
   opacity: 1;
-  background: rgba(41, 135, 246, 1);
+  background: #eea74c;
 }
 
 .header_content {
   width: 690rpx;
   height: 324rpx;
-  opacity: 1;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
   position: absolute;
   top: 30rpx;
   left: 30rpx;
-  border-radius: 10rpx;
+  border-radius: 8rpx;
 }
 
-.place {
-  height: 150rpx;
+.place{
+  height: 128rpx;
   width: 630rpx;
-  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+  border-bottom: 2rpx solid rgba(238,238,238,1);
   display: flex;
   align-items: center;
   margin-left: 30rpx;
   box-sizing: border-box;
 }
-
-.place input {
-  width: 250rpx;
+.place view{  
+  width: 45%;
   height: 60rpx;
-  line-break: 60rpx;
+  line-height: 60rpx;
   display: inline-block;
-  /* background: red; */
-  margin-left: 30rpx;
-  /* margin-right: 30rpx; */
-  font-size: 36rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color:#d2d2d2;
+  white-space:nowrap;
+       overflow:hidden;
+       text-overflow:ellipsis;
 }
-
-.place image {
+.place image{
   width: 48rpx;
   height: 48rpx;
-  /* vertical-align: middle; */
+  margin:0 30rpx;
 }
 
 .input_p {
@@ -63,23 +62,20 @@ page{
 /* 共享空间 */
 
 .share {
-  width: 660rpx;
-  height: 436rpx;
-  opacity: 1;
+  width: 690rpx;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
-  margin-top: 212rpx;
-  margin-left: 30rpx;
+  margin: 212rpx auto 0;
   position: relative;
-  padding-top: 44rpx;
-  padding-left: 36rpx;
+  padding: 44rpx 0;
+  border-radius: 8rpx;
 }
 
 .icon {
   width: 8rpx;
   height: 38rpx;
   opacity: 1;
-  background: rgba(41, 135, 246, 1);
+  background: #eea74c;
   position: absolute;
   left: 0;
   top: 44rpx;
@@ -87,95 +83,93 @@ page{
 
 .can_share {
   height: 44rpx;
-  opacity: 1;
   font-size: 32rpx;
   font-family: PingFang;
   color: rgba(102, 102, 102, 1);
   line-height: 44rpx;
-  letter-spacing: 0px;
-  /* margin-top: 44rpx; */
+  margin-left: 36rpx;
 }
 
 .input_on {
-  width: 616rpx;
+  width: 490rpx;
   height: 90rpx;
   line-height: 90rpx;
-  border-bottom: 1rpx solid rgba(41, 135, 246, 1);
+  border-bottom: 1rpx solid #eea74c;
   font-size: 36rpx;
   margin-top: 20rpx;
 }
 
 .input_off{
-  width: 490rpx;
+  width: 100%;
   height: 90rpx;
   line-height: 90rpx;
-  border-bottom: 1rpx solid rgba(210, 210, 210, 1);
-  /* color: rgba(210, 210, 210, 1); */
+  border-bottom: 1rpx solid #eea74c;
   font-size: 36rpx;
   margin-top: 20rpx; 
+}
+.input_beizhu{
+  margin: 0 auto;
 }
 .input+p{
   color: rgba(210,210,210,1);
 }
 
 .share_item{
-  width: 660rpx;
+  width: 690rpx;
   height: 234rpx;
-  opacity: 1;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
-  margin-top: 30rpx;
-  margin-left: 30rpx;
+  margin: 30rpx auto;
   position: relative;
   padding-top: 44rpx;
-  padding-left: 36rpx;
+  border-radius: 8rpx;
 }
 .share_item input{
   width: 490rpx;
   margin-top: 40rpx;
 }
-.share_item text{
+.share_item .xingli{
   position: absolute;
   width: 60rpx;
   height: 56rpx;
-  opacity: 1;
   font-size: 40rpx;
   font-family: PingFangSC;
   color: rgba(74,74,74,1);
-  line-height: 56rpx;
+  line-height:60rpx;
   letter-spacing: 0px;
   right: 60rpx;
   top: 140rpx;
 }
-
-.goods_class_on{
+.share_kge{
+  width: 630rpx;
+  margin: 0 auto;
+}
+.goods_chose{
+  width: 690rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 10rpx;
+}
+.goods_chose view{
   width: 190rpx;
   height: 74rpx;
-  opacity: 1;
-  background: rgba(41,135,246,1);
-  border-radius: 1px 1px 1px 1px;
-  color: white;
+  border-radius: 8rpx;
   text-align: center;
   font-size: 28rpx;
   line-height: 74rpx;
   float: left;
-  margin-right: 24rpx;
-  margin-top: 18rpx;
+  margin:13rpx 0 0 25rpx;
+
+}
+.goods_class_on{
+  border: 1rpx solid #eea74c;
+  background: #eea74c;
+  color: white;
 }
 .goods_class_off{
-  width: 190rpx;
-  height: 74rpx;
-  opacity: 1;
-  border-radius: 1px 1px 1px 1px;
-  border: 1px solid rgba(153,153,153,1);
+  border: 1rpx solid #999999;
+  background: #ffffff;
   color: rgba(102,102,102,1);
-  text-align: center;
-  font-size: 28rpx;
-  line-height: 74rpx;
-  float: left;
-  margin-right: 24rpx;
-  margin-top: 18rpx;
-  box-sizing: border-box;
 }
 
 .check{
@@ -200,12 +194,27 @@ page{
 button{
   width: 690rpx;
 height: 96rpx;
+line-height: 96rpx;
 opacity: 1;
-background: rgba(41, 135, 246, 1);
+background: #eea74c;
 color: white;
-margin-left: 30rpx;
-margin-top: 30rpx;
-margin-bottom: 30rpx;
+margin: 30rpx auto;
+border-radius: 8rpx;
+}
+button::after{ border: none; }
+.butts{
+  width: 690rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  color: white;
+  background: #d2d2d2;
+  margin: 30rpx auto;
+  border-radius: 8rpx;
+  text-align: center;
+
+}
+.butts1{
+  background: #eea74c;
 }
 
 .add{
@@ -221,7 +230,7 @@ margin-bottom: 30rpx;
 .add text{
   font-size: 36rpx;
   font-family: PingFang;
-  color: rgba(41,135,246,1);
+  color: #eea74c;
   line-height: 50rpx;
   letter-spacing: 0px;
   margin-left: 20rpx;
@@ -230,6 +239,7 @@ margin-bottom: 30rpx;
   height: 108rpx;
   width: 630rpx;
   position: relative;
+  margin: 0 auto;
 }
 .add_input image{
   width: 50rpx;
@@ -265,8 +275,9 @@ margin-bottom: 30rpx;
   position: absolute;
   top: 117rpx;
   left: 40rpx;
+  border-radius: 12rpx;
 }
-.xieyi_content text{
+.xieyi_content view {
   opacity: 1;
   font-size: 36rpx;
   font-family: PingFangSC;
@@ -274,10 +285,9 @@ margin-bottom: 30rpx;
   line-height: 170rpx;
   text-align: center;
   width: 674rpx;  
-  display: block;
   font-weight: bold;
 }
-.xieyi_content view{
+.xieyi_content text{
     width: 588rpx;
     height: 590rpx;
     opacity: 1;
@@ -287,8 +297,9 @@ margin-bottom: 30rpx;
     line-height: 46rpx;
     margin-left: 42rpx;
     overflow: auto;
+    display: block
 }
-.xieyi_content view::-webkit-scrollbar {
+.xieyi_content text::-webkit-scrollbar {
   width: 6rpx;
   background-color: #f5f5f5;
 }
@@ -298,4 +309,22 @@ margin-bottom: 30rpx;
   position: absolute;
   left: 326rpx;
   bottom: 30rpx;
+}
+
+/*选择时间后字体改变 */
+.chasize{
+  font-size: 32rpx !important;
+  font-weight: 600!important;
+  color: #000 !important;
+}
+button[disabled] {
+  color:rgb(255, 255, 255)!important;
+  background: #D2D2D2!important;
+  border: none!important;
+  outline: none!important;
+}
+
+
+.zhuozhong{
+  color: #f00;
 }

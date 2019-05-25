@@ -1,53 +1,62 @@
 <!-- 头部我的搜索 -->
 <view class='header_back'>
+</view>
   <view class='header_content'>
-    <view class='place' style='margin-left:20rpx;'>
-      <text style='font-size:34rpx;font-weight:bold;'>莫斯科</text>
-      <text style='color:rgba(155,155,155,1);margin-left:10rpx;'>俄罗...</text>
-      <view>2018-12-31</view>
+    <view class='place'>
+      <text class='citys'>{{search.start_place}}</text>
+      <text class='citys_country'>{{search.start_country}}</text>
+      <view class='place_time'>{{search.startDate}}</view>
     </view>
-    <image src='/images/jiantou.png' class='jiantou'></image>
-    <view class='place' style='margin-right:20rpx;'>
-      <text style='font-size:34rpx;font-weight:bold;'>莫斯科</text>
-      <text style='color:rgba(155,155,155,1);margin-left:10rpx;'>俄罗...</text>
-      <view>2018-12-31</view>
+    <view class='jiantou'>
+      <image src='/images/jiantou.png'></image>
+    </view>
+    <view class='place' style='float:right;'>
+      <text class='citys'>{{search.end_place}}</text>
+      <text class='citys_country'>{{search.end_country}}</text>
+      <view class='place_time'>{{search.endDate}}</view>
     </view>
   </view>
-</view>
 
 <!-- 搜索到的内容 -->
-<view class='search_content'>
+<view class='search_content' wx:for='{{birds}}' wx:key='{{index}}' bindtap='go_trip_details'  data-id='{{item.bid}}' wx:if='{{have_search}}'>
   <view class='icon'></view>
-  <view class='search_title'>剩余可携重量：15 kg</view>
+  <view class='search_title'>剩余可携重量：{{item.btotalweight}}kg</view>
   <!-- 城市始发地 -->
   <view class='citys_box'>
     <view class='cityTo'>
       <view class='city_item'>
-        <text class='citys'>莫斯科</text>
-        <view class='citys_country'>俄罗斯</view>
-        <text>2018-12-31</text>
+        <text class='citys'>{{item.bstart}}</text>
+        <text class='citys_country'>{{item.bstartpoint}}</text>
+        <text>{{item.bstarttime}}</text>
       </view>
       <view class='fly'>
         <image src='/images/fly.png'></image>
       </view>
-      <view class='city_item' style='margin-left:310rpx;'>
-        <text class='citys'>上海</text>
-        <view class='citys_country'>中国</view>
-        <text>2019-01-01</text>
+      <view class='city_item' style='float:right;'>
+        <text class='citys'>{{item.bends}}</text>
+        <text class='citys_country'>{{item.bendpoint}}</text>
+        <text>{{item.bendtime}}</text>
       </view>
     </view>
   </view>
   <!-- 个人头像信息 -->
   <view class='user'>
-    <image src='/images/fly.png' class='headImg'></image>
-    <view class='username'>飞鸟用户717</view>
+    <image src='{{item.uheaderimg}}' class='headImg'></image>
+    <view class='username'>{{item.uusername}}</view>
     <view class='rank'>信用等级 <image src='/images/el4.png'></image></view>
   </view>
 </view>
 
 
 <!-- 底部 -->
-<view class='foot'>
+<view class='foot' wx:if='{{have_search}}'>
   <text>哎呀…到底了</text>
   <image src='/images/wind.png'></image>
+</view>
+
+<!-- 当没有搜到任何行程时 -->
+<view wx:if='{{!have_search}}' class='no_search'>
+  <image src='/images/no_result.png'></image>
+  <view>抱歉！查询无果</view>
+  <button bindtap='search_again'>重新搜索</button>
 </view>

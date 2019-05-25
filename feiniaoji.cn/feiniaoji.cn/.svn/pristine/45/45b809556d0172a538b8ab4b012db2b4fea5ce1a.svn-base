@@ -1,0 +1,10 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class OrderPro extends Model{
+	// 插入订单商品
+	public function insertOrderDetail($info){
+		$res = $this->insertAll($info);
+		return $res;
+	}
+}

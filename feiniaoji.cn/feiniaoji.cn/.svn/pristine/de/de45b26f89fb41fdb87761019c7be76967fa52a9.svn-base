@@ -1,0 +1,101 @@
+/*******banner、轮播*********/
+.banner .carousel-indicators li{float:none;border:0;background:#FFFFFF;height:24px;width:24px;}
+.banner{position: relative;overflow: hidden;height:600px;}
+.banner ul li{position:relative;width:100%;height:600px;}
+.banner ul{height:600px;position: relative;overflow: hidden;}
+.banner a{position: absolute;height:110px;width:42px;display: block;z-index: 2;top:50%;margin-top:-55px;}
+.banner>.prev{background:url(../images/index/prev.png) no-repeat ;left:25px;}
+.banner>.next{background:url(../images/index/next.png) no-repeat ;right:25px;}
+
+.banner ul li>img{width:100%;height:600px;position: absolute;left:50%;margin-left:-50%;display: block;}
+.banner ol .active{background:#ff0000}
+.carousel-control.left,.carousel-control.right{background-image: none;}
+
+
+
+/*今日推荐*/
+.content .introduct li h3 b>a{position:absolute;right:16%;line-height:42px;color:#FF0000}
+.content .introduct li h3> a{color:#FFFFFF;font-size:18px;position:absolute;display: block;	
+						left:0;right:0;padding-left:16%}
+.content .introduct li h3{margin:0;height:45px;line-height:45px;background:#009944;
+					position:relative;text-align:left;}
+.content .introduct{width:100%;height:236px;}
+.content .introduct .title{width:20%;background:#009944;height:232px;}
+.content .introduct ul{display: inline-block;width:80%;margin:0;}
+.content .introduct ul li img{height:135px;width:182px;}
+.content .introduct p{color: #FFFFFF;font-size: 34px;}
+/********news********/
+/*title 公用*/
+ .title-text{ position:relative;
+	            border-top-width: 1px;
+	            border-style: solid;
+	            border-color: #959595;
+				height:28px;  
+				border-width:1px 0 1px 1px ;
+				/*border-bottom:1px solid #959595;
+				border-left:1px solid #959595;*/
+				width:305px;
+				z-index: -1;
+				margin-bottom:15px;}
+ .new-content ul{margin:0;}
+ .title-text h2{width:100%;padding-bottom:5px;position:absolute;bottom:0;left:80px;padding-top:10px;margin:0;left:32px;
+ 					right:0;background:#FFFFFF;color:#009944;font-size:38px}
+ .title-text h2 span{padding-right:5px;color:#FF0000;font-size:26px;float: left;}
+ .title-text h2 span i{font-size:30px;font-style: italic;font-family:'Arial';float:left;}
+ .burst .title-text h2:after{content:url(../images/index/t-yupiao.jpg);display:inline-block;
+  					margin-right:12px;float:left;line-height:38px;}
+/*news-内容*/
+
+.content .news img,.content .product img{margin:0 auto;}
+.content img{margin: 12% auto;display: block;}
+
+/******************公用样式***********************/
+.pro-on .pic ul li:nth-child(1) a img{width:586px;height:517px;}
+
+.content .pic ul li img{position: absolute;z-index: -1;top:0;}
+.content .pic ul .com >a{padding:1px;height:236px;display: block;}
+/*触发*/
+.content .pic ul li:hover h3>a{background:#009944;color:#FFFFFF}
+.content .pic ul li:hover b>a{color:#FF0000}
+.content .pic ul li:hover .com>a {background:rgba(0,153,68,.6);}
+
+.pro-on  .pic ul li:nth-child(1) .com>a{height:517px}
+.pro-on  .pic ul li:nth-child(1) .com h3>a{line-height:73px;}	
+	    
+.pro-on .pic ul li:nth-child(1) .com h3{height:71px;font-size:30px;}
+.pro-on .pic ul li:nth-child(1) .com h3>b>a{height:73px;padding-top:0px;
+
+									line-height:74px;font-size:34px;display: inline;}		    
+.content  ul li .com{padding:0;border:1px solid #009944;width:100%;height:100%;}
+.content  ul li .com h3 >a{border-top:1px solid #009944}
+.content  .pic ul li{padding:0px 0 0 10px;}
+.content   ul li h3 b a{display:inline;color:#009944;font-size:26px;}
+.content  .pic ul li h3 b{cursor:pointer;color:#000000;font-size:18px;
+					position: absolute;line-height:52px;right:10%;}
+.content  .pic ul li h3>a{height:100%;line-height:52px;clear:both;bottom:0;
+							font-size:22px;color:#000000;
+							position:absolute;display: block;
+							width:100%;text-align:left;padding-left:12%;}
+.content .pic ul li h3{margin:0;height:52px;position:relative;width:100%;clear: both;}
+.content .pic ul li{margin:5px 0;}		
+/*por*/
+.product li:nth-child(1){float:right;}
+.content .product .pic ul li{float:right}
+.pro-on  .pic ul li:nth-child(1) .com>a{height:517px}
+.pro-on  .pic ul li:nth-child(1) .com h3>a{line-height:73px;}
+/*intor-pro*/
+.content  .intro-pro .pic ul li{float: left;}
+.content  .intro-pro .pic ul .com:hover a{color:#FFFFFF}
+.content  .intro-pro .pic ul .com h3>a{color:#009944;line-height:52px;}
+
+
+.pro-on  .pic ul li:nth-child(1) h3>a{line-height:73px;}
+.burst .pic ul li:nth-child(2) .com>a
+{height:517px;}
+.burst .pic ul li:nth-child(2) .com>a img{width:586px;height:517px;margin:0 auto;}
+.burst .pic ul li:nth-child(2) .com h3{position:relative;height:73px;}
+.burst .pic ul li:nth-child(2) .com h3>a{height:73px;}
+.burst .pic ul li:nth-child(2) .com h3 b{line-height:73px;height:73px;position:absolute;}
+.content.burst .pic ul .com h3 b>a{color:#FF0000,}
+/*斜体*/
+

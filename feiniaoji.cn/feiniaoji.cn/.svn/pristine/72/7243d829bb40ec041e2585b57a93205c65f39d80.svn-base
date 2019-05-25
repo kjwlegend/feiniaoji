@@ -1,0 +1,14 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Config extends Model{
+	//查看config 数据
+	public function configIndex(){
+		//实例化config模型
+		$configModel = new Config();
+		//查看语句
+		$res = $configModel->find();
+		//返回$res
+		return $res;
+	}
+}

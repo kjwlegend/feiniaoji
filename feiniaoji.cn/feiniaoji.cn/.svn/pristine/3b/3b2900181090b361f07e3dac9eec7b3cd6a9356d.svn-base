@@ -1,0 +1,222 @@
+<?php
+namespace app\index\controller;
+use think\Controller;
+class Index extends Controller{
+  public function _initialize()
+  {
+    //header头部
+    $configModel = model('config');
+    //footer尾部
+    $contactModel = model('contact');
+    //产品分类
+    $proClassModel = model('proClassify');
+    //调用contactModel的footer方法
+    $contact = $contactModel->footer();
+    //调用configmodel的index方法
+    $config = $configModel->configIndex();
+    // 调用Proclassify中的proClass方法
+    $proClass = $proClassModel->proClass();
+    // var_dump($proClass);
+    $arr = [];
+    foreach ($proClass as $key => $val) {
+      $arr[$val['pid']]['pid'] = $val['pid'];
+      $arr[$val['pid']]['pname'] = $val['pname'];
+      $arr[$val['pid']]['c'][$key]['cid'] = $val['cid'];
+      $arr[$val['pid']]['c'][$key]['cname'] = $val['cname'];
+    }
+    // var_dump($arr);
+    //绑定变量
+    $this->assign('config',$config);
+    $this->assign('contact',$contact);
+    $this->assign('proClass',$arr); 
+    // //调用页面
+    // return $this->fetch();
+  }
+
+  //首页
+  public function index()
+  {
+    
+    
+    $banner = model('banner')->BannerSelect();
+    //绑定变量
+    $this ->assign('banner',$banner);  
+    
+    
+    //调用页面
+    return $this->fetch();
+  }
+  
+  public function address()
+  {
+  	//调用页面
+  	return $this->fetch();
+  }
+
+  public function comfire_order()
+  {
+    // 接收购物车ids
+    // $ids = $_POST['id'];
+    $ids = [1,2];
+    // 根据购物车id查询商品信息
+    $cartModel = model('cart'); 
+    $cartInfo = $cartModel->cartProSel($ids);
+
+
+    $this->assign('cartInfo', $cartInfo);
+  	//调用页面
+  	return $this->fetch();
+  }
+
+  public function product()
+  {
+    //产品分类
+    $proClassModel = model('proClassify');
+    //最新商品
+    $proNewModel = model('pro');
+    $id = $_GET['id'];
+    //缓存
+    // $redis = new \Redis();
+    // $redis->connect('127.0.0.1', 6379);
+    // $redis->delete('pro');
+    // if($redis->exists('pro')){
+      // 缓存中有数据的时候，从缓存中取,先反串行化
+      // $pro = $redis->get('pro');
+      // $proNew = unserialize($pro);
+      // echo 1;
+    // }else{
+      //调用pro中的pro方法
+
+      $proNew = $proNewModel->pro($id);
+      // var_dump($proNew);
+      // 从数据库中取出数据，放入缓存,数据放入缓存前，串行化
+      // $redis->set('pro', serialize($proNew));
+      // echo 2;
+    // }
+    
+    
+    // 调用Proclassify中的proClass方法
+    $proClass = $proClassModel->proClass();
+    $arr = [];
+    foreach ($proClass as $key => $val) {
+      $arr[$val['pid']]['pid'] = $val['pid'];
+      $arr[$val['pid']]['pname'] = $val['pname'];
+      $arr[$val['pid']]['c'][$key]['cid'] = $val['cid'];
+      $arr[$val['pid']]['c'][$key]['cname'] = $val['cname'];
+    }
+    // var_dump(json_decode(json_encode($proNew), 1));
+    //绑定变量
+    $this->assign('pro',$proNew);
+    $this ->assign('proClass',$arr);
+    //调用页面
+    return $this->fetch();
+  }
+  public function login(){
+    return $this->fetch();
+  }
+
+  public function order_details(){
+    return $this->fetch();
+  }
+
+  public function ordered(){
+    return $this->fetch();
+  }
+
+
+
+  public function pay_fail(){
+    return $this->fetch();
+  }
+
+  public function pay_success(){
+    return $this->fetch();
+  }
+
+  public function pro_details(){
+    return $this->fetch();
+  }
+
+
+
+
+  public function register(){
+    return $this->fetch();
+  }
+
+  public function shop_cart(){
+    return $this->fetch();
+  }
+
+  public function user(){
+    return $this->fetch();
+  }
+
+  // 生成订单并付款
+  public function pay(){
+    $ids = $_POST['cartIds'];  // 购物车ids
+    $addressId =  1;         //$_POST['address_id'];
+    $orderState = $this->addOrder($ids, $addressId);
+    if($orderState){
+      return $this->fetch();
+    }
+    
+  }
+
+  // 生成订单
+  private function addOrder($ids, $addressId){
+    // 根据用户地址id查询相关信息
+    $addressModel     = model('address');
+    $cartModel        = model('cart');
+    $orderModel       = model('order');
+    $orderDetailModel = model('orderPro');
+    $addressInfo = $addressModel->getAddress($addressId);
+    // 根据购物车ids查询相关商品信息
+   
+    $orderInfo = $cartModel->cartProSel($ids);
+    if(count($orderInfo) > 0){
+      $arr = [
+        'name'        => $orderInfo[0]['name'],
+        'order_sn'    => date('YmdHis').rand(10, 99),
+        'user_id'     => 1,        //session('userId'),
+        'username'    => 'xiaoguniang', // seesion('username')
+        'address_id'  => 1,
+        'address'     => $addressInfo['address'],
+        'created_time'=> date('Y-m-d H:i:s')
+      ];
+      // 把信息插入订单表
+      $orderId = $orderModel->addOrder($arr);
+      if($orderId){
+        // 插入订单商品,先遍历订单商品
+        foreach($orderInfo as $k => $v){
+          $details[$k] = [
+            'order_id'  => $orderId, 
+            'pro_id'    => $v['pro_id'],
+            'pro_name'  => $v['name'],
+            'color_id'  => $v['color_id'],
+            'pro_color' => $v['color'],
+            'combo_id'  => $v['combo_id'],
+            'pro_combo' => $v['combo']
+          ];
+        }
+        $orderDetailRes = $orderDetailModel->insertOrderDetail($details);
+        if($orderDetailRes){  // 订单生成成功后，删除购物车
+          $cartDelRes = $cartModel->cartDel($ids);
+          if($cartDelRes){
+            return 1;   //生成订单成功
+          }else{
+            $this->error('删除购物车商品失败');
+          }
+        }else{
+          $this->error('写入订单商品表失败');
+        }
+      }else{
+        $this->error('数据写入订单表失败');
+      }
+
+    }else{
+      $this->error('不支持空订单操作');
+    }
+  }
+
+}

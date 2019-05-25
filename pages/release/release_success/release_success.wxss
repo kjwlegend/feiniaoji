@@ -30,6 +30,10 @@ view{
   background: rgba(41,135,246,1);
   color: white;
   margin-top: 332rpx;
+  border: none;
+}
+.go_home::after{
+  border: none;
 }
 .go_order{
   width: 690rpx;

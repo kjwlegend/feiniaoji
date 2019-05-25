@@ -1,0 +1,17 @@
+.product .address ul li{width:275px;padding:6px;margin-right:45px;}
+.product .address ul li:nth-last-child(1){margin-right:0;}
+.product .address ul{margin:0;padding:0 25px;}
+
+.right-show>div{border: 1px solid #A0A0A0;}
+.mess-add label{display:inline-block;float:left}
+.mess-add input[type="text"]{left:115px;position: absolute;height:30px;line-height:30px;padding:5px}
+.mess-add div:nth-child(2)>input{width:500px;}
+.mess-add div:nth-child(5)>input{width:263px;}
+.mess-add div{position: relative;margin:5px;padding:5px 0;overflow: hidden;}
+form{margin: auto;width:625px}
+
+.mess-add form{line-height:30px;font-size: 16px;overflow: hidden;}
+.mess-add form>input{color:#ffffff;padding:0 34px;line-height:35px;background:#009944;border:none;margin:20px 16px;float: left;}
+.mess-add form input[type="submit"]{margin-left:120px;}
+.mess-add form .m-check{margin-left:107px;}
+.mess-add form .m-check input:checked + span:after{content:"";height:10px;width:10px;margin:-5px 0 0 -5px;border-radius: 50%;border-radius:50%;background:#009944;}

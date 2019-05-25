@@ -1,33 +1,39 @@
 <!-- 头部飞鸟用户部分 -->
 <view class='header_back'>
+</view>
   <view class='header_content'>
-    <image src='/images/my_on.png' class='headimg'></image>
+    <image src='{{birds.uheaderimg}}' class='headimg'></image>
     <view class='userinfo'>
-      <text class='user'>飞鸟用户1995</text>
-      <view class='country'>国家：美国</view>
-      <view class='yi'>已认证
-        <image src='/images/gougou_white.png'></image>
+      <text class='user'>{{birds.uusername}}</text>
+      <view class='country'>国家：{{birds.unation}}</view>
+      <view class='uwxaccount'>微信号:<text selectable="true">{{birds.uwxaccount}}</text></view>
+      <view class='yi'>
+        <view>已认证</view>
+        <image mode='widthFix' src='/images/gougou_white.png'></image>
       </view>
     </view>
-    <view class='des'>本人常年往返上海纽约，只带小件，大件不带，做事不拖拉，欢迎信任~ </view>
-    <view class='credit'>信用等级
-      <image src='/images/gougou.png'></image>
+    <view class='des'>{{birds.udescribe}} </view>
+    <view class='credit'>
+      <text>信用等级</text>
+      <view wx:for="{{gous}}" wx:key='{{index}}'>
+        <image wx:if='{{(birds.usore-1)>=index}}' mode='widthFix' src='/images/gou1.png'></image>
+        <image wx:else mode='widthFix' src='/images/gou2.png'></image>
+      </view>
     </view>
   </view>
-</view>
 <!-- 出发行程状态 -->
 <!-- 非已取消状态 -->
 <view class='trip_state' wx:if='{{!is_cancel}}'>
   <view class='trip_item'>
-    <image src='/images/wait.png'></image>
+    <image mode='widthFix' src='/images/wait.png'></image>
     <view class='trip_word'>待出发</view>
   </view>
   <view class='trip_item'>
-    <image src="{{is_fly||is_complete?'/images/flying.png':'/images/flyno.png'}}"></image>
+    <image mode='widthFix' src="{{is_fly||is_complete?'/images/flying.png':'/images/flyno.png'}}"></image>
     <view class="{{is_fly||is_complete?'trip_word':'trip_word1'}}">进行中</view>
   </view>
   <view class='trip_item'>
-    <image src="{{is_complete?'/images/conpleteing.png':'/images/conpleteend.png'}}"></image>
+    <image mode='widthFix' src="{{is_complete?'/images/conpleteing.png':'/images/conpleteend.png'}}"></image>
     <view class="{{is_complete?'trip_word':'trip_word1'}}">已完成</view>
   </view>
   <view class="{{is_fly||is_complete?'line1_on':'line1'}}"></view>
@@ -40,28 +46,31 @@
 </view>
 
 <!-- 主要内容 -->
-<view class="{{is_my?'trip_info1':'trip_info'}}">
+<view class="{{is_my?'trip_info1 trip_info':'trip_info'}}">
   <!-- 到达城市 -->
   <view class='cityTo'>
     <view class='city_item'>
-      <text class='citys'>莫斯科</text>
-      <view class='citys_country'>俄罗斯</view>
-      <text>2018-12-31</text>
+      <text class='citys'>{{birds.bstart}}</text>
+      <view class='citys_country'>{{birds.bstartpoint}}</view>
+      <text>{{birds.bstarttime}}</text>
     </view>
-    <image src='/images/jiantou.png' class='jiantou'></image>
-    <view class='city_item' style='margin-left:310rpx;'>
-      <text class='citys'>莫斯科</text>
-      <view class='citys_country'>俄罗斯</view>
-      <text>2018-12-31</text>
+    <view class='jiantou'>
+      <image mode='widthFix' src='/images/jiantou.png'></image>
+    </view>
+    <view class='city_item city_items'>
+      <text class='citys'>{{birds.bends}}</text>
+      <view class='citys_country'>{{birds.bendpoint}}</view>
+      <text>{{birds.bendtime}}</text>
     </view>
   </view>
+  <view></view>
   <!-- 可共享空间 -->
   <view class='share'>
     <view class='icon'></view>
     <view class='share_title'>可共享空间</view>
-    <view class='share_case'>20寸行李箱(x2)</view>
-    <view class='share_case'>20寸行李箱(x2)</view>
-    <view class='share_case'>20寸行李箱(x2)</view>
+    <view class='share_case' wx:for='{{box}}' wx:key='{{index}}'>
+      <text>{{item}}</text>
+    </view>
     <view style='clear:both;'></view>
   </view>
   <!-- 可共享重量 -->
@@ -69,8 +78,9 @@
     <view class='icon'></view>
     <view class='share_title'>可共享重量</view>
     <view class='weight'>
-      <view>剩余5kg</view>
-      总共20kg
+      <view class='weight_zhong'>剩余{{birds.btotalweight-birds.bresidueweight}}kg</view>
+      <view class='weight_sheng' style='width:{{widths}}'></view>
+      <view class='weight_zong'>总共{{birds.btotalweight}}kg</view>
     </view>
   </view>
   <!-- 收货类型 -->
@@ -78,21 +88,16 @@
     <view class='icon'></view>
     <view class='share_title'>收货类型</view>
     <view class='goods_class' style='margin-top:20rpx;'>
-      <view>日用品</view>
-      <view>食品</view>
-      <view>文件</view>
-      <view>衣物</view>
-      <view>数码产品</view>
-      <view>其他</view>
+      <view wx:for='{{types}}' wx:key='{{index}}'>{{item}}</view>
     </view>
   </view>
   <!-- 飞鸟备注 -->
   <view class='share'>
     <view class='icon'></view>
     <view class='share_title'>飞鸟备注</view>
-    <view class='remark'>最近不在伦敦，请提前两天与我联系。</view>
-    <view class='fabu' style=' margin-top: 26rpx;'>发布时间：2018-12-08 15:23:45 </view>
-    <view class='fabu'>行程编号：123d9837439743</view>
+    <view class='remark'>{{birds.bdesc}}</view>
+    <view class='fabu' style=' margin-top: 26rpx;'>发布时间：{{date}}</view>
+    <view class='fabu'>行程编号：{{birds.btripnumbers}}</view>
   </view>
 </view>
 
@@ -102,17 +107,19 @@
   <view class='icon' style='height:116rpx;left:0;'></view>
   <view class='new_road'>其他行程推荐</view>
   <!-- 客户列 -->
-  <view class='road_list' wx:for='{{road_list}}' wx:key='{{index}}'>
-    <image src='/images/banner.png' class='list_img'></image>
+  <view class='road_list' wx:for='{{all_birds}}' wx:key='{{index}}' bindtap='go_tripDetails' data-id='{{item.bid}}'>
+    <image src='{{item.uheaderimg}}' class='list_img'></image>
     <view class='road_word'>
-      <text class='place'>伦敦-上海</text>
+      <text class='place'>
+        <text>{{item.bstart}}</text><text class='place_xia'>-</text><text>{{item.bends}}</text>
+      </text>
       <view class='time'>
         <image src='/images/home_time.png'></image>
-        2018-12-15
+        {{item.bstarttime}}
       </view>
       <view class='weight_oh'>
         <image src='/images/huo.png'></image>
-        15kg
+        {{item.btotalweight}}kg
       </view>
     </view>
     <image class='right' src='/images/right_go.png'></image>
@@ -120,19 +127,19 @@
 </view>
 
 
-<view wx:if="{{!is_fly&&!is_complete&&!is_cancel}}">
+<view wx:if="{{!is_fly&&!is_complete&&!is_cancel}}" class='foots'>
   <!-- 下单 如果是查看别人的行程 -->
   <view class='foot' wx:if='{{!is_my}}'>
     <view class='produce' bindtap='show_xieyi'>下单说明
       <image src='/images/produce.png'></image>
     </view>
-    <view class='sub' style='color:white;background:rgba(41,135,246,1);' bindtap='show_xieyi'>立即下单</view>
-    <view class='sub'>在线沟通</view>
+    <view class='sub' style='color:white;background:rgba(41,135,246,1);' bindtap='go_order_sub' data-id='{{birds.bid}}' wx:if="{{!is_cancel||!is_fly||!is_complete}}">立即下单</view>
+    <view class='sub' bindtap='go_order_online'>在线沟通</view>
   </view>
   <!-- 下单 如果是查看自己的行程 -->
-  <view class='foot' wx:if='{{is_my}}'>
-    <view class='sub1'>修改行程</view>
-    <view class='sub1' style='color:rgba(153,153,153,1);border-color:rgba(153,153,153,1);'>取消行程</view>
+  <view class='foot' wx:elif='{{is_my&&order!=2}}'>
+    <view class='sub1' bindtap='trip_revise' data-id='{{birds.bid}}'>修改行程</view>
+    <view class='sub1' style='color:rgba(153,153,153,1);border-color:rgba(153,153,153,1);' bindtap='trip_cancel' data-id='{{birds.bid}}'>取消行程</view>
   </view>
 </view>
 
@@ -145,21 +152,23 @@
     <text>下单说明</text>
     <view class='xieyi_list'>
       <view class='dote'></view>
-      <view class='xieyi_word'>下单前请与飞鸟联系，以确保信 息的真实性；</view>
+      <view class='xieyi_word'>下单前请与飞鸟(带货人)联系，以确保信 息的真实性；</view>
     </view>
     <view class='xieyi_list'>
       <view class='dote'></view>
-      <view class='xieyi_word'>下单时输入期望价格和备注信息，等待飞鸟确认是否接单； </view>
+      <view class='xieyi_word'>下单时输入期望价格和备注信息，等待飞鸟(带货人)确认是否接单； </view>
     </view>
     <view class='xieyi_list'>
       <view class='dote'></view>
-      <view class='xieyi_word'>飞鸟确认接单后您需要微信支付 订单费用。 </view>
+      <view class='xieyi_word'>飞鸟(带货人)确认接单后您需要微信支付 订单费用。 </view>
     </view>
     <!-- 确定、取消按钮 -->
     <view class='xieyi_btn'>
       <view style='margin-left:86rpx;' bindtap='xieyi_off'>取消</view>
-      <view style='background:rgba(41,135,246,1);color:white;margin-left:20rpx;' bindtap=''>好的</view>
+      <view style='background:rgba(41,135,246,1);color:white;margin-left:20rpx;' bindtap='go_order_sub' data-id='{{birds.bid}}'>好的</view>
     </view>
   </view>
   <image src='/images/close_window.png' bindtap='xieyi_off'></image>
 </view>
+
+<view class="{{isIphoneX?'iphone':''}}"></view>

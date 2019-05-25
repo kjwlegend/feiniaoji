@@ -1,0 +1,353 @@
+		<link rel="stylesheet" href="INDEX_CSS/base.css" />
+
+
+		<link rel="stylesheet" href="INDEX_CSS/product.css"/>
+		<title>产品中心</title>
+	
+
+	<div class="mg product ov row">
+		<!------------left-show------------------->
+		<div class="ov">
+			
+		
+		<div class="left-show col-xs-2">
+				<!--l-nav-->
+				<div class="l-nav left">
+					<dl>
+					{volist name="proClass" id="vo"}
+
+
+						<dt><span></span>{$vo.pname}</dt>
+						<dd class="on">
+							{volist name="vo['c']" id="vv"}
+								<a href="{:url('index/pro_details')}?id={$vv.cid}">{$vv.cname}</a>
+							{/volist}
+						</dd>
+					
+					{/volist}
+						
+					</dl>
+				</div>
+		                 <!--l-nav-end-->
+                <div class="left-down ov">
+                	<h3 class="text-center">人气推荐</h3>
+                	<ul>
+                		<li>
+                			
+                			<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg"/></a>
+                			
+                			<div class="show_com">
+                				<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                				
+                			</div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic4.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                           </div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic6.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                           </div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_02.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                          </div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                           </div>
+                		</li>
+                		
+                		
+                	</ul>
+                	
+                </div>
+			</div>				
+			<!------------left-show-end------------------>
+	
+		<div class="r-product left col-xs-10">
+			<div class="r-title">
+				<a href="product.html">全部商品分类&gt;</a>
+				<a href="pro_details.html">电器&gt;</a>
+				<a href="pro_details.html">吸尘器</a>
+			</div>
+
+				<div class="pro-content ov">
+					
+					<div class="pro-hot ov">
+						<h2 class="text-left"><span><b>H</b>ot</span>热卖推荐</h2>
+					<ul class="ov">
+						<li>
+							<a class="left" href="pro_details.html"><img src="INDEX_IMAGES/pro/r-pro01.png" /></a>
+							<div class="left">
+								<h3 class="text-left"><a href="pro_details.html">福维克吸尘器 </h3>
+									<p><a href="pro_details.html">持久吸力/家具保洁神<br />器/呵护家人</a></p>
+									 <span id="">
+									 	<b>￥</b>1999
+									 </span>
+									
+								<a href="comfire_order.html">立即购买</a>
+							</div>
+						</li>
+						<li>
+							<a class="left" href="pro_details.html"><img src="INDEX_IMAGES/pro/r-pro01.png" /></a>
+							<div class="left">
+								<h3 class="text-left"><a href="pro_details.html">福维克吸尘器  </a></h3>
+									<p><a href="pro_details.html">持久吸力/家具保洁神<br />器/呵护家人</a></p>
+									 <span id="">
+									 	<b>￥</b>1999
+									 </span>
+									
+								<a href="shop.html">立即购买</a>
+							</div>
+						</li>
+						<li>
+							<a class="left" href="pro_details.html"><img src="INDEX_IMAGES/pro/r-pro01.png" /></a>
+							<div class="left">
+								<h3 class="text-left"><a href="pro_details.html">福维克吸尘器 </a></h3>
+									<p> <a href="pro_details.html">持久吸力/家具保洁神<br />器/呵护家人</a></p>
+									 <span id="">
+									 	<b>￥</b>1999
+									 </span>
+									
+								<a href="shop.html">立即购买</a>
+							</div>
+						</li>
+					
+						
+					
+					</ul>
+					</div>
+					<!--商品表格-->
+					<div class="p-table ov">
+						<table class="table">
+							
+						
+							<tbody>
+							<tr>
+							<th>价格</th>
+							<td>0-999</td>
+							<td class="on">1000-1999</td>
+							<td>2000-2999 </td>
+							<td>3000-3999 </td>
+							<td>4000-4999</td>
+							<td>5000以上</td>
+							<td></td>
+							</tr>
+						
+								<tr>
+									
+									<th rowspan="2">品牌</th>
+								
+									<td class="on"><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/p-logo.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-2.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-3.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-4.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-5.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-6.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-7.png"/></td>
+								</tr>
+								
+								<tr>
+									
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-8.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-9.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-10.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-11.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-12.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-13.png"/></td>
+									
+									<td></td>
+								
+								</tr>
+								
+								<tr>
+							     <th>产品功率</th>
+									<td>0-85kw  </td>
+								
+									<td>86-499kw </td>
+								
+									<td>500kw-999kw </td>
+								
+									<td>1000-1399kw</td>
+								
+									<td>1400-1799kw</td>
+								
+									<td>1800kw以上</td>
+									
+									<td></td>
+								
+								</tr>
+								<th>类型</th>
+									<td>手提式吸尘器 </td>
+								
+									<td>卧式吸尘器</td>
+								
+									<td>感应式自动吸尘器 </td>
+								
+									<td>桶式吸尘器</td>
+								
+									<td>立式吸尘器</td>
+								
+									<td>吸尘器配件</td>
+									
+									<td></td>
+								
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						
+						<!--展示-->
+						<!--头部-->
+					<div class="pro-show ov">
+						
+						<!------------right-show------------------->
+						<div class="right-show ">
+							<!--<!--头部-->
+							<div class="title ov">
+							<div class="list  left col-lg-4">
+								<h4>排序</h4>
+									<ul class="vf">
+										
+										<li class="on">销售<i></i></li>
+										<li>价格<i></i></li>
+										<li>评价<i></i></li>
+										<li>发布时间<i></i></li>
+									</ul>
+								</div>
+							
+	              
+							<div class="iput left col-lg-4 text-center">
+								<div class="ov">
+									
+								<input type="text" placeholder="请输入搜索内容" />
+								<input type="button" name="" id="" />
+								</div>
+							</div>
+							<div class="t-turn left col-lg-4 text-right">
+								
+									<span>共64件商品</span>
+									 <span><b>1</b>/14</span>
+									 <span id="">
+									 	<i><!--&lt;-->&lang;</i>
+									 	<i>&rang;</i>
+									 	
+									 </span>
+								
+								
+							</div>
+						</div>
+					<!--头部-end-->
+							<div class="con-show">
+							<ul class="ov show-row">
+								
+								{volist name="pro" id="vo"}
+								
+								
+
+
+									<li class="col-lg-4">
+										<div class="shop_com">
+										<a href="{:url('index/pro_details')}?id={$vo.id}"><img src="UPLOADS/{$vo.image} " width="286px" height="236px" /></a>							
+										<h3> <span>￥</span>{$vo.price}<a href="javascript:;">{$vo.gift}</a></h3>
+										<h4><a href="{:url('index/pro_details')}?id={$vo.id}">{$vo.name}</a></h4>
+										<p>
+			                     			<a href="{:url('index/pro_details')}?id={$vo.id}">{$vo.desc}</a></p>
+			                            <p>已售  <span>499</span>件  &nbsp;   &nbsp; 评论  <span>120</span>条</p>
+										</div>
+										<a class="lg" href="{:url('index/pro_details')}?id={$vo.id}"></a>
+									</li>
+								{/volist}
+
+
+
+							</ul>
+						</div>
+					</div>
+					<!-------right-show-end--------->
+					</div>
+					
+				
+				</div>
+
+			<!--——————————Hot 热销产品———-end-->
+
+			<!--爆款产品-end-->
+		</div>
+		</div>
+		<!---翻页------------>
+		<div class="turn ov">
+			<ul>
+				<li><a href="javascript:;">上一页</a></li>
+				<li class="on"><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">下一页</a></li>
+				<li><i>第</i><input type="text" id="" value="" /><i>页</i></li>
+				<li><a href="javascript:;">确定</a></li>
+			</ul>
+		</div>
+		<!-----翻页-end-------->
+	</div>
+
+
+	
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/pro.js"></script>
+    <script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+    <script>		 
+     $('.right-show .list ul li,table tr:nth-child(1) td').click(function(){
+					$('.right-show .list ul .on,table tr:nth-child(1) .on').removeClass('on')
+					$(this).addClass("on")
+		}) 
+		$(' table tr:nth-child(2) td, table tr:nth-child(3) td').click(function(){
+					$('table tr:nth-child(2) .on, table tr:nth-child(3) .on').removeClass('on')
+					$(this).addClass("on")
+		})
+	  $('table tr:nth-last-child(2) td').click(function(){
+					$('table tr:nth-last-child(2) .on').removeClass('on')
+					$(this).addClass("on")
+		})
+	    $('table tr:nth-last-child(1) td').click(function(){
+					$('table tr:nth-last-child(1) .on').removeClass('on')
+					$(this).addClass("on")
+		})
+    </script>

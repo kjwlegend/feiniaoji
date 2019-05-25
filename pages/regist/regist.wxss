@@ -33,26 +33,27 @@ page{
 }
 
 .header view {
-  width: 264rpx;
   height: 48rpx;
   opacity: 1;
   font-size: 36rpx;
   font-family: PingFangSC;
-  color: rgba(74, 74, 74, 1);
+  color: #000000;
   line-height: 48px;
   letter-spacing: 0px;
   text-align: center;
+  font-weight: 700;
 }
 
 .content {
   margin-top: 132rpx;
   margin-left: 30rpx;
   width: 690rpx;
-  height: 912rpx;
+  /* height: 912rpx; */
   opacity: 1;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 6px 1px rgba(217, 225, 231, 0.66);
   padding-top: 1rpx;
+  padding-bottom: 10rpx;
 }
 
 .icon {
@@ -66,29 +67,33 @@ page{
 }
 
 .content_item {
-  width: 327px;
+  width: 100%;
   opacity: 1;
-  /* border: 1px solid red; */
   margin-top: 70rpx;
   position: relative;
   font-size: 30rpx;
-  font-family: PingFang;
   color: rgba(102, 102, 102, 1);
-  line-height: 21px;
-  letter-spacing: 0px;
-  overflow: hidden;
 }
 
 .item_1 {
-  height: 136rpx;
-  width: 266rpx;
-  float: left;
+  height: 146rpx;
+  width: 36%;
+  display: inline-block;
   padding-left: 36rpx;
+  vertical-align: middle;
 }
+
 
 .item_1 input {
   width: 266rpx;
-  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 13rpx;
+}
+.item_1 picker .picker{
+  width: 266rpx;
+  border-bottom: 1px solid rgba(238, 238, 238, 1);
   height: 80rpx;
   line-height: 80rpx;
   margin-top: 13rpx;
@@ -99,7 +104,7 @@ page{
 
 .item_2{
   width: 600rpx;
-  height: 136rpx;
+  height: 146rpx;
   padding-left: 36rpx;
 }
 .item_2 input{
@@ -109,20 +114,19 @@ page{
   line-height: 80rpx;
   margin-top: 13rpx;
   display: inline-block;
+  vertical-align: middle;
   /* float: left; */
 }
 .to{
   line-height: 80rpx;
   vertical-align: middle;
-  margin-left: 40rpx;
-  margin-right: 40rpx;
+  margin:0 15rpx;
   color: rgba(210,210,210,1);
   display: inline-block;
-  margin-bottom: 60rpx;
 }
 .item_3{
   width: 600rpx;
-  height: 136rpx;
+  height: 146rpx;
   padding-left: 36rpx;
 }
 .item_3 input{
@@ -154,9 +158,12 @@ page{
   opacity: 1;
   background: rgba(41,135,246,1);
   color: white;
-  margin-bottom: 30rpx;
+  margin-bottom: 80rpx;
 }
-
+.sub[disabled] {
+    color:#fff !important;
+    background: rgb(210, 210, 210) !important;
+}
 .notice{
   width: 278px;
   height: 21px;
@@ -169,4 +176,35 @@ page{
   margin-top: 30rpx;
   margin-left: 30rpx;
   margin-bottom: 50rpx;
+}
+
+
+.quhaos{
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 3;
+}
+.quhaos input{
+  width: 200rpx;
+}
+.keuxanze{
+  position: absolute;
+  top: 90rpx;
+  left: -10rpx;
+  background: #fff;
+  width: 100%;
+  padding: 10rpx;
+  max-height: 200rpx;
+  border: 1rpx solid rgba(238, 238, 238, 1);
+  overflow: auto;
+}
+.keuxanze view{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+  overflow: hidden;
 }

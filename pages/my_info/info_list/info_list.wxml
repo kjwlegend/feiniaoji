@@ -1,32 +1,37 @@
 <!--pages/my_info/info_list/info_list.wxml-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <view class='info_item' style='height:160rpx;line-height:160rpx;'>
-  <text>头像</text>
-  <image src='{{userInfo.avatarUrl}}' class='head_img'></image>
-  <image src='/images/right_gray.png' class='right' style='top:70rpx;'></image>
+  <text class='infoe'>头像</text>
+  <image src='{{userInfo.headerimg}}' class='head_img'></image>
+  <!-- <image src='/images/right_gray.png' class='right' style='top:70rpx;'></image> -->
 </view>
 <view class='info_item'>
-  <text>昵称</text>
-  <text class='infos'>{{userInfo.nickName}}</text>
-  <image src='/images/right_gray.png' class='right'></image>
+  <text class='infoe'>昵称</text>
+  <text class='infos'>{{userInfo.nickname}}</text>
+  <!-- <image src='/images/right_gray.png' class='right'></image> -->
 </view>
 <view class='info_item'>
-  <text>姓名</text>
-  <text class='infos'>{{userInfo.nickName}}</text>
+  <text class='infoe'>微信号</text>
+  <text class='infos'>{{userInfo.wxaccount}}</text>
+</view>
+<view class='info_item' bindtap='change' data-id='name'>
+  <text class='infoe'>姓名</text>
+  <text class='infos'>{{userInfo.username}}</text>
   <image src='/images/right_gray.png' class='right'></image>
 </view>
-<view class='info_item'>
-  <text>常驻国家</text>
-  <text class='infos'>俄罗斯</text>
+<view class='info_item' bindtap='change' data-id='country'>
+  <text class='infoe'>常驻国家</text>
+  <text class='infos'>{{userInfo.nation}}</text>
   <image src='/images/right_gray.png' class='right'></image>
 </view>
-<view class='info_item'>
-  <text>手机号码</text>
-  <text class='infos'>1234567910</text>
+<view class='info_item' bindtap='change' data-id='phone'>
+  <text class='infoe'>手机号码</text>
+  <text class='infos'>{{userInfo.areacode}}-{{userInfo.phone}}</text>
   <image src='/images/right_gray.png' class='right'></image>
 </view>
-<view class='info_item' style='height:180rpx;'>
-  <text style='line-height:180rpx;'>个人描述</text>
-  <textarea >常年往返上海和伦敦出差，有需要待货可以联系我</textarea>
+<view class='info_item1' style='height:180rpx;' bindtap='change' data-id='des'>
+  <text class='info_miaoshu'>个人描述</text>
+  <text class='info_geren'>{{userInfo.describe}}</text>
   <image src='/images/right_gray.png' class='right' style='top:80rpx;'></image>
 </view>
 

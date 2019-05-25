@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系添加</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="ADMIN_JS/jquery.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#top').change(function(){
+            var id = $(this).val();
+            $.post("{:url('ProClassify/carryOut')}",{id: id},function(data){
+                
+                var arr = eval(data);
+                    // console.log(arr);
+                $('#two').remove();
+                $('#three').remove();
+
+                var vals ='<select id="two" name="two" class="dfinput">';
+                vals += '<option value="">请选择二级分类</option>';
+                for(var i=0;i<arr.length;i++){
+                    vals += '<option value="'+arr[i].id+'">'+arr[i].name+'</option>';  
+                }
+
+                vals += '</select>';
+                $('#ttwo').append(vals);
+
+                // $('#two').change(function(){
+                //     var id = $(this).val();
+                //     $.post("{:url('ProClassify/carryOut')}",{id: id},function(data){
+                //         console.log(id);
+                //         var arr = eval(data);
+                //             // console.log(arr);
+                //         $('#three').remove();
+                //         var vals ='<select id="three" name="parent_id" class="dfinput">';
+                //         vals += '<option value="">请选择三级分类</option>';
+                //         for(var i=0;i<arr.length;i++){
+                //             vals += '<option value="'+arr[i].id+'">'+arr[i].name+'</option>';  
+                //         }
+                //         vals += '</select>';
+                //         $('#tthree').append(vals);
+                //     })
+                // })
+            })
+
+        })
+        
+
+    })
+</script>
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">表单</a></li>
+    </ul>
+    </div>
+
+    <div class="formbody">
+
+    <div class="formtitle"><span>产品分类添加</span></div>
+    <form action="{:url('ProClassify/classTopInsert')}" method="post" >
+        <ul class="forminfo">
+       
+        <li>
+            <label>上级分类</label>
+            <cite id="class">
+                <select id="top" name="top" class="dfinput">
+                    <option value="">请选择顶级分类</option>
+                    {foreach name="tops" id="vo"}
+                        <option value="{$vo.id}">{$vo.name}</option>
+                    {/foreach}
+                </select>
+                <cite  id="ttwo"></cite>
+                <cite  id="tthree"></cite>   
+                
+            </cite>
+                
+     
+        </li>
+
+        <li>
+            <label>分类名</label>
+            <input name="name" type="text" class="dfinput"  />
+        </li>
+        注：<br>
+        如果不选择上级分类，添加的分类为顶级分类。<br/>如果选择上级分类，当前添加分类为所选上级分类的下级分类
+        <li>
+            <label></label>
+            <input name="" type="submit" class="btn" value="确认保存"/>
+        </li>
+        </ul>
+    </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>  
+<head>
+<!-- <title>Login</title> -->
+<meta charset="utf-8">
+ <!--  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="author" content="ZERO3412[at]gmail.com" /> -->
+      <title>Login </title>
+
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="ZERO3412[at]gmail.com" />
+
+
+
+<link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_BOOTSTRAP/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/bootstrap-dialog/bootstrap-dialog.min.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/formvalidator/validation.engine.jquery.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/animate.min.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/bootstrap-table/bootstrap-table.min.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/bootstrap-table/extensions/editable/bootstrap-editable.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN_VENDOR/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" />
+  <link rel="stylesheet" type="text/css" href="ADMIN/app.css" />
+  <link href="ADMIN/custom.min.css" rel="stylesheet">
+
+
+
+  <script type="text/javascript" src="ADMIN/jquery.min.js"></script>
+  <script type="text/javascript" src="ADMIN_BOOTSTRAP/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-dialog/bootstrap-dialog.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/formvalidator/jquery.validation.engine.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/formvalidator/jquery.validation.engine.cn.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-table/bootstrap-table.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+  
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-table/extensions/editable/bootstrap-table-editable.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-table/extensions/editable/bootstrap-editable.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-table/extensions/export/bootstrap-table-export.min.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-table/extensions/export/tableExport.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-datetimepicker/moment.js"></script>
+  <script type="text/javascript" src="ADMIN_VENDOR/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="ADMIN_VENDOR/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<link href="ADMIN/style.css" rel='stylesheet' type='text/css' />
+<!--//webfonts-->
+<script src="ADMIN/jquery.min.js"></script>
+</head>
+<body>
+<script>$(document).ready(function(c) {
+    $('.close').on('click', function(c){
+        $('.login-form').fadeOut('slow', function(c){
+            $('.login-form').remove();
+        });
+    });   
+});
+</script>
+ <!--SIGN UP-->
+<h1>飞鸟集</h1>
+	<div class="login-form">
+	    <div class="close"> </div>
+	        <div class="head-info">
+	            <label class="lbl-1"> </label>
+	            <label class="lbl-2"> </label>
+	            <label class="lbl-3"> </label>
+	        </div>
+	            <div class="clear"> </div>
+	    <div class="avtar">
+	        <img src="ADMIN/img/avtar.png" style="width: 150px;" />
+	    </div>
+	        <form action="{:url('index/checkLogin')}" method="post">
+	            <input type="text" class="text" value="" name="name" placeholder="用户名" >
+	            <div class="key">
+	            	<input type="password" value="" name="password" placeholder="密码" >
+	            </div>
+	        
+			    <div class="signin">
+			        <input type="submit" value="登录" >
+			    </div>  
+	      </form>
+	</div>
+
+
+</body>
+</html>

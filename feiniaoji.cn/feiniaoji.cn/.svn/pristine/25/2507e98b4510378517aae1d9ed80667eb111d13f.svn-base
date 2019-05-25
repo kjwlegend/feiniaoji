@@ -1,0 +1,41 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:70:"E:\xin\test\sc\public/../application/admin\view\pro_classify\edit.html";i:1527662013;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系添加</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">表单</a></li>
+    </ul>
+    </div>
+
+    <div class="formbody">
+
+    <div class="formtitle"><span>设置添加</span></div>
+    <form action="<?php echo url('pro_classify/update'); ?>" method="post" >
+        <ul class="forminfo">
+       
+       
+        <li>
+            <label>分类名</label>
+            <input name="name" type="text" class="dfinput" value="<?php echo $class['name']; ?>" />
+        </li>
+     
+        <li>
+            <label><input type="hidden" name="id" value="<?php echo \think\Request::instance()->get('id'); ?>"></label>
+            <input name="" type="submit" class="btn" value="确认保存"/>
+        </li>
+        </ul>
+    </form>
+
+    </div>
+</body>
+</html>

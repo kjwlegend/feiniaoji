@@ -1,0 +1,85 @@
+<?php
+namespace app\admin\controller;
+use app\common\Common;
+// use think\Url;
+use think\Db;
+
+class Contact extends Common{
+	//联系列表
+	public function index(){
+		//连接model
+		$contactModel = model('Contact');
+		//调用model的contactIndex方法
+		$contact = $contactModel->contactIndex();		
+		//绑定变量
+		$this->assign('contact',$contact);
+		//调用页面
+		return $this->fetch();
+	}
+
+
+
+	//修改页面
+	public function edit(){
+		$id = $_GET['id'];
+		//调用contact视图
+		$contactModel = model('Contact');
+		//调用model的contactEdit方法
+		$res = $contactModel->contactEdit($id);
+		//绑定变量
+		$this->assign('contact',$res);
+		//调用修改页面
+		return $this->fetch();
+
+	}
+	//文件上传
+	public function uploads(){
+		//文件上传
+		// 获取表单上传文件 例如上传了001.jpg
+	    $file = request()->file('code');
+	    // var_dump($file);
+	    // 移动到框架应用根目录/uploads/ 目录下
+	    $info = $file->move( './static/uploads');
+	    //判断是否上传成功
+	    if($info){
+	        // 成功上传后 获取上传信息
+	        // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+	         $code = $info->getSaveName();
+	         return $code;
+	    }else{
+	        // 上传失败获取错误信息
+	        echo $file->getError();
+	    }
+
+	}
+	//执行修改
+	public function Update(){
+		//调用文件上传方法
+		$code = $this->uploads();
+		//获取post的id
+		$id=$_POST['id'];
+		//调用contact视图
+		$contactModel = model('Contact');
+		//获取修改页面输入的post内容
+		$info = [
+			'name'			=> $_POST['name'],
+			'email'			=> $_POST['email'],
+			'customer_line' => $_POST['customer_line'],
+			'service_line'  => $_POST['service_line'],
+			'updated_time'  => date('Y-m-d H:i:s'),
+			'code' 	 		=> $code
+		];
+		//调用model的contactUpdate方法
+		$res = $contactModel->contactUpdate($info,$id);
+		//判断
+		if($res){
+			//修改成功
+			$this->success('修改成功',url('contact/index'));
+		}else{
+			//修改失败
+			$this->error('修改失败');
+		}
+
+	}
+
+}

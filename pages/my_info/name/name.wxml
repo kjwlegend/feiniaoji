@@ -1,6 +1,6 @@
 <!--pages/my_info/name/name.wxml-->
 <view class='infos'>
   <view>输入你的姓名  :</view>
-  <input placeholder='' placeholder-class='input_p'></input>
+  <input bindinput='getinput' placeholder='输入你的姓名:' value='{{placeho}}' placeholder-class='input_p'></input>
 </view>
-<button>保  存</button>
+<view class='buttons' bindtap='change'>保  存</view>

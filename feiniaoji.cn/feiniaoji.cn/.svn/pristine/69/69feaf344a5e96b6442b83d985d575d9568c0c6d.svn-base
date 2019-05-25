@@ -1,0 +1,605 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:66:"E:\xin\test\sc\public/../application/index\view\index\product.html";i:1528190434;s:59:"E:\xin\test\sc\public/../application/index\view\layout.html";i:1527392666;s:66:"E:\xin\test\sc\public/../application/index\view\layout\header.html";i:1528186185;s:66:"E:\xin\test\sc\public/../application/index\view\layout\footer.html";i:1527468834;}*/ ?>
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="INDEX_CSS/base.css" />
+<link rel="stylesheet" href="INDEX_CSS/bootstrap.css" />
+<link rel="stylesheet" href="INDEX_CSS/common.css" />
+	<head>
+		<meta charset="UTF-8">
+
+		<title>首页</title>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="mg">
+
+				<div class="header-left left">
+					<i>您好，欢迎来到 福维克！</i>
+					<a href="login.html" class="active">登录</a>
+					<a href="register.html">注册</a>
+				</div>
+				<!--右边-->
+				<div class="header-right right">
+					<ul>
+						<li>
+							<a href="user.html">个人中心</a>
+						</li>
+						<li>
+							<a href="shop-cart.html">购物车</a>
+						</li>
+						<li>
+							<a href="user.html">收藏</a>
+						</li>
+						<li>
+							<a href="user.html">帮助</a>
+						</li>
+						<li>
+							<a href="user.html">服务热线：8488085</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--搜索-->
+		<div class="search mg ov">
+
+			<a href="index.html" class="left"><img src="UPLOADS/<?php echo $config['logo']; ?>" width="110px" height="70px"></a>
+			<div class="s-right right vf">
+				<div class="left form-left">
+					<input type="text" name="" id="" value="" />
+					<input type="button" value="搜索">
+
+					<!--搜索兰-->
+					<div class="s-nav cl">
+						<ul>
+							<li>
+								<a href="product.html">吸尘器 </a>
+							</li>
+							<li>
+								<a href="product.html"> 福维克</a>
+							</li>
+							<li>
+								<a href="product.html">扫地机</a>
+							</li>
+							<li>
+								<a href="product.html"> 清洁工具 </a>
+							</li>
+							<li>
+								<a href="product.html"> 保洁</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--搜索兰-right-->
+				<div class="left form-right vw">
+					<a href="pro_details.html"><img src="INDEX_IMAGES/index/s-pro.png" /></a>
+					<div class="left">
+
+						<span>
+					￥<i>299</i>
+				</span>
+						<p class="ov">
+							<a href="shop-cart.html">点击购买</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--主菜单-->
+		<div class="mg nav">
+
+			<div class="nav-left left ov">	 
+				
+					<h2> 全部商品</h2>
+					<dl>
+						<?php if(is_array($proClass) || $proClass instanceof \think\Collection || $proClass instanceof \think\Paginator): $i = 0; $__LIST__ = $proClass;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+							<dt><?php echo $vo['pname']; ?><i>&rang;</i></dt>
+							<dd class="active">
+								<?php if(is_array($vo['c']) || $vo['c'] instanceof \think\Collection || $vo['c'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['c'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vv): $mod = ($i % 2 );++$i;?>
+								<a href="<?php echo url('index/product'); ?>?id=<?php echo $vv['cid']; ?>"><?php echo $vv['cname']; ?></a>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
+							</dd>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+						</dl>
+		  
+			</div>
+			<div class="nav-right">
+				<ul class="vf">
+					<li class="active">
+						<a href="<?php echo url('index/index'); ?>" {:'__SELF__' == U('index/index') ? 'class="active"' : ''}>首页</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>?id=1" {:'__SELF__' == U('index/product') ? 'class="active"' : ''}>最新商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>?id=2" {:'__SELF__' == U('index/product') ? 'class="current"' : ''}>热门商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>?id=3" {:'__SELF__' == U('index/product') ? 'class="current"' : ''}>推荐商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/product'); ?>?id=4" {:'__SELF__' == U('index/product') ? 'class="current"' : ''}>爆款推荐商品</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/user'); ?>" {:'__SELF__' == U('index/user') ? 'class="current"' : ''}> 会员专区</a>
+					</li>
+					<li>
+						<a href="<?php echo url('index/index'); ?>" {:'__SELF__' == U('index/index') ? 'class="current"' : ''}>入驻商城</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+ 		<link rel="stylesheet" href="INDEX_CSS/base.css" />
+
+
+		<link rel="stylesheet" href="INDEX_CSS/product.css"/>
+		<title>产品中心</title>
+	
+
+	<div class="mg product ov row">
+		<!------------left-show------------------->
+		<div class="ov">
+			
+		
+		<div class="left-show col-xs-2">
+				<!--l-nav-->
+				<div class="l-nav left">
+					<dl>
+					<?php if(is_array($proClass) || $proClass instanceof \think\Collection || $proClass instanceof \think\Paginator): $i = 0; $__LIST__ = $proClass;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+
+
+						<dt><span></span><?php echo $vo['pname']; ?></dt>
+						<dd class="on">
+							<?php if(is_array($vo['c']) || $vo['c'] instanceof \think\Collection || $vo['c'] instanceof \think\Paginator): $i = 0; $__LIST__ = $vo['c'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vv): $mod = ($i % 2 );++$i;?>
+								<a href="<?php echo url('index/pro_details'); ?>?id=<?php echo $vv['cid']; ?>"><?php echo $vv['cname']; ?></a>
+							<?php endforeach; endif; else: echo "" ;endif; ?>
+						</dd>
+					
+					<?php endforeach; endif; else: echo "" ;endif; ?>
+						
+					</dl>
+				</div>
+		                 <!--l-nav-end-->
+                <div class="left-down ov">
+                	<h3 class="text-center">人气推荐</h3>
+                	<ul>
+                		<li>
+                			
+                			<a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg"/></a>
+                			
+                			<div class="show_com">
+                				<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                				
+                			</div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic4.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                           </div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/new-pic6.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                           </div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_02.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                          </div>
+                		</li>
+                		<li><a href="pro_details.html"><img src="INDEX_IMAGES/index/tuip_01.jpg"/></a>
+                			<div class="show_com">
+                						<h4 class="text-left"><a href="pro_details.html">[福维克]卧式吸尘器</a></h4>
+                			<p><a href="pro_details.html">持久吸力/家具保洁神器/居</a></p>
+
+							<p><a href="pro_details.html">家必备/呵护家人</a></p>
+                           <p><span>一口价<i>￥</i></span>1888</p>
+                           </div>
+                		</li>
+                		
+                		
+                	</ul>
+                	
+                </div>
+			</div>				
+			<!------------left-show-end------------------>
+	
+		<div class="r-product left col-xs-10">
+			<div class="r-title">
+				<a href="product.html">全部商品分类&gt;</a>
+				<a href="pro_details.html">电器&gt;</a>
+				<a href="pro_details.html">吸尘器</a>
+			</div>
+
+				<div class="pro-content ov">
+					
+					<div class="pro-hot ov">
+						<h2 class="text-left"><span><b>H</b>ot</span>热卖推荐</h2>
+					<ul class="ov">
+						<li>
+							<a class="left" href="pro_details.html"><img src="INDEX_IMAGES/pro/r-pro01.png" /></a>
+							<div class="left">
+								<h3 class="text-left"><a href="pro_details.html">福维克吸尘器 </h3>
+									<p><a href="pro_details.html">持久吸力/家具保洁神<br />器/呵护家人</a></p>
+									 <span id="">
+									 	<b>￥</b>1999
+									 </span>
+									
+								<a href="comfire_order.html">立即购买</a>
+							</div>
+						</li>
+						<li>
+							<a class="left" href="pro_details.html"><img src="INDEX_IMAGES/pro/r-pro01.png" /></a>
+							<div class="left">
+								<h3 class="text-left"><a href="pro_details.html">福维克吸尘器  </a></h3>
+									<p><a href="pro_details.html">持久吸力/家具保洁神<br />器/呵护家人</a></p>
+									 <span id="">
+									 	<b>￥</b>1999
+									 </span>
+									
+								<a href="shop.html">立即购买</a>
+							</div>
+						</li>
+						<li>
+							<a class="left" href="pro_details.html"><img src="INDEX_IMAGES/pro/r-pro01.png" /></a>
+							<div class="left">
+								<h3 class="text-left"><a href="pro_details.html">福维克吸尘器 </a></h3>
+									<p> <a href="pro_details.html">持久吸力/家具保洁神<br />器/呵护家人</a></p>
+									 <span id="">
+									 	<b>￥</b>1999
+									 </span>
+									
+								<a href="shop.html">立即购买</a>
+							</div>
+						</li>
+					
+						
+					
+					</ul>
+					</div>
+					<!--商品表格-->
+					<div class="p-table ov">
+						<table class="table">
+							
+						
+							<tbody>
+							<tr>
+							<th>价格</th>
+							<td>0-999</td>
+							<td class="on">1000-1999</td>
+							<td>2000-2999 </td>
+							<td>3000-3999 </td>
+							<td>4000-4999</td>
+							<td>5000以上</td>
+							<td></td>
+							</tr>
+						
+								<tr>
+									
+									<th rowspan="2">品牌</th>
+								
+									<td class="on"><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/p-logo.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-2.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-3.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-4.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-5.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-6.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-7.png"/></td>
+								</tr>
+								
+								<tr>
+									
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-8.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-9.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-10.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-11.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-12.png"/></td>
+								
+									<td><a href="javascript:;"></a><img src="INDEX_IMAGES/pro/logo-13.png"/></td>
+									
+									<td></td>
+								
+								</tr>
+								
+								<tr>
+							     <th>产品功率</th>
+									<td>0-85kw  </td>
+								
+									<td>86-499kw </td>
+								
+									<td>500kw-999kw </td>
+								
+									<td>1000-1399kw</td>
+								
+									<td>1400-1799kw</td>
+								
+									<td>1800kw以上</td>
+									
+									<td></td>
+								
+								</tr>
+								<th>类型</th>
+									<td>手提式吸尘器 </td>
+								
+									<td>卧式吸尘器</td>
+								
+									<td>感应式自动吸尘器 </td>
+								
+									<td>桶式吸尘器</td>
+								
+									<td>立式吸尘器</td>
+								
+									<td>吸尘器配件</td>
+									
+									<td></td>
+								
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						
+						<!--展示-->
+						<!--头部-->
+					<div class="pro-show ov">
+						
+						<!------------right-show------------------->
+						<div class="right-show ">
+							<!--<!--头部-->
+							<div class="title ov">
+							<div class="list  left col-lg-4">
+								<h4>排序</h4>
+									<ul class="vf">
+										
+										<li class="on">销售<i></i></li>
+										<li>价格<i></i></li>
+										<li>评价<i></i></li>
+										<li>发布时间<i></i></li>
+									</ul>
+								</div>
+							
+	              
+							<div class="iput left col-lg-4 text-center">
+								<div class="ov">
+									
+								<input type="text" placeholder="请输入搜索内容" />
+								<input type="button" name="" id="" />
+								</div>
+							</div>
+							<div class="t-turn left col-lg-4 text-right">
+								
+									<span>共64件商品</span>
+									 <span><b>1</b>/14</span>
+									 <span id="">
+									 	<i><!--&lt;-->&lang;</i>
+									 	<i>&rang;</i>
+									 	
+									 </span>
+								
+								
+							</div>
+						</div>
+					<!--头部-end-->
+							<div class="con-show">
+							<ul class="ov show-row">
+								
+								<?php if(is_array($pro) || $pro instanceof \think\Collection || $pro instanceof \think\Paginator): $i = 0; $__LIST__ = $pro;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+								
+								
+
+
+									<li class="col-lg-4">
+										<div class="shop_com">
+										<a href="<?php echo url('index/pro_details'); ?>?id=<?php echo $vo['id']; ?>"><img src="UPLOADS/<?php echo $vo['image']; ?> " width="286px" height="236px" /></a>							
+										<h3> <span>￥</span><?php echo $vo['price']; ?><a href="javascript:;"><?php echo $vo['gift']; ?></a></h3>
+										<h4><a href="<?php echo url('index/pro_details'); ?>?id=<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?></a></h4>
+										<p>
+			                     			<a href="<?php echo url('index/pro_details'); ?>?id=<?php echo $vo['id']; ?>"><?php echo $vo['desc']; ?></a></p>
+			                            <p>已售  <span>499</span>件  &nbsp;   &nbsp; 评论  <span>120</span>条</p>
+										</div>
+										<a class="lg" href="<?php echo url('index/pro_details'); ?>?id=<?php echo $vo['id']; ?>"></a>
+									</li>
+								<?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+
+							</ul>
+						</div>
+					</div>
+					<!-------right-show-end--------->
+					</div>
+					
+				
+				</div>
+
+			<!--——————————Hot 热销产品———-end-->
+
+			<!--爆款产品-end-->
+		</div>
+		</div>
+		<!---翻页------------>
+		<div class="turn ov">
+			<ul>
+				<li><a href="javascript:;">上一页</a></li>
+				<li class="on"><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">下一页</a></li>
+				<li><i>第</i><input type="text" id="" value="" /><i>页</i></li>
+				<li><a href="javascript:;">确定</a></li>
+			</ul>
+		</div>
+		<!-----翻页-end-------->
+	</div>
+
+
+	
+	<script type="text/javascript" src="INDEX_JS/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="INDEX_JS/pro.js"></script>
+    <script type="text/javascript" src="INDEX_JS/loaddown.js"></script>
+    <script>		 
+     $('.right-show .list ul li,table tr:nth-child(1) td').click(function(){
+					$('.right-show .list ul .on,table tr:nth-child(1) .on').removeClass('on')
+					$(this).addClass("on")
+		}) 
+		$(' table tr:nth-child(2) td, table tr:nth-child(3) td').click(function(){
+					$('table tr:nth-child(2) .on, table tr:nth-child(3) .on').removeClass('on')
+					$(this).addClass("on")
+		})
+	  $('table tr:nth-last-child(2) td').click(function(){
+					$('table tr:nth-last-child(2) .on').removeClass('on')
+					$(this).addClass("on")
+		})
+	    $('table tr:nth-last-child(1) td').click(function(){
+					$('table tr:nth-last-child(1) .on').removeClass('on')
+					$(this).addClass("on")
+		})
+    </script>
+
+		<!--底部-->
+		<div class="footer ov">
+			<div class="footer-class content">
+
+				<div class="row ov mg">
+					<div class="col-xs-1 text-center">
+
+					</div>
+					<div class="col-xs-6">
+
+						<div class="col-xs-3 text-center">
+
+							<ul class="list-unstyled ">
+								<li>
+									<a href="javascript:;">购物指南</a>
+								</li>
+								<li>
+									<a href="javascript:;">购物流程</a>
+								</li>
+								<li>
+									<a href="register.html">新用户注册</a>
+								</li>
+								<li>
+									<a href="javascript:;">常见问题</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="col-xs-3 text-center">
+							<ul class="list-unstyled">
+								<li>
+
+									<a href="javascript:;">配送方式</a>
+								</li>
+								<li>
+									<a href="javascript:;">收货指南</a>
+								</li>
+								<li>
+									<a href="javascript:;">免费配送安装</a>
+								</li>
+								<li>
+									<a href="javascript:;">物流配送费用</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class=" col-xs-3   text-center">
+							<ul class="list-unstyled">
+								<li>
+									<a href="javascript:;">售后服务</a>
+								</li>
+								<li>
+									<a href="javascript:;">退换货说明</a>
+								</li>
+								<li>
+									<a href="javascript:;">退款说明</a>
+								</li>
+								<li>
+									<a href="javascript:;">维修说明</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class=" col-sm-3 text-center">
+							<ul class="list-unstyled">
+
+								<li>
+									<a href="index.html">关于福维克</a>
+								</li>
+								<li>
+									<a href="index.html">富微克简介</a>
+								</li>
+								<li>
+									<a href="javascript:;">服务承诺</a>
+								</li>
+								<li>
+									<a href="javascript:;">推广合作</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="  col-xs-3 text-center">
+						<ul class="list-unstyled left">
+							<li>
+								<a href="javascript:;">联系我们</a>
+							</li>
+							<li>
+								<a href="javascript:;"><?php echo $contact['email']; ?></a>
+							</li>
+							<li>
+								<a href="javascript:;"><?php echo $contact['customer_line']; ?></a>
+							</li>
+							<li>
+								<a href="javascript:;"><?php echo $contact['service_line']; ?></a>
+							</li>
+
+						</ul>
+
+					</div>
+					<div class="col-xs-1">
+
+						<a href="javascript:;"><a href="pro_details.html"><img src="UPLOADS/<?php echo $contact['code']; ?>" class="img-responsive left" /></a></a>
+					</div>
+					<div class="col-xs-1"></div>
+
+				</div>
+				<div class="footer-down text-center">
+					<p><?php echo $config['copy']; ?> xcxcdfr </p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	
+</html>

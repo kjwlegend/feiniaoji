@@ -1,0 +1,64 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\xin\test\sc\public/../application/admin\view\config\edit.html";i:1527493516;}*/ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系添加</title>
+<link href="ADMIN_CSS/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">表单</a></li>
+    </ul>
+    </div>
+
+    <div class="formbody">
+
+    <div class="formtitle"><span>设置添加</span></div>
+    <form action="<?php echo url('config/update'); ?>" method="post" enctype="multipart/form-data">
+        <ul class="forminfo">
+       
+        
+        <li>
+            <label>logo</label>
+            <input name="logo" type="file"  />
+            <img src="UPLOADS/<?php echo $config['logo']; ?>">
+        </li>
+        <li>
+            <label>版权</label>
+            <input name="copy" type="text" class="dfinput" value="<?php echo $config['copy']; ?>" />
+        </li>
+        <li>
+            <label>状态</label>
+        <?php if($config['state'] != '1'): ?>
+ 
+
+            <cite>
+                <input name="state" type="radio" value="1" checked="checked" />开启
+                <input name="state" type="radio" value="0" />禁用
+            </cite>
+        <?php else: ?>
+            <cite>
+                <input name="state" type="radio" value="1"  />开启
+                <input name="state" type="radio" value="0" checked="checked" />禁用
+            </cite>
+
+
+
+        <?php endif; ?>
+        </li>
+        <li>
+            <label><input type="hidden" name="id" value="<?php echo \think\Request::instance()->get('id'); ?>"></label>
+            <input name="" type="submit" class="btn" value="确认保存"/>
+        </li>
+        </ul>
+    </form>
+
+    </div>
+</body>
+</html>

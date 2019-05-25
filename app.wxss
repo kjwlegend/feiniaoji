@@ -10,4 +10,19 @@
 } 
 page{
   background: rgba(248,248,248,1);
+  
+}
+.f {
+	flex: 1;
+}
+view,text{
+ font-family: 'PingFang Medium'
+}
+
+.f-row {
+  display: flex;
+  flex-direction: row;
+}
+.iphone{
+  padding-bottom: 68rpx;
 }

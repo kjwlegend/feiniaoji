@@ -1,0 +1,148 @@
+<?php
+namespace app\index\controller;
+use think\Controller;
+class Index extends Controller{
+  public function _initialize()
+  {
+    //header头部
+    $configModel = model('config');
+    //footer尾部
+    $contactModel = model('contact');
+    //产品分类
+    $proClassModel = model('proClassify');
+    //调用contactModel的footer方法
+    $contact = $contactModel->footer();
+    //调用configmodel的index方法
+    $config = $configModel->configIndex();
+    // 调用Proclassify中的proClass方法
+    $proClass = $proClassModel->proClass();
+    // var_dump($proClass);
+    $arr = [];
+    foreach ($proClass as $key => $val) {
+      $arr[$val['pid']]['pid'] = $val['pid'];
+      $arr[$val['pid']]['pname'] = $val['pname'];
+      $arr[$val['pid']]['c'][$key]['cid'] = $val['cid'];
+      $arr[$val['pid']]['c'][$key]['cname'] = $val['cname'];
+    }
+    // var_dump($arr);
+    //绑定变量
+    $this->assign('config',$config);
+    $this->assign('contact',$contact);
+    $this->assign('proClass',$arr); 
+    // //调用页面
+    // return $this->fetch();
+  }
+
+  //首页
+  public function index()
+  {
+    
+    
+    $banner = model('banner')->BannerSelect();
+    //绑定变量
+    $this ->assign('banner',$banner);  
+    
+    
+    //调用页面
+    return $this->fetch();
+  }
+  
+  public function address()
+  {
+  	//调用页面
+  	return $this->fetch();
+  }
+
+  public function comfire_order()
+  {
+  	//调用页面
+  	return $this->fetch();
+  }
+
+  public function product()
+  {
+    //产品分类
+    $proClassModel = model('proClassify');
+    //最新商品
+    $proNewModel = model('pro');
+    $id = $_GET['id'];
+    //缓存
+    // $redis = new \Redis();
+    // $redis->connect('127.0.0.1', 6379);
+    // $redis->delete('pro');
+    // if($redis->exists('pro')){
+      // 缓存中有数据的时候，从缓存中取,先反串行化
+      // $pro = $redis->get('pro');
+      // $proNew = unserialize($pro);
+      // echo 1;
+    // }else{
+      //调用pro中的pro方法
+
+      $proNew = $proNewModel->pro($id);
+      // var_dump($proNew);
+      // 从数据库中取出数据，放入缓存,数据放入缓存前，串行化
+      // $redis->set('pro', serialize($proNew));
+      // echo 2;
+    // }
+    
+    
+    // 调用Proclassify中的proClass方法
+    $proClass = $proClassModel->proClass();
+    $arr = [];
+    foreach ($proClass as $key => $val) {
+      $arr[$val['pid']]['pid'] = $val['pid'];
+      $arr[$val['pid']]['pname'] = $val['pname'];
+      $arr[$val['pid']]['c'][$key]['cid'] = $val['cid'];
+      $arr[$val['pid']]['c'][$key]['cname'] = $val['cname'];
+    }
+    // var_dump(json_decode(json_encode($proNew), 1));
+    //绑定变量
+    $this->assign('pro',$proNew);
+    $this ->assign('proClass',$arr);
+    //调用页面
+    return $this->fetch();
+  }
+  public function login(){
+    return $this->fetch();
+  }
+
+  public function order_details(){
+    return $this->fetch();
+  }
+
+  public function ordered(){
+    return $this->fetch();
+  }
+
+  public function pay(){
+    return $this->fetch();
+  }
+
+  public function pay_fail(){
+    return $this->fetch();
+  }
+
+  public function pay_success(){
+    return $this->fetch();
+  }
+
+  public function pro_details(){
+    return $this->fetch();
+  }
+
+
+
+
+  public function register(){
+    return $this->fetch();
+  }
+
+  public function shop_cart(){
+    return $this->fetch();
+  }
+
+  public function user(){
+    return $this->fetch();
+  }
+
+}

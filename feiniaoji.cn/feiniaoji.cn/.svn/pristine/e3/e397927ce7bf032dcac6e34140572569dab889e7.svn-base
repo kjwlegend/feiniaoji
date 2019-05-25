@@ -1,0 +1,77 @@
+<?php
+namespace app\admin\controller;
+use app\common\Common;
+class Color extends Common{
+	//列表
+	public function index(){
+		//调用color模型
+		$colorModel = model('color');
+		//调用model中的colorIndex方法
+		$res = $colorModel -> colorIndex();
+		//绑定变量
+		$this->assign('color',$res);
+		//调用页面
+		return $this->fetch();
+	}
+	//添加页面
+	public function add(){
+		//调用页面
+		return $this->fetch();
+	}
+	//添加执行
+	public function insert(){
+		//获取post
+		$info = [
+			'color' => $_POST['color'],
+			'state' => $_POST['state'],
+			'created_time' => date('Y-m-d H:i:s' )
+		];
+		//调用color模型
+		$colorModel = model('color');
+		//调用model中的colorInsert方法
+		$res = $colorModel->colorInsert($info);
+		//判断
+		if($res){
+			$this->success('添加成功',url('color/index'));
+		}else{
+			$this->error('添加失败');
+		}
+	}
+	//修改页面
+	public function edit(){
+		//获取传过来的id
+		$id = $_GET['id'];
+		//调用color模型
+		$colorModel = model('color');
+		//调用model中colorEdit方法
+		$res = $colorModel->colorEdit($id);
+		//绑定变量
+		$this->assign('color',$res);
+		//调用页面
+		return $this->fetch();
+	}
+	//修改执行
+	 public function Update(){
+	 	//获取post  id
+	 	$id = $_POST['id'];
+	 	//获取post传过来的参数
+	 	$info = [
+
+	 		'color' => $_POST['color'],
+	 		'state' => $_POST['state'],
+			'updated_time' => date('Y-m-d H:i:s' )
+	 	]; 
+	 	//调用color模型
+	 	$colorModel = model('color');
+	 	//调用model中colorUplate方法
+	 	$res = $colorModel ->colorUpdate($info,$id);
+	 			//判断
+		if($res){
+			//修改成功
+			$this->success('修改成功',url('contact/index'));
+		}else{
+			//修改失败
+			$this->error('修改失败');
+		}
+	 }
+}

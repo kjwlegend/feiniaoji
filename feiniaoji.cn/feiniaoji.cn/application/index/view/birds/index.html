@@ -1,0 +1,244 @@
+<style type="text/css">
+  .title_left{
+/*color:#5c5c5c;*/
+font-size: 24px;
+font-family:'宋体';
+}
+.panel-title{
+  color:#5c5c5c;
+  font-family:'宋体';
+}
+</style>
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3 >飞鸟带货列表</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+         
+        </div>
+      </div>
+    </div>
+<main class="main-container" id="main-container">
+
+    <section class="section-header">
+        <div class="container-fluid">
+        
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h3 class="panel-title">飞鸟带货列表</h3></div>
+                        <div class="panel-body">
+                          <!-- <div id="toolbar"><a href="{:url('birds/publish')}"><button class="btn btn-primary"><i class="fa fa-plus-square"></i>添加飞鸟带货</button></a></div> -->
+                          <p>行程编号 飞鸟昵称 出发地 出发时间 终点 到达时间 空间 创建时间, 搜索时间格式是 2019/1/11进行搜索  搜索时注意空格哦</p>
+                            <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%"></table>
+                        </div>
+                        <div class="panel-footer">Panel footer</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+var authorize = {
+        removeData : 1
+    };
+
+$(function(){
+$('#toolbar > button').on('click',function(){
+  window.location.href = "{:url('birds/index')}";
+});
+  
+var app = {
+      pageList     : "{:url('birds/pages')}",// 列表分页显示
+      pageEdit     : "{:url('orders/index')}", // 查看相关订单页面
+      pageAjax     : "{:url('birds/ajax')}",//在列表修改页面
+      pageRemove   : "{:url('birds/delete')}",//在列表删除页面
+
+    // pagingType   : 'server', //分页方式 server | client {server : {"total":24,"rows":[…]} | client : {"data":[...]}}
+      pageSize     :  10,
+      uniqueId     : 'bid',
+      sortOrder    : 'desc',
+      controlTable :  $('#datatable'),
+      columns : [
+      // {
+      //   field: 'bid',
+      //   title: '编号',
+      //   align: 'center',
+      //   editable: false
+      // },
+      {
+        field: 'btripnumbers',
+        title: '行程编号',
+        align: 'center',
+        editable: false
+      },{
+        field: 'unickname',
+        title: '飞鸟昵称',
+        width: '10%',
+        align: 'center',
+        formatter: operateunickname
+      },
+      // {
+      //   field: 'tstartpoint',
+      //   title: '出发地国家',
+      //   width: '10%',
+      //   align: 'center',
+      //   editable: true
+      // },
+      {
+        field: 'bstart',
+        title: '出发地',
+        // width: '10%',
+        align: 'center',
+        editable: false
+      },{
+        field: 'bstarttime',
+        title: '出发时间',
+        // width: '10%',
+        align: 'center',
+        editable: false
+      }
+      // ,{
+      //   field: 'tendpoint',
+      //   title: '终点国家',
+      //   width: '10%',
+      //   align: 'center',
+      //   editable: true
+      // }
+      ,{
+        field: 'bends',
+        title: '终点',
+        // width: '10%',
+        align: 'center',
+        editable: false
+      },{
+        field: 'bendtime',
+        title: '到达时间',
+        // width: '10%',
+        align: 'center',
+        editable: false
+      },{
+        field: 'bbox',
+        title: '空间',
+        // width: '10%',
+        align: 'center',
+        editable: true
+      },{
+        field: 'btotalweight',
+        title: '总重量',
+        // width: '10%',
+        align: 'center',
+        editable: true
+      },{
+        field: 'bresidueweight',
+        title: '剩余重量',
+        // width: '10%',
+        align: 'center',
+        editable: true
+      },{
+        field: 'btotalearn',
+        title: '总收益',
+        // width: '10%',
+        align: 'center',
+        editable: false
+      },{
+        field: 'btypes',
+        title: '收货类型',
+        // width: '10%',
+        align: 'center',
+        editable: true
+      },{
+        field: 'bstate',
+        title: '状态',
+        // width: '10%',
+        align: 'center',
+        // editable:false,
+        editable: {
+          type: 'select',
+          title: '状态',
+          source: [{ value: 0, text: "待出发" }, { value: 1, text: "进行中" }, { value: 2, text: "已完成" }, { value: 3, text: "取消" }, { value: 4, text: "待评论" }],
+        }
+      }
+      // ,{
+      //   field: 'bdesc',
+      //   title: '备注',
+      //   width: '20%',
+      //   align: 'center',
+      //   editable: true
+      // }
+      ,{
+        field: 'bdateline',
+        title: '创建时间',
+        // width: '20%',
+        align: 'center',
+        // editable: false
+        formatter: operatedateline
+      },{
+        field: 'bupdatetime',
+        title: '修改时间',
+        // width: '20%',
+        align: 'center',
+        formatter: operateupdatetime
+        // editable: false
+      },{
+        field: 'operate',
+        title: '编辑',
+        width: '300px',
+        align: 'center',
+        formatter: operateFormatter
+      }]
+      
+  };
+  
+var oTable = new TableInit(app);
+    oTable.Init();
+
+var oButtonInit = new ButtonInit(app);
+    oButtonInit.Init();
+});
+function operatedateline(value, row, index)
+{
+  return new Date(parseInt(row.bdateline) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');            
+}
+
+function operateupdatetime(value, row, index)
+{
+  return new Date(parseInt(row.bupdatetime) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');            
+}
+function operateunickname(value, row, index)
+{
+  var unickname;
+  if(row.unickname!=null){
+    var base64= row.unickname;
+    var base = new Base64();
+   unickname= base.decode(base64);
+
+    // name = '<i>'+base+' </i>';
+  }            
+  return unickname;
+}
+
+</script>
+<script type="text/javascript" src="ADMIN/base64.js"></script>
+
+<script type="text/javascript" src="ADMIN/js/birids.js"></script>
+
+
+
+
+
+
+

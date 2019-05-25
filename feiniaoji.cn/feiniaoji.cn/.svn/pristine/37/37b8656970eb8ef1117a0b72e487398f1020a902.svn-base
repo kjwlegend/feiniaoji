@@ -1,0 +1,87 @@
+<?php
+namespace app\admin\controller;
+use app\common\Common;
+
+class User extends Common{
+	//用户添加 页面
+	public function add(){
+		return $this->fetch();
+	}
+
+	//用户列表 页面
+	public function index(){
+		$info = model('user')->indexSelect();
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+
+
+	//用户修改
+	public function edit(){
+		//修改id
+		$id = $_GET['id'];
+
+		//查询原数据
+		$info = model('user')->editSelect($id);
+		$this->assign('info',$info);
+		return $this->fetch();
+	}
+
+	//用户添加
+	public function insert(){
+		//重组数组
+		$arr['username']		=	$_POST['username'];
+		$arr['password']		=	$_POST['password'];
+		$arr['address']			=	$_POST['address'];
+		$arr['state']			=	$_POST['state'];
+		$arr['email']			=	$_POST['email'];
+		$arr['phone']			=	$_POST['phone'];
+		$arr['created_time']	=	date('Y-m-d H:i:s');
+
+		$res = model('user')->addInsert($arr);
+		if($res){
+			$this->success('添加成功','User/index');
+		}else{
+			$this->error('添加失败','User/add');
+		}
+	}
+
+	//用户修改
+	public function update(){
+		//修改id
+		$id = $_POST['id'];
+		//重组数组
+		$arr['username']		=	$_POST['username'];
+		$arr['password']		=	$_POST['password'];
+		$arr['email']			=	$_POST['email'];
+		$arr['phone']			=	$_POST['phone'];		
+		$arr['balance']			=	$_POST['balance'];
+		$arr['integral']		=	$_POST['integral'];
+		$arr['discounts']		=	$_POST['discounts'];
+		$arr['address']			=	$_POST['address'];
+		$arr['state']			=	$_POST['state'];
+		$arr['updated_time']	=	date('Y-m-d H:i:s');
+		//调用修改执行操作
+		$res = model('user')->indexUpdate($id,$arr);
+
+		if($res){
+			$this->success('修改成功','user/index');
+		}else{
+			$this->error('修改失败','user/index');
+		}
+	}
+
+	//用户删除
+	public function delete(){
+		//删除id
+		$id = $_GET['id'];
+		//调用删除执行操作
+		$res = model('user')->indexDelete($id);
+
+		if($res){
+			$this->success('删除成功','user/index');
+		}else{
+			$this->error('删除失败','user/index');
+		}
+	}
+}

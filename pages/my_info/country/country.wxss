@@ -32,13 +32,15 @@ page{
 .input_p{
   color: rgba(210,210,210,1);
 }
-button{
+.buttons{
   width: 690rpx;
   height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
   opacity: 1;
   background: rgba(41,135,246,1);
   color: white;
-  margin-left: 30rpx;
-  margin-top: 30rpx;
+  margin: 30rpx auto;
   font-size: 36rpx;
+  border-radius: 8rpx;
 }

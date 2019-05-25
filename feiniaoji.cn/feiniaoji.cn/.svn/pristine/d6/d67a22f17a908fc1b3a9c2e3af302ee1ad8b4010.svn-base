@@ -1,0 +1,91 @@
+<?php
+namespace app\index\controller;
+use think\Controller;
+class Index extends Controller{
+  public function _initialize()
+  {
+    //header头部
+    $configModel = model('config');
+    //footer尾部
+    $contactModel = model('contact');
+    //调用contactModel的footer方法
+    $contact = $contactModel->footer();
+    //调用configmodel的index方法
+    $config = $configModel->configIndex(); 
+    //绑定变量
+    $this->assign('config',$config);
+    $this->assign('contact',$contact);
+    // //调用页面
+    // return $this->fetch();
+  }
+  //首页
+  public function index()
+  {
+    
+    $banner = model('banner')->BannerSelect();
+    $this -> assign('banner',$banner);
+    //调用页面
+    return $this->fetch();
+  }
+  
+  public function address()
+  {
+  	//调用页面
+  	return $this->fetch();
+  }
+
+  public function comfire_order()
+  {
+  	//调用页面
+  	return $this->fetch();
+  }
+
+  public function product()
+  {
+    //调用页面
+    return $this->fetch();
+  }
+  public function login(){
+    return $this->fetch();
+  }
+
+  public function order_details(){
+    return $this->fetch();
+  }
+
+  public function ordered(){
+    return $this->fetch();
+  }
+
+  public function pay(){
+    return $this->fetch();
+  }
+
+  public function pay_fail(){
+    return $this->fetch();
+  }
+
+  public function pay_success(){
+    return $this->fetch();
+  }
+
+  public function pro_details(){
+    return $this->fetch();
+  }
+
+
+
+
+  public function register(){
+    return $this->fetch();
+  }
+
+  public function shop_cart(){
+    return $this->fetch();
+  }
+
+  public function user(){
+    return $this->fetch();
+  }
+
+}

@@ -1,0 +1,137 @@
+<?php
+namespace app\admin\controller;
+use app\common\Common;
+use think\Db;
+
+class Pro extends Common{
+//商品列表
+	public function index(){
+		//调用pro_classify模型
+		$proModel = model('Pro');
+		//调用proClass方法
+		$res = $proModel -> index();
+		//绑定变量
+		$this->assign('pro',$res);
+		//调用页面
+		return $this->fetch();
+
+	}
+	public function add(){
+		//连接数据库
+		$ProClassify = Db::name('pro_classify')->where('parent_id',0)->select();
+		// dump($ProClassify);
+		//绑定变量
+		$this->assign('ProClassify',$ProClassify);
+		
+		//调用页面
+		return $this->fetch();
+	}
+	//文件上传
+	public function uploads(){
+		//文件上传
+		// 获取表单上传文件 例如上传了001.jpg
+	    $file = request()->file('image');
+	    // var_dump($file);
+	    // 移动到框架应用根目录/uploads/ 目录下
+	    $info = $file->move( './static/uploads');
+	    //判断是否上传成功
+	    if($info){
+	        // 成功上传后 获取上传信息
+	        // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+	         $image = $info->getSaveName();
+	         return $image;
+	    }else{
+	        // 上传失败获取错误信息
+	        echo $file->getError();
+	    }
+	}
+	//添加执行
+	public function insert(){
+		//调用文件上传方法
+		$image = $this->uploads();
+		//获取post参数
+		$arr = [
+			'class_id' =>$_POST['class_id'],
+			'name'=>$_POST['name'],
+			'image'=>$image,
+			'price'=>$_POST['price'],
+			'desc' =>$_POST['desc'],
+			'gift'=>$_POST['gift'],
+			'faddish'=>$_POST['faddish'],
+			'text' => $_POST['text']
+		];
+		//调用pro模型
+		$proModel = model('Pro');
+		//调用proinsert方法
+		$res = $proModel -> insert($arr);
+		//判断
+		if($res){
+			$this->success('添加成功',url('pro/index'));
+		}else{
+			$this->error('添加失败');
+		}
+	}
+	//删除商品
+	public function delete(){
+		//调用pro模型
+		$proModel = model('pro');
+		//调用 delete方法
+		$res = $proModel->delete();
+		//判断
+		if($res){
+			$this->success('删除成功');
+		}else{
+			$this->error('删除失败');
+		}
+
+	}
+	//修改页面
+	public function edit(){
+		$id = $_GET['id'];
+		
+		//连接数据库
+		$ProClassify = Db::name('pro_classify')->where(['parent_id'=>'0'])->select();
+		dump($ProClassify);
+		// $pc = Db::name('pro_classify')->where(['parent_id'=>$parentId])->find();
+		//调用pro模型
+		$proModel = model('Pro');
+		//调用proinsert方法
+		$res = $proModel -> findEdit($id);
+		// dump($res);
+		//绑定变量
+		$this->assign('ProClassify',$ProClassify);
+		// $this->assign('pc',$pc);
+
+		$this->assign('pro',$res);
+
+		//调用页面
+		return $this->fetch();
+	}
+	//修改执行
+	public function update(){
+		//调用文件上传方法
+		$image = $this->uploads();
+		$id = $_POST['id'];
+		//获取post参数
+		$arr = [
+			'class_id' =>$_POST['class_id'],
+			'name'=>$_POST['name'],
+			'image'=>$image,
+			'desc' =>$_POST['desc'],
+			'gift'=>$_POST['gift'],
+			'faddish'=>$_POST['faddish'],
+			'text' => $_POST['text']
+		];
+		//调用pro模型
+		$proModel = model('Pro');
+		//调用proinsert方法
+		$res = $proModel -> proUpdate($arr,$id);
+		//判断
+		if($res){
+			$this->success('修改成功',url('pro/index'));
+		}else{
+			$this->error('修改失败');
+		}
+
+	}
+}

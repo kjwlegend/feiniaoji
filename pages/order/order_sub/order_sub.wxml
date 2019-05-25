@@ -1,0 +1,81 @@
+<!--pages/release/release.wxml-->
+<!-- 头部 -->
+<view class='header_back'>
+</view>
+  <view class='header_content'>
+    <!-- 出发到达城市 -->
+    <view class='citys_box'>
+      <view class='cityTo'>
+        <view class='city_item'>
+          <text class='citys'>{{birds.bstart}}</text>
+          <view class='citys_country'>{{birds.bstartpoint}}</view>
+          <text>{{birds.bstarttime}}</text>
+        </view>
+        <view class='jiantou'>
+          <image src='/images/fly.png'></image>
+        </view>
+
+        <view class='city_item' style='right:0;left:auto;'>
+          <text class='citys'>{{birds.bends}}</text>
+          <view class='citys_country'>{{birds.bendpoint}}</view>
+          <text>{{birds.bendtime}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 飞鸟用户 -->
+    <view style='padding-top:15rpx;margin-top:20rpx;'>
+      <image src='{{birds.uheaderimg}}' class='headImg'></image>
+      <view class='headImg_right'>
+        <view class='nickname'>{{birds.uusername}}</view>
+        <view class='dengjis'>
+          <text>信用等级</text>
+          <view wx:for="{{gous}}" wx:key='{{index}}'>
+            <image wx:if='{{(birds.usore-1)>=index}}' mode='widthFix' src='/images/gou1.png'></image>
+            <image wx:else mode='widthFix' src='/images/gou2.png'></image>
+          </view>
+          <!-- <image  mode='widthFix' src='/images/el3.png'></image> -->
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+<!-- 我的物品重量 -->
+<view class='share_item'>
+  <view class='icon'></view>
+  <view class='can_share'>我的物品重量</view>
+  <view class='can_w'>该飞鸟当前最多还能带{{left_weight}}kg</view>
+  <input placeholder-class='input_p' class="input_off" placeholder='请输入整数，如：2' bindinput='get_weight' type='number' value='{{weight}}'></input>
+  <text>KG</text>
+</view>
+
+<!-- 收获类型 -->
+<view class='share_item' style='height:422rpx;'>
+  <view class='icon'></view>
+  <view class='can_share' style='margin-bottom:22rpx;'>我的物品类型</view>
+  <view class='goods_clse'>
+    <view class="{{goods_on[index]==index?'goods_class_on':'goods_class_off'}}" wx:for="{{goods_class}}" wx:key="{{index}}" bindtap='choose_goods' data-num='{{index}}'>{{item}}</view>
+  </view>
+</view>
+
+<!-- 备注信息 -->
+<view class='share_item' style='margin-bottom:20rpx;'>
+  <view class='icon'></view>
+  <view class='can_share'>我愿意支付的费用（元）</view>
+  <input style='width:490rpx;' type='number' placeholder-class='input_p' class="input_off" placeholder='请输入整数，如：200 ' bindinput='money' style='display:inline-block;'></input>
+  <text style='margin-left:60rpx;font-size:40rpx;display:block;margin-top:-40rpx;'>元</text>
+</view>
+
+<!-- 备注信息 -->
+<view class='share_item' style='margin-bottom:20rpx;'>
+  <view class='icon'></view>
+  <view class='can_share'>备注信息</view>
+  <input style='width:612rpx;' placeholder-class='input_p' class="input_off" placeholder='在此输入备注信息' bindinput='get_info'></input>
+</view>
+
+<!-- <form report-submit="true" bindsubmit="order_sub">
+<button form-type='submit'>提交</button>
+</form> -->
+<button bindtap='order_sub'>提  交</button>
+
+<view class="{{isIphoneX?'iphone':''}}"></view>

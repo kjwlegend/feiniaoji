@@ -1,19 +1,20 @@
 {
   "pages": [
-    "pages/test/test",
+    "pages/homepage/homepage",
+    "pages/order/order_sub/order_sub",
     "pages/find/find",
+    "pages/choose_place/choose_place",
+    "pages/regist/regist",
     "pages/search_res/search_res",
     "pages/trip_revise/trip_revise",
     "pages/trip_details/trip_details",
-    "pages/homepage/homepage",
     "pages/pay/pay_result",
-    "pages/order/order_success/order_success",
     "pages/order/order_evaluate/order_evaluate",
+    "pages/order/order_success/order_success",
     "pages/order/order_details/order_details",
     "pages/order/my_order/my_order",
     "pages/my/my_comment/mycomment",
-    "pages/mytrip/mytrip",    
-    
+    "pages/mytrip/mytrip",
     "pages/release/release",
     "pages/release/release_success/release_success",
     "pages/my_info/phone/phone",
@@ -22,12 +23,10 @@
     "pages/my_info/des/des",
     "pages/my_info/info_list/info_list",
     "pages/my/my",
-    
-    "pages/info/info",
+    "pages/main/main",
     "pages/index/index",
-    "pages/regist/regist",
+    "pages/chatroom/chatroom",
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,9 +35,9 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#a9a9a9",
+    "color": "#4a4a4a",
     "selectedColor": "#2987f6",
-    "backgroundColor": "white",
+    "backgroundColor": "#ffffff",
     "list": [
       {
         "text": "首页",
@@ -60,15 +59,15 @@
       },
       {
         "text": "消息",
-        "pagePath": "pages/info/info",
-        "selectedIconPath": "/images/info_on.png",
-        "iconPath": "/images/info_off.png"
+        "pagePath": "pages/main/main",
+        "selectedIconPath": "/images/my_on.png",
+        "iconPath": "/images/my_off.png"
       },
       {
         "text": "我的",
         "pagePath": "pages/my/my",
-        "selectedIconPath": "/images/my_on.png",
-        "iconPath": "/images/my_off.png"
+        "selectedIconPath": "/images/info_on.png",
+        "iconPath": "/images/info_off.png"
       }
     ]
   }

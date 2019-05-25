@@ -7,7 +7,9 @@ page{
   height: 80rpx;
   border: 1rpx solid rgba(41,135,246,1);
   color: rgba(41,135,246,1);
-  margin:0 0 0 30rpx;
+  margin:0 auto;
+  border-radius: 8rpx;
+  overflow: hidden;
   /* box-sizing: border-box; */
 }
 .header_nav{
@@ -49,14 +51,14 @@ page{
 
 /* 订单列 */
 .orders{
-  width: 654rpx;
+  width: 690rpx;
   height: 504rpx;
   opacity: 1;
   background: rgba(255,255,255,1);
   box-shadow: 0px 4px 6px 1px rgba(217,225,231,0.66);
-  margin:20rpx 0 0 30rpx; 
+  margin:20rpx auto 0; 
   position: relative;
-  padding-left:36rpx; 
+  border-radius: 8rpx;
 }
 .icon {
   width: 8rpx;
@@ -71,10 +73,12 @@ page{
   width: 618rpx;
   line-height: 80rpx;
   font-size: 26rpx;
+  margin: 0 auto;
 }
 .citys_box{
   position: relative; 
-  margin-top: 30rpx;
+  margin: 30rpx auto 0;
+  width: 618rpx;
 }
 .cityTo{
   width: 618rpx;
@@ -82,7 +86,7 @@ page{
   border-bottom: 1rpx solid rgba(238,238,238,1);
 }
 .city_item{
-  width: 148rpx;
+  width: 6em;
   height: 160rpx;
   opacity: 1;
   font-size: 24rpx;
@@ -91,21 +95,29 @@ page{
   line-height: 34rpx;
   letter-spacing: 0px;
   float: left;
+  overflow: hidden;
 }
 .citys{
   height: 50rpx;
-  opacity: 1;
   font-size: 36rpx;
-  font-family: PingFangSC;
   color: rgba(74,74,74,1);
   line-height: 50rpx;
   letter-spacing: 0px;
   font-weight: bold;
+  max-width:6em;
+  display: block;
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .citys_country{
+  width: 100%;
   margin-top: 5rpx;
   margin-bottom: 5rpx;
   color:rgba(153,153,153,1);
+  overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 .jiantou{
   position: absolute;
@@ -121,7 +133,7 @@ page{
   line-height: 42rpx;
   font-size: 24rpx;
   color: rgba(102,102,102,1);
-  margin-top: 36rpx;
+  margin: 36rpx auto 0;
 }
 .order_money{
   width: 618rpx;
@@ -129,7 +141,7 @@ page{
   line-height: 42rpx;
   font-size: 24rpx;
   color: rgba(51,51,51,1);
-  margin-top: 5rpx;
+  margin: 5rpx auto 0;
 }
 .btn{
   width: 150rpx;
@@ -142,6 +154,7 @@ page{
   margin-top: 32rpx;
   float: right;
   margin-right: 36rpx;
+  border-radius: 8rpx;
 }
 .btn1{
   width: 150rpx;
@@ -155,4 +168,17 @@ page{
   float: right;
   margin-right: 36rpx;
   background: rgba(41,135,246,1);
+  border-radius: 8rpx;
+}
+
+.order_none{
+  width: 300rpx;
+  margin: 200rpx auto;
+}
+.order_none image{
+  width: 300rpx;
+}
+.order_none view{
+  text-align: center;
+  font-size: 38rpx;
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="ADMIN_JS/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#top').change(function(){
+				var id = $(this).val();
+				$.post("{:url('ProClassify/carryOut')}",{id: id},function(data){
+					// alert(data);
+					var arr = eval(data);
+					// console.log(arr);
+					$('#two option[value != ""]').remove();
+					for(var i=0;i<arr.length;i++){
+						var vals = $('<option value="'+arr[i].id+'">'+arr[i].name+'</option>');
+						console.log(vals);
+						$('#two').append(vals);
+					}
+				})
+			})
+			// $('#two').change(function(){
+			// 	var id = $(this).val();
+			// 	$.post("{:url('ProClassify/carryOut')}",{id: id},function(data){
+			// 	var arr = eval(data);
+			// 	$('#three option[value !=""]').remove();
+			// 	for(var i=0;i<arr.length;i++){
+			// 		var vals = $('<option value="'+arr[i].id+'">'+arr[i].name+'</option>');
+			// 		$('#three').append(vals);
+			// 	}
+			// })
+			// })
+			
+		})
+	</script>
+</head>
+<body>
+	<select id="top">
+		<option value="">请选择顶级分类</option>
+		{volist name="ProClassify" id="vo"}
+			<option value="{$vo.id}">{$vo.name}</option>
+		{/volist}
+		
+	</select>
+	
+		<select id="two">
+		<option value="">请选择二级分类</option>
+	</select>
+
+	
+
+	<!-- <select id="three">
+		<option value="">请选择三级分类</option>
+	</select> -->
+	
+
+</body>
+</html>

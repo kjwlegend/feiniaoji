@@ -1,0 +1,51 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+class Color extends Model{
+	//颜色列表
+	public function colorIndex(){
+	//实例化color模型
+	$colorModel = new Color();
+	//数据查看
+	$res = $colorModel->select();
+	//返回$res 
+	return $res;	
+	} 
+	//颜色添加
+	public function colorInsert($info){
+		//实例化color模型
+		$colorModel = new Color();
+		//数据添加
+		$res = $colorModel->save($info);
+		//返回$res
+		return $res;
+	}
+	//查看修改颜色
+	public function colorEdit($id){
+		//实例化color模型
+		$colorModel = new Color();
+		//数据查看
+		$res = $colorModel->find($id);
+		//返回$res
+		return $res;
+	}
+	//修改操作
+	public function colorUpdate($info,$id){
+		//实例化color模型
+		$colorModel = new Color();
+		//数据修改
+		$res = $colorModel->save($info,['id'=>$id]);
+		//返回$res
+		return $res;
+	}
+	//数据删除
+	public function colorDelete(){
+		//实例化color模型
+		$colorModel = new Color();
+		//数据删除
+		$res = $colorModel->delate();
+		//返回$res
+		return $res;
+	}
+	
+}

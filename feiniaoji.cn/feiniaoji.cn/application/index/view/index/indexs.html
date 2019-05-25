@@ -1,0 +1,146 @@
+
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>统计</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+         
+        </div>
+      </div>
+    </div>
+<main class="main-container" id="main-container">
+
+    <section class="section-header">
+        <div class="container-fluid">
+        
+        </div>
+    </section>
+
+    <section class="section-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                          <input type="hidden" name="month1" class="month1" value="{$month1}">
+                          <input type="hidden" name="month2" class="month2" value="{$month2}">
+                          <input type="hidden" name="month3" class="month3" value="{$month3}">
+                          <input type="hidden" name="month4" class="month4" value="{$month4}">
+                          <input type="hidden" name="month5" class="month5" value="{$month5}">
+                          <input type="hidden" name="month6" class="month6" value="{$month6}">
+                          <input type="hidden" name="month7" class="month7" value="{$month7}">
+                          <input type="hidden" name="month8" class="month8" value="{$month8}">
+                          <input type="hidden" name="month9" class="month9" value="{$month9}">
+                          <input type="hidden" name="month10" class="month10" value="{$month10}">
+                          <input type="hidden" name="month11" class="month11" value="{$month11}">
+                          <input type="hidden" name="month12" class="month12" value="{$month12}">
+                          <input type="hidden" name="year" class="year" value="{$year}">                        
+                          <div id="container" style="min-width:400px;height:400px"></div>
+                        </div>
+                        <br>
+                        <div class="panel-footer">Panel footer</div>
+                    </div>
+                    <div class="col-md-12 title">
+
+
+                          <div class="col-md-3 col-sm-6 col-xs-12 tile_stats_count">
+                            <span class="count_top"><i class="fa fa-mortar-board"></i><a class="numbers" href="{:url('user/index')}"> 用户人数</a></span>
+                            <div class="count">{$user}</div>
+                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> {$user}</i> 位用户</span>
+                          </div>
+
+                          <div class="col-md-3 col-sm-6 col-xs-12 tile_stats_count">
+                            <span class="count_top"><i class="fa fa-clock-o"></i> <a class="numbers" href="{:url('birds/index')}"> 订单总数量</a></span>
+                            <div class="count">{$orders}</div>
+                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> {$orders} </i>条订单   包含所有类型的订单 如：待确认,代付款</span>
+                          </div>
+                       
+                        <div class="col-md-3 col-sm-6 col-xs-12 tile_stats_count">
+                            <span class="count_top"><i class="fa fa-clock-o"></i><a class="numbers" href="{:url('birds/index')}"> 飞鸟行程订单总数量</a></span>
+                            <div class="count">{$birds}</div>
+                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> {$birds} </i>条行程   包含所有类型的行程 如：待出发,进行中</span>
+                          </div>
+                      
+                        <div class="col-md-3 col-sm-6 col-xs-12 tile_stats_count">
+                            <span class="count_top"><i class="fa fa-clock-o"></i><a class="numbers" href="{:url('comments/index')}"> 评论数量</a></span>
+                            <div class="count">{$comments}</div>
+                            <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i> {$comments} </i>条评论   用户评论</span>
+                          </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="ADMIN/js/jquery.min.js"></script>
+<script src="ADMIN_VENDOR/Chart.js/dist/Chart.bundle.js"></script>
+<script src="ADMIN_VENDOR/Highcharts/code/highcharts.js"></script>
+<script src="ADMIN_VENDOR/Highcharts/code/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<script type="text/javascript">
+
+
+var month1 = parseInt($('.month1').val());
+var month2 = parseInt($('.month2').val());
+var month3 = parseInt($('.month3').val());
+var month4 = parseInt($('.month4').val());
+var month5 = parseInt($('.month5').val());
+var month6 = parseInt($('.month6').val());
+var month7 = parseInt($('.month7').val());
+var month8 = parseInt($('.month8').val());
+var month9 = parseInt($('.month9').val());
+var month10 = parseInt($('.month10').val());
+var month11 = parseInt($('.month11').val());
+var month12 = parseInt($('.month12').val());
+var year = parseInt($('.year').val())+' 年订单总量';
+
+
+var chart = Highcharts.chart('container',{
+  title: {
+    text: year
+  },
+  xAxis: {
+    categories: ['一月', '二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+  },
+  // yAxis: {
+  //   title:{
+  //      text: '飞鸟订单'
+  //   }
+  // },
+  yAxis: {
+    type: 'logarithmic',
+    minorTickInterval: 0.1
+  },
+  yAxis: {
+    title: {
+      text: '下单次数'
+    }
+  },
+  
+  tooltip: {
+    headerFormat: '<b>{series.name}</b><br />',
+    pointFormat: 'x = {point.x}, y = {point.y}'
+  },
+  series: [{
+    data: [month1,month2, month3, month4, month5, month6, month7, month8, month9, month10, month11, month12 ]
+    // pointStart: 1
+  }]
+});
+</script>
+</html>
+
+
+
+
+
+
+
+
+

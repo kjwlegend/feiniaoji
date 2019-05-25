@@ -1,0 +1,55 @@
+<?php
+namespace app\admin\model;
+use think\Model;
+
+class User extends Model{
+  //列表页面 查询
+  public function indexSelect(){
+  	//实例化对象
+    $info = new User();
+    $res = $info->select();
+    //返回结果
+    return $res;
+  }
+
+  //修改时 默认数据
+  public function editSelect($id){
+  	//实例化对象
+  	$info = new User();
+  	$res = $info
+  		->where(['id'=>$id])
+		  ->find();
+	//返回结果
+	return $res;
+  }
+
+  //添加数据
+  public function addInsert($arr){
+  	//实例化对象
+  	$info = new User();
+  	$res = $info
+  		->insert($arr);
+  	//返回结果
+  	return $res;
+  }
+
+  //列表修改
+  public function indexUpdate($id,$arr){
+  	//实例化对象
+  	$info = new User();
+  	$res = $info
+		->save($arr,['id'=>$id]);
+	//返回结果
+	return $res;
+  }
+
+  //列表删除
+  public function indexDelete($id){
+  	//实例化对象
+  	$info = new User();
+  	$res = $info
+  		->where(['id'=>$id])
+  		->delete();
+  	return $res;
+  }
+}

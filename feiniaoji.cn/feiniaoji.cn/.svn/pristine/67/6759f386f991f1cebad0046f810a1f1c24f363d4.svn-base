@@ -1,0 +1,73 @@
+<?php
+namespace app\admin\controller;
+use app\common\Common;
+class Config extends Common{
+	//config列表
+	public function index(){
+		//调用config模型
+		$configModel = model('config');
+		//数据库操作
+		$res = $configModel->configIndex();
+		//绑定变量
+		$this->assign('config',$res);
+		//调用页面
+		return $this->fetch();
+	}
+
+	//文件上传
+	public function uploads(){
+		//文件上传
+		// 获取表单上传文件 例如上传了001.jpg
+	    $file = request()->file('logo');
+	    // var_dump($file);
+	    // 移动到框架应用根目录/uploads/ 目录下
+	    $info = $file->move( './static/uploads');
+	    //判断是否上传成功
+	    if($info){
+	        // 成功上传后 获取上传信息
+	        // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+	         $logo = $info->getSaveName();
+	         return $logo;
+	    }else{
+	        // 上传失败获取错误信息
+	        echo $file->getError();
+	    }
+
+	}
+	//修改页面
+	public function edit(){
+		//获取URL传过来的id
+		$id = $_GET['id'];
+		//实例化config模型
+		$configModel = model('Config');
+		//调用model中configEdit方法
+		$res = $configModel->configEdit($id);
+		//绑定变量
+		$this->assign('config',$res);  
+		//调用页面
+		return $this->fetch();
+	}  
+	//修改执行
+	public function update(){
+		//调用文件上传方法
+		$logo = $this->uploads();
+		//获取post传过来的id
+		$id = $_POST['id'];
+		//获取post修改内容
+		$info = [
+			'logo' => $logo,
+			'copy' =>$_POST['copy']
+		];
+		//实例化config模型
+		$configModel = model('Config');
+		//调用model中configUpdate方法
+		$res = $configModel->configUpdate($info,$id);
+		//判断是否修改成功
+		if($res){
+			$this->success('修改成功',url('config/index'));
+		}else{
+			$this->error('修改失败');
+		}
+
+	}
+}

@@ -1,0 +1,11 @@
+<?php
+namespace app\index\model;
+use think\Model;
+class Order extends Model{
+
+	// 将数据插入订单表
+	public function addOrder($arr){
+		$orderId = $this->insertGetId($arr);
+		return $orderId;
+	}
+}

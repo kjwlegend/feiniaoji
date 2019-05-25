@@ -4,7 +4,6 @@
 
 <view wx:if='{{pay_success}}'>恭喜您！支付成功</view>
 <view wx:if='{{!pay_success}}'>抱歉！支付失败</view>
-<button wx:if='{{pay_success}}' class='go_home' bindtap='go_home'>回到首页</button>
-<button wx:if='{{pay_success}}' class='go_order'>查看订单详情</button>
-<button wx:if='{{!pay_success}}' class='go_home' bindtap='go_home'>重新支付</button>
-<button wx:if='{{!pay_success}}' class='go_order'>返回订单详情</button>
+<button class='go_home' bindtap='go_home'>回到首页</button>
+<button wx:if='{{pay_success}}' class='go_order' bindtap='go_order'>查看订单详情</button>
+<button wx:if='{{!pay_success}}' class='go_order' bindtap='go_order'>返回订单详情</button>
