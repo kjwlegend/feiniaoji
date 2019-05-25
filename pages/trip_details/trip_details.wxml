@@ -95,7 +95,7 @@
   <view class='share'>
     <view class='icon'></view>
     <view class='share_title'>飞鸟备注</view>
-    <view class='remark'>{{birds.bdesc}}</view>
+    <view class='remark'><text selectable='true'>{{birds.bdesc}}</text></view>
     <view class='fabu' style=' margin-top: 26rpx;'>发布时间：{{date}}</view>
     <view class='fabu'>行程编号：{{birds.btripnumbers}}</view>
   </view>

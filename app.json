@@ -70,5 +70,6 @@
         "iconPath": "/images/info_off.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
